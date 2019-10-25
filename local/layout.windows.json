@@ -1,0 +1,109 @@
+{
+  "version": "1.1.1",
+  "windows": {
+    "main": {
+      "main": true,
+      "url": "app://editor/index.html",
+      "windowType": "dockable",
+      "x": 69,
+      "y": 23,
+      "width": 1371,
+      "height": 877,
+      "layout": {
+        "children": [
+          {
+            "children": [
+              {
+                "active": 0,
+                "children": [
+                  "node-library"
+                ],
+                "height": 396.90625,
+                "type": "panel",
+                "width": 264
+              },
+              {
+                "active": 0,
+                "children": [
+                  "assets"
+                ],
+                "height": 396.078125,
+                "type": "panel",
+                "width": 264
+              }
+            ],
+            "height": 795,
+            "type": "dock-v",
+            "width": 264
+          },
+          {
+            "children": [
+              {
+                "active": 0,
+                "children": [
+                  "scene"
+                ],
+                "height": 527,
+                "type": "panel",
+                "width": 593
+              },
+              {
+                "active": 0,
+                "children": [
+                  "console",
+                  "timeline",
+                  "game-window"
+                ],
+                "height": 266,
+                "type": "panel",
+                "width": 593
+              }
+            ],
+            "height": 795,
+            "type": "dock-v",
+            "width": 593
+          },
+          {
+            "active": 0,
+            "children": [
+              "hierarchy"
+            ],
+            "height": 795,
+            "type": "panel",
+            "width": 204
+          },
+          {
+            "active": 0,
+            "children": [
+              "inspector",
+              "cocos-services"
+            ],
+            "height": 795,
+            "type": "panel",
+            "width": 304
+          }
+        ],
+        "type": "dock-h"
+      },
+      "panels": [
+        "node-library",
+        "assets",
+        "console",
+        "timeline",
+        "game-window",
+        "hierarchy",
+        "inspector",
+        "cocos-services",
+        "scene"
+      ]
+    }
+  },
+  "panels": {
+    "sprite-editor": {
+      "x": 736,
+      "y": 142,
+      "width": 500,
+      "height": 522
+    }
+  }
+}

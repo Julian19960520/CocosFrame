@@ -1,0 +1,72 @@
+{
+  "mtimes": {
+    "212f3033-ca8d-4164-a459-6a7f80b39c85": {
+      "assetMtime": 1571929724627,
+      "metaMtime": 1571929724629
+    },
+    "5a9267e3-f839-4fb9-bada-ec478363af6e": {
+      "assetMtime": 1571929702480,
+      "metaMtime": 1571929702491
+    },
+    "51e0e0eb-b0e5-4d9e-9b68-d2e74aa9bd12": {
+      "assetMtime": 1571929702480,
+      "metaMtime": 1571929702491
+    }
+  },
+  "result": {
+    "name": "AutoAtlas",
+    "width": 1024,
+    "height": 1024,
+    "ver": "1.2.0",
+    "uuid": "212f3033-ca8d-4164-a459-6a7f80b39c85",
+    "maxWidth": 1024,
+    "maxHeight": 1024,
+    "padding": 2,
+    "allowRotation": true,
+    "forceSquared": false,
+    "powerOfTwo": false,
+    "algorithm": "MaxRects",
+    "format": "png",
+    "quality": 80,
+    "contourBleed": true,
+    "paddingBleed": true,
+    "filterUnused": false,
+    "platformSettings": {},
+    "subMetas": {},
+    "bleed": 1,
+    "atlases": [
+      {
+        "files": [
+          {
+            "name": "blue",
+            "uuid": "5a9267e3-f839-4fb9-bada-ec478363af6e",
+            "textureUuid": "51e0e0eb-b0e5-4d9e-9b68-d2e74aa9bd12",
+            "path": "/Users/hortor/Documents/CocosCreaterProject/Frame/temp/trimImages/spritesheet_js_1571929754562_image_0.png",
+            "trim": {
+              "x": 3,
+              "y": 3,
+              "width": 1,
+              "height": 1,
+              "rotatedWidth": 1,
+              "rotatedHeight": 1
+            },
+            "rawWidth": 1,
+            "rawHeight": 1,
+            "width": 7,
+            "height": 7,
+            "originalPath": "/Users/hortor/Documents/CocosCreaterProject/Frame/library/imports/51/51e0e0eb-b0e5-4d9e-9b68-d2e74aa9bd12.png",
+            "x": 0,
+            "y": 0,
+            "rotatedWidth": 7,
+            "rotatedHeight": 7
+          }
+        ],
+        "width": 7,
+        "height": 7,
+        "name": "AutoAtlas-1",
+        "imagePath": "/Users/hortor/Documents/CocosCreaterProject/Frame/temp/TexturePacker/preview/Atlas/UI/AutoAtlas.pac/AutoAtlas-1.png"
+      }
+    ],
+    "unpackedTextures": []
+  }
+}
