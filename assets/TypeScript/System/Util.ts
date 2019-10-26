@@ -1,5 +1,3 @@
-import Scene from "../System/Scene";
-
 // Learn TypeScript:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/typescript.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/manual/en/scripting/typescript.html
@@ -11,24 +9,15 @@ import Scene from "../System/Scene";
 //  - [English] http://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 
 const {ccclass, property} = cc._decorator;
-import SceneManager from "../System/SceneManager"
-@ccclass
-export default class LoginScene extends Scene {
 
-    @property(cc.Button)
-    button: cc.Button = null;
-
-    // LIFE-CYCLE CALLBACKS:
-
-    // onLoad () {}
-
-    onLoad () {
-        this.button.node.on("click",()=>{
-            SceneManager.ins.Enter("MainMenuScene",(scene)=>{
-                console.log("Enter", scene);
-            });
-        })
+export namespace Util{
+    export function instantPrefab(path:string, callback){
+        cc.loader.loadRes(path, (err, prefab) => {
+            console.log("err", err);
+            var node:cc.Node = cc.instantiate(prefab);
+            node.name = path.substr(path.lastIndexOf("/")+1);
+            node.position = cc.Vec2.ZERO;
+            callback(node);
+        });
     }
-
-    // update (dt) {}
 }

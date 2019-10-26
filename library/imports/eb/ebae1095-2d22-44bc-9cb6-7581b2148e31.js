@@ -13,18 +13,40 @@ cc._RF.push(module, 'ebae1CVLSJEvJy2dYGyFI4x', 'ScreenRect');
 //  - [English] http://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 Object.defineProperty(exports, "__esModule", { value: true });
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
-var NewClass = /** @class */ (function (_super) {
-    __extends(NewClass, _super);
-    function NewClass() {
-        return _super !== null && _super.apply(this, arguments) || this;
+var ScreenRect = /** @class */ (function (_super) {
+    __extends(ScreenRect, _super);
+    function ScreenRect() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.maxHeight = 1200;
+        _this.minHeight = 1000;
+        return _this;
     }
-    NewClass.prototype.start = function () {
+    ScreenRect_1 = ScreenRect;
+    ScreenRect.prototype.onLoad = function () {
+        ScreenRect_1.Ins = this;
+        var widget = this.node.getComponent(cc.Widget);
+        var winSizePixels = cc.director.getWinSizeInPixels();
+        if (winSizePixels.height > this.maxHeight) {
+            widget.top = widget.bottom = (winSizePixels.height - this.maxHeight) / 2;
+        }
+        if (winSizePixels.height < this.minHeight) {
+            this.node.scale = winSizePixels.height / this.minHeight;
+            this.node.height = this.minHeight;
+        }
     };
-    NewClass = __decorate([
+    var ScreenRect_1;
+    ScreenRect.Ins = null;
+    __decorate([
+        property
+    ], ScreenRect.prototype, "maxHeight", void 0);
+    __decorate([
+        property
+    ], ScreenRect.prototype, "minHeight", void 0);
+    ScreenRect = ScreenRect_1 = __decorate([
         ccclass
-    ], NewClass);
-    return NewClass;
+    ], ScreenRect);
+    return ScreenRect;
 }(cc.Component));
-exports.default = NewClass;
+exports.default = ScreenRect;
 
 cc._RF.pop();

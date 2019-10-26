@@ -14,13 +14,11 @@ var Scene_1 = require("../System/Scene");
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
-var SceneSystem_1 = require("../System/SceneSystem");
+var SceneManager_1 = require("../System/SceneManager");
 var LoginScene = /** @class */ (function (_super) {
     __extends(LoginScene, _super);
     function LoginScene() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.label = null;
-        _this.text = 'hello';
         _this.button = null;
         return _this;
         // update (dt) {}
@@ -29,17 +27,11 @@ var LoginScene = /** @class */ (function (_super) {
     // onLoad () {}
     LoginScene.prototype.onLoad = function () {
         this.button.node.on("click", function () {
-            SceneSystem_1.default.ins.Enter("MainMenuScene", function (scene) {
+            SceneManager_1.default.ins.Enter("MainMenuScene", function (scene) {
                 console.log("Enter", scene);
             });
         });
     };
-    __decorate([
-        property(cc.Label)
-    ], LoginScene.prototype, "label", void 0);
-    __decorate([
-        property
-    ], LoginScene.prototype, "text", void 0);
     __decorate([
         property(cc.Button)
     ], LoginScene.prototype, "button", void 0);

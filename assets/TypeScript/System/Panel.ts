@@ -1,4 +1,4 @@
-import Scene from "../System/Scene";
+import PanelManager from "./PanelManager";
 
 // Learn TypeScript:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/typescript.html
@@ -11,24 +11,21 @@ import Scene from "../System/Scene";
 //  - [English] http://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 
 const {ccclass, property} = cc._decorator;
-import SceneManager from "../System/SceneManager"
+
 @ccclass
-export default class LoginScene extends Scene {
-
+export default class Panel extends cc.Component {
     @property(cc.Button)
-    button: cc.Button = null;
-
-    // LIFE-CYCLE CALLBACKS:
-
-    // onLoad () {}
-
-    onLoad () {
-        this.button.node.on("click",()=>{
-            SceneManager.ins.Enter("MainMenuScene",(scene)=>{
-                console.log("Enter", scene);
-            });
+    public closeButton:cc.Button;
+    @property(cc.Button)
+    public okButton:cc.Button;
+    @property(cc.Button)
+    public cancelButton:cc.Button;
+    onLoad(){
+        this.closeButton.node.on("click", ()=>{
+            this.closePanel();
         })
     }
-
-    // update (dt) {}
+    public closePanel(){
+        PanelManager.ins.Close(this);
+    }
 }

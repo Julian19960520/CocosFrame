@@ -1,6 +1,6 @@
 "use strict";
-cc._RF.push(module, 'd534dWuoKNK2blS540z8aHi', 'SceneSystem');
-// TypeScript/System/SceneSystem.ts
+cc._RF.push(module, 'd534dWuoKNK2blS540z8aHi', 'SceneManager');
+// TypeScript/System/SceneManager.ts
 
 // Learn TypeScript:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/typescript.html
@@ -14,44 +14,44 @@ cc._RF.push(module, 'd534dWuoKNK2blS540z8aHi', 'SceneSystem');
 Object.defineProperty(exports, "__esModule", { value: true });
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var Scene_1 = require("./Scene");
-var SceneSystem = /** @class */ (function (_super) {
-    __extends(SceneSystem, _super);
-    function SceneSystem() {
+var SceneManager = /** @class */ (function (_super) {
+    __extends(SceneManager, _super);
+    function SceneManager() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.stack = [];
         _this.cache = new Map();
         _this.curScene = null;
         _this.firstScene = "";
-        _this.block = null;
+        _this.blockInput = null;
         return _this;
     }
-    SceneSystem_1 = SceneSystem;
-    SceneSystem.prototype.onLoad = function () {
-        SceneSystem_1.ins = this;
-        this.Enter(this.firstScene);
-        this.block.enabled = false;
+    SceneManager_1 = SceneManager;
+    SceneManager.prototype.onLoad = function () {
+        SceneManager_1.ins = this;
+        this.Enter(this.firstScene, null, ShiftFunc.simpleShift);
+        this.blockInput.enabled = false;
     };
-    SceneSystem.prototype.Enter = function (sceneName, callback, shiftFunc) {
+    SceneManager.prototype.Enter = function (sceneName, callback, shiftFunc) {
         var _this = this;
         if (callback === void 0) { callback = null; }
-        if (shiftFunc === void 0) { shiftFunc = this.moveLeftShift; }
+        if (shiftFunc === void 0) { shiftFunc = ShiftFunc.moveLeftShift; }
         this.loadScene(sceneName).then(function (newScene) {
             _this.stack.push(sceneName);
             if (callback) {
                 callback(newScene);
             }
-            _this.block.enabled = true;
+            _this.blockInput.enabled = true;
             shiftFunc(_this.curScene, newScene, function () {
-                _this.block.enabled = false;
+                _this.blockInput.enabled = false;
             });
             _this.curScene = newScene;
             _this.printState();
         });
     };
-    SceneSystem.prototype.Back = function (callback, shiftFunc) {
+    SceneManager.prototype.Back = function (callback, shiftFunc) {
         var _this = this;
         if (callback === void 0) { callback = null; }
-        if (shiftFunc === void 0) { shiftFunc = this.moveRightShift; }
+        if (shiftFunc === void 0) { shiftFunc = ShiftFunc.moveRightShift; }
         if (this.stack.length >= 2) {
             this.stack.pop();
             var lastScene = this.stack[this.stack.length - 1];
@@ -59,9 +59,9 @@ var SceneSystem = /** @class */ (function (_super) {
                 if (callback) {
                     callback(lastScene);
                 }
-                _this.block.enabled = true;
+                _this.blockInput.enabled = true;
                 shiftFunc(_this.curScene, lastScene, function () {
-                    _this.block.enabled = false;
+                    _this.blockInput.enabled = false;
                 });
                 _this.curScene = lastScene;
                 _this.printState();
@@ -71,7 +71,7 @@ var SceneSystem = /** @class */ (function (_super) {
             console.log("this.stack.length == 0");
         }
     };
-    SceneSystem.prototype.loadScene = function (sceneName) {
+    SceneManager.prototype.loadScene = function (sceneName) {
         var _this = this;
         return new Promise(function (reslove, reject) {
             var scene = _this.cache.get(sceneName);
@@ -79,12 +79,14 @@ var SceneSystem = /** @class */ (function (_super) {
                 reslove(scene);
             }
             else {
-                cc.loader.loadRes("Scene/" + sceneName, function (err, prefab) {
+                cc.loader.loadRes("Scene/" + sceneName + "/" + sceneName, function (err, prefab) {
                     var newNode = cc.instantiate(prefab);
                     newNode.name = sceneName;
+                    newNode.position = cc.Vec2.ZERO;
+                    newNode.active = false;
                     scene = newNode.getComponent(Scene_1.default);
                     if (scene) {
-                        _this.node.addChild(scene.node);
+                        _this.node.addChild(scene.node, 0);
                         _this.cache.set(sceneName, scene);
                         reslove(scene);
                     }
@@ -95,7 +97,35 @@ var SceneSystem = /** @class */ (function (_super) {
             }
         });
     };
-    SceneSystem.prototype.simpleShift = function (curScene, newScene, finish) {
+    SceneManager.prototype.printState = function () {
+        var str = "==========SceneManager=========\nstack: ";
+        for (var i = 0; i < this.stack.length; i++) {
+            str += " >> " + this.stack[i];
+        }
+        str += "\ncache: ";
+        this.cache.forEach(function (v, k) {
+            str += v.name + ", ";
+        });
+        str += "\ncurrent: " + this.curScene ? this.curScene.name : "null";
+        console.log(str);
+    };
+    var SceneManager_1;
+    SceneManager.ins = null;
+    __decorate([
+        property
+    ], SceneManager.prototype, "firstScene", void 0);
+    __decorate([
+        property(cc.BlockInputEvents)
+    ], SceneManager.prototype, "blockInput", void 0);
+    SceneManager = SceneManager_1 = __decorate([
+        ccclass
+    ], SceneManager);
+    return SceneManager;
+}(cc.Component));
+exports.default = SceneManager;
+var ShiftFunc;
+(function (ShiftFunc) {
+    function simpleShift(curScene, newScene, finish) {
         if (curScene) {
             curScene.node.active = false;
             console.log(curScene.name + " false");
@@ -105,38 +135,41 @@ var SceneSystem = /** @class */ (function (_super) {
             console.log(newScene.name + " true");
         }
         finish();
-    };
-    SceneSystem.prototype.moveLeftShift = function (curScene, newScene, finish) {
+    }
+    ShiftFunc.simpleShift = simpleShift;
+    function moveLeftShift(curScene, newScene, finish) {
         if (curScene) {
             curScene.node.position = cc.v2(0, 0);
-            cc.tween(curScene.node).to(0.5, { position: cc.v2(-750, 0) }, { easing: 'quintOut' }).call(function () {
+            cc.tween(curScene.node).to(0.5, { position: cc.v2(-640, 0) }, { easing: 'quintOut' }).call(function () {
                 curScene.node.active = false;
             }).start();
         }
         if (newScene) {
-            newScene.node.position = cc.v2(750, 0);
+            newScene.node.position = cc.v2(640, 0);
             newScene.node.active = true;
             cc.tween(newScene.node).to(0.5, { position: cc.v2(0, 0) }, { easing: 'quintOut' }).call(function () {
                 finish();
             }).start();
         }
-    };
-    SceneSystem.prototype.moveRightShift = function (curScene, newScene, finish) {
+    }
+    ShiftFunc.moveLeftShift = moveLeftShift;
+    function moveRightShift(curScene, newScene, finish) {
         if (curScene) {
             curScene.node.position = cc.v2(0, 0);
-            cc.tween(curScene.node).to(0.5, { position: cc.v2(750, 0) }, { easing: 'quintOut' }).call(function () {
+            cc.tween(curScene.node).to(0.5, { position: cc.v2(640, 0) }, { easing: 'quintOut' }).call(function () {
                 curScene.node.active = false;
             }).start();
         }
         if (newScene) {
-            newScene.node.position = cc.v2(-750, 0);
+            newScene.node.position = cc.v2(-640, 0);
             newScene.node.active = true;
             cc.tween(newScene.node).to(0.5, { position: cc.v2(0, 0) }, { easing: 'quintOut' }).call(function () {
                 finish();
             }).start();
         }
-    };
-    SceneSystem.prototype.scaleShift = function (curScene, newScene, finish) {
+    }
+    ShiftFunc.moveRightShift = moveRightShift;
+    function scaleShift(curScene, newScene, finish) {
         if (curScene) {
             curScene.node.scale = 1;
             cc.tween(curScene.node).to(1000, { scale: 0 }).call(function () {
@@ -150,32 +183,8 @@ var SceneSystem = /** @class */ (function (_super) {
                 finish();
             });
         }
-    };
-    SceneSystem.prototype.printState = function () {
-        var str = "==========SceneSystem=========\nstack: ";
-        for (var i = 0; i < this.stack.length; i++) {
-            str += " >> " + this.stack[i];
-        }
-        str += "\ncache: ";
-        this.cache.forEach(function (v, k) {
-            str += v.name + ", ";
-        });
-        str += "\ncurrent: " + this.curScene ? this.curScene.name : "null";
-        console.log(str);
-    };
-    var SceneSystem_1;
-    SceneSystem.ins = null;
-    __decorate([
-        property
-    ], SceneSystem.prototype, "firstScene", void 0);
-    __decorate([
-        property(cc.BlockInputEvents)
-    ], SceneSystem.prototype, "block", void 0);
-    SceneSystem = SceneSystem_1 = __decorate([
-        ccclass
-    ], SceneSystem);
-    return SceneSystem;
-}(cc.Component));
-exports.default = SceneSystem;
+    }
+    ShiftFunc.scaleShift = scaleShift;
+})(ShiftFunc || (ShiftFunc = {}));
 
 cc._RF.pop();

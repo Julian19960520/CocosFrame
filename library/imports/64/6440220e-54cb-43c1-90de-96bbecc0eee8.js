@@ -14,8 +14,9 @@ var Scene_1 = require("../System/Scene");
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
-var SceneSystem_1 = require("../System/SceneSystem");
+var SceneManager_1 = require("../System/SceneManager");
 var DataBind_1 = require("../System/DataBind");
+var Top_1 = require("../System/Top");
 var MainMenuScene = /** @class */ (function (_super) {
     __extends(MainMenuScene, _super);
     function MainMenuScene() {
@@ -25,22 +26,36 @@ var MainMenuScene = /** @class */ (function (_super) {
         _this.buttonBack = null;
         _this.buttonAdd = null;
         _this.buttonSub = null;
-        _this.text = 'hello';
+        _this.buttonOpenPanel = null;
         return _this;
         // update (dt) {}
     }
-    // LIFE-CYCLE CALLBACKS:
-    // onLoad () {}
     MainMenuScene.prototype.onLoad = function () {
         var _this = this;
         this.buttonBack.node.on("click", function () {
-            SceneSystem_1.default.ins.Back();
+            SceneManager_1.default.ins.Back();
         });
         this.buttonAdd.node.on("click", function () {
             DataBind_1.DB.Set("energy", DataBind_1.DB.Get("energy") + 1);
         });
         this.buttonSub.node.on("click", function () {
             DataBind_1.DB.Set("energy", DataBind_1.DB.Get("energy") - 1);
+        });
+        this.buttonOpenPanel.node.on("click", function () {
+            Top_1.default.ins.Toast("aasfasfs");
+            // PanelManager.ins.Open("MessageBox",(box:MessageBox)=>{
+            //     box.cancelButton.node.active = false;
+            //     box.okButton.node.on("click", ()=>{
+            //         PanelManager.ins.Open("MessageBox",(box:MessageBox)=>{
+            //             box.cancelButton.node.active = false;
+            //             box.okButton.node.on("click", ()=>{
+            //                 console.log("ok");
+            //                 box.closePanel();
+            //             })
+            //         });
+            //         box.closePanel();
+            //     })
+            // });
         });
         this.Bind("energy", function (energy) {
             _this.energyLabel.string = energy;
@@ -63,8 +78,8 @@ var MainMenuScene = /** @class */ (function (_super) {
         property(cc.Button)
     ], MainMenuScene.prototype, "buttonSub", void 0);
     __decorate([
-        property
-    ], MainMenuScene.prototype, "text", void 0);
+        property(cc.Button)
+    ], MainMenuScene.prototype, "buttonOpenPanel", void 0);
     MainMenuScene = __decorate([
         ccclass
     ], MainMenuScene);

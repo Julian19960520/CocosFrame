@@ -11,35 +11,35 @@
 const {ccclass, property} = cc._decorator;
 import Scene from "./Scene";
 @ccclass
-export default class SceneSystem extends cc.Component {
+export default class SceneManager extends cc.Component {
     stack:string[] = [];
     cache:Map<string, Scene> = new Map<string, Scene>();
     curScene:Scene = null;
-    static ins:SceneSystem = null;
+    static ins:SceneManager = null;
     @property
     firstScene:string = "";
     @property(cc.BlockInputEvents)
-    block:cc.BlockInputEvents = null;
+    blockInput:cc.BlockInputEvents = null;
     onLoad(){
-        SceneSystem.ins = this;
-        this.Enter(this.firstScene);
-        this.block.enabled = false;
+        SceneManager.ins = this;
+        this.Enter(this.firstScene, null, ShiftFunc.simpleShift);
+        this.blockInput.enabled = false;
     }
-    public Enter(sceneName:string, callback:(t:Scene)=>void = null, shiftFunc = this.moveLeftShift){
+    public Enter(sceneName:string, callback:(t:Scene)=>void = null, shiftFunc = ShiftFunc.moveLeftShift){
         this.loadScene(sceneName).then((newScene:Scene)=>{
             this.stack.push(sceneName);
             if(callback){
                 callback(newScene);   
             }
-            this.block.enabled = true;
+            this.blockInput.enabled = true;
             shiftFunc(this.curScene, newScene, ()=>{
-                this.block.enabled = false;
+                this.blockInput.enabled = false;
             });
             this.curScene = newScene;
             this.printState();
         })
     }
-    public Back(callback:(t:Scene)=>void = null, shiftFunc = this.moveRightShift){
+    public Back(callback:(t:Scene)=>void = null, shiftFunc = ShiftFunc.moveRightShift){
         if(this.stack.length>=2){
             this.stack.pop();
             let lastScene = this.stack[this.stack.length-1];
@@ -47,9 +47,9 @@ export default class SceneSystem extends cc.Component {
                 if(callback){
                     callback(lastScene);   
                 }
-                this.block.enabled = true;
+                this.blockInput.enabled = true;
                 shiftFunc(this.curScene, lastScene, ()=>{
-                    this.block.enabled = false;
+                    this.blockInput.enabled = false;
                 });
                 this.curScene = lastScene;
                 this.printState();
@@ -64,12 +64,14 @@ export default class SceneSystem extends cc.Component {
             if(scene){
                 reslove(scene);
             }else{
-                cc.loader.loadRes("Scene/"+sceneName, (err, prefab) => {
+                cc.loader.loadRes("Scene/"+sceneName+"/"+sceneName, (err, prefab) => {
                     var newNode:cc.Node = cc.instantiate(prefab);
                     newNode.name = sceneName;
+                    newNode.position = cc.Vec2.ZERO;
+                    newNode.active = false;
                     scene = newNode.getComponent(Scene);
                     if(scene){
-                        this.node.addChild(scene.node);
+                        this.node.addChild(scene.node, 0);
                         this.cache.set(sceneName, scene);
                         reslove(scene);
                     }else{
@@ -79,7 +81,25 @@ export default class SceneSystem extends cc.Component {
             }
         });
     }
-    private simpleShift(curScene:Scene, newScene:Scene, finish){
+    private printState(){
+        let str = "==========SceneManager=========\nstack: ";
+        for(let i=0; i<this.stack.length; i++){
+            str += " >> "+this.stack[i];
+        }
+        str+="\ncache: ";
+        this.cache.forEach((v, k)=>{
+            str+=v.name+", "
+        })
+        str+="\ncurrent: " + this.curScene?this.curScene.name:"null";
+        console.log(str);
+    }
+}
+
+
+
+
+namespace ShiftFunc{
+    export function simpleShift(curScene:Scene, newScene:Scene, finish){
         if(curScene){
             curScene.node.active = false;
             console.log(curScene.name +" false");
@@ -90,37 +110,37 @@ export default class SceneSystem extends cc.Component {
         }
         finish();
     }
-    private moveLeftShift(curScene:Scene, newScene:Scene, finish){
+    export function moveLeftShift(curScene:Scene, newScene:Scene, finish){
         if(curScene){
             curScene.node.position = cc.v2(0, 0);
-            cc.tween(curScene.node).to(0.5, {position: cc.v2(-750, 0)}, { easing: 'quintOut'}).call(()=>{
+            cc.tween(curScene.node).to(0.5, {position: cc.v2(-640, 0)}, { easing: 'quintOut'}).call(()=>{
                 curScene.node.active = false;
             }).start();
         }
         if(newScene){
-            newScene.node.position = cc.v2(750, 0);
+            newScene.node.position = cc.v2(640, 0);
             newScene.node.active = true;
             cc.tween(newScene.node).to(0.5, {position: cc.v2(0, 0)}, { easing: 'quintOut'}).call(()=>{
                 finish();
             }).start();
         }
     }
-    private moveRightShift(curScene:Scene, newScene:Scene, finish){
+    export function moveRightShift(curScene:Scene, newScene:Scene, finish){
         if(curScene){
             curScene.node.position = cc.v2(0, 0);
-            cc.tween(curScene.node).to(0.5, {position: cc.v2(750, 0)}, { easing: 'quintOut'}).call(()=>{
+            cc.tween(curScene.node).to(0.5, {position: cc.v2(640, 0)}, { easing: 'quintOut'}).call(()=>{
                 curScene.node.active = false;
             }).start();
         }
         if(newScene){
-            newScene.node.position = cc.v2(-750, 0);
+            newScene.node.position = cc.v2(-640, 0);
             newScene.node.active = true;
             cc.tween(newScene.node).to(0.5, {position: cc.v2(0, 0)}, { easing: 'quintOut'}).call(()=>{
                 finish();
             }).start();
         }
     }
-    private scaleShift(curScene:Scene, newScene:Scene, finish){
+    export function scaleShift(curScene:Scene, newScene:Scene, finish){
         if(curScene){
             curScene.node.scale = 1;
             cc.tween(curScene.node).to(1000,{scale:0}).call(()=>{
@@ -134,17 +154,5 @@ export default class SceneSystem extends cc.Component {
                 finish();
             });
         }
-    }
-    private printState(){
-        let str = "==========SceneSystem=========\nstack: ";
-        for(let i=0; i<this.stack.length; i++){
-            str += " >> "+this.stack[i];
-        }
-        str+="\ncache: ";
-        this.cache.forEach((v, k)=>{
-            str+=v.name+", "
-        })
-        str+="\ncurrent: " + this.curScene?this.curScene.name:"null";
-        console.log(str);
     }
 }

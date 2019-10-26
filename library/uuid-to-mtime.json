@@ -419,11 +419,6 @@
     "meta": 1571929593717,
     "relativePath": "model/primitives.fbx"
   },
-  "5154b28b-5b70-49e1-9a2c-78d52eff6e28": {
-    "asset": 1571934199158,
-    "meta": 1571934199163,
-    "relativePath": "Main.fire"
-  },
   "8006a762-b775-46fe-972b-df69c8ef3c96": {
     "asset": 1571929688082,
     "meta": 1571929642600,
@@ -439,13 +434,8 @@
     "meta": 1571929669050,
     "relativePath": "TypeScript/System"
   },
-  "ebae1095-2d22-44bc-9cb6-7581b2148e31": {
-    "asset": 1571929669044,
-    "meta": 1571929669348,
-    "relativePath": "TypeScript/System/ScreenRect.ts"
-  },
   "3b956251-83f9-4bac-a258-e58bf5250977": {
-    "asset": 1571933113998,
+    "asset": 1572003070163,
     "meta": 1571929674822,
     "relativePath": "TypeScript/SceneScript"
   },
@@ -455,14 +445,14 @@
     "relativePath": "resources/Scene"
   },
   "61f81f23-f331-45bd-af7d-8fca1c2c38d4": {
-    "asset": 1571929897761,
-    "meta": 1571929897779,
-    "relativePath": "resources/Scene/LoginScene.prefab"
+    "asset": 1572111504693,
+    "meta": 1572111504705,
+    "relativePath": "resources/Scene/LoginScene/LoginScene.prefab"
   },
   "8661e836-9726-4a7c-aa43-63a8c94421c2": {
-    "asset": 1571934924940,
-    "meta": 1571934924946,
-    "relativePath": "resources/Scene/MainMenuScene.prefab"
+    "asset": 1572116126060,
+    "meta": 1572116126069,
+    "relativePath": "resources/Scene/MainMenuScene/MainMenuScene.prefab"
   },
   "51e0e0eb-b0e5-4d9e-9b68-d2e74aa9bd12": {
     "asset": 1571929702480,
@@ -484,34 +474,104 @@
     "meta": 1571929724629,
     "relativePath": "Atlas/UI/AutoAtlas.pac"
   },
-  "a06668ff-ec2f-4e5e-8a64-0eba49c7f9b7": {
-    "asset": 1571932104144,
-    "meta": 1571932109368,
-    "relativePath": "TypeScript/SceneScript/LoginScene.ts"
-  },
-  "9319fbf5-af1a-4216-a579-d09738b0f626": {
-    "asset": 1571933289726,
-    "meta": 1571933291067,
-    "relativePath": "TypeScript/SceneScript/Test.ts"
-  },
-  "d534d5ae-a0a3-4ad9-b952-e78d33f1a1e2": {
-    "asset": 1571934225873,
-    "meta": 1571934227225,
-    "relativePath": "TypeScript/System/SceneSystem.ts"
-  },
-  "78dbef89-8e89-4957-96ff-c91ccb388779": {
-    "asset": 1571934486102,
-    "meta": 1571934512010,
-    "relativePath": "TypeScript/System/DataBind.ts"
-  },
   "48d4d3dc-f505-4ddc-80ce-b2fd845d8425": {
     "asset": 1571934509117,
     "meta": 1571934512010,
     "relativePath": "TypeScript/System/Scene.ts"
   },
+  "6bdd3b8b-f327-4b07-be3c-956b2db6d07c": {
+    "asset": 1572102700788,
+    "meta": 1572102704686,
+    "relativePath": "Atlas/UI/white.png"
+  },
+  "ebae1095-2d22-44bc-9cb6-7581b2148e31": {
+    "asset": 1572112112025,
+    "meta": 1572112117485,
+    "relativePath": "TypeScript/System/ScreenRect.ts"
+  },
+  "7efee909-d74c-415f-b4ca-3a085cb2930a": {
+    "asset": 1572113884309,
+    "meta": 1572113884311,
+    "relativePath": "resources/Scene/LoginScene"
+  },
+  "2962b265-3401-4d8b-bd90-7ebad3954198": {
+    "asset": 1572113906234,
+    "meta": 1572113906236,
+    "relativePath": "resources/Scene/MainMenuScene"
+  },
+  "d619ffde-d51c-410e-b028-8d985a3cd8bb": {
+    "asset": 1572114451687,
+    "meta": 1572114451689,
+    "relativePath": "resources/Panel"
+  },
+  "6fd63780-16f4-45fc-a9a0-d1aeea1c91df": {
+    "asset": 1572118485824,
+    "meta": 1572118485830,
+    "relativePath": "resources/Panel/MessageBox.prefab"
+  },
+  "0e9e75a8-1061-4c35-80de-a33e57fab8f7": {
+    "asset": 1572116316524,
+    "meta": 1572116318262,
+    "relativePath": "TypeScript/SceneScript/MessageBox.ts"
+  },
+  "d534d5ae-a0a3-4ad9-b952-e78d33f1a1e2": {
+    "asset": 1572118051376,
+    "meta": 1572118088235,
+    "relativePath": "TypeScript/System/SceneManager.ts"
+  },
+  "5154b28b-5b70-49e1-9a2c-78d52eff6e28": {
+    "asset": 1572122905812,
+    "meta": 1572122905817,
+    "relativePath": "Main.fire"
+  },
+  "a06668ff-ec2f-4e5e-8a64-0eba49c7f9b7": {
+    "asset": 1572118255719,
+    "meta": 1572118257031,
+    "relativePath": "TypeScript/SceneScript/LoginScene.ts"
+  },
+  "0e91a2cc-a312-4e97-a0fd-4dc959959199": {
+    "asset": 1572119404258,
+    "meta": 1572119410577,
+    "relativePath": "TypeScript/System/Panel.ts"
+  },
+  "91832ce6-1124-4c46-8bc3-fd23ad6317a0": {
+    "asset": 1572119548895,
+    "meta": 1572119548896,
+    "relativePath": "resources/TopLayer"
+  },
+  "354d2d40-b088-445a-b568-208094a5f1f1": {
+    "asset": 1572121523175,
+    "meta": 1572121523185,
+    "relativePath": "resources/TopLayer/Toast.prefab"
+  },
+  "4826aaad-ede7-4e7c-85d4-0c8bc4777abd": {
+    "asset": 1572120941667,
+    "meta": 1572121334788,
+    "relativePath": "TypeScript/System/PanelManager.ts"
+  },
+  "85f3094b-8eaf-4ec8-958a-16657cfc3f43": {
+    "asset": 1572121483691,
+    "meta": 1572121505432,
+    "relativePath": "TypeScript/System/Util.ts"
+  },
+  "7c149fd1-15c7-4a6e-b893-8b794427199d": {
+    "asset": 1572122772061,
+    "meta": 1572122773264,
+    "relativePath": "TypeScript/System/Top.ts"
+  },
   "6440220e-54cb-43c1-90de-96bbecc0eee8": {
-    "asset": 1571934657260,
-    "meta": 1571934660336,
+    "asset": 1572123805148,
+    "meta": 1572123817960,
     "relativePath": "TypeScript/SceneScript/MainMenuScene.ts"
+  },
+  "a509a7c0-53c4-41e2-be7e-c12c9e1fcc6b": {
+    "asset": 1572123816341,
+    "meta": 1572123818004,
+    "relativePath": "TypeScript/System/Common.ts"
+  },
+  "78dbef89-8e89-4957-96ff-c91ccb388779": {
+    "asset": 1572123476052,
+    "meta": 1572123818015,
+    "relativePath": "TypeScript/System/DataBind.ts"
   }
 }
