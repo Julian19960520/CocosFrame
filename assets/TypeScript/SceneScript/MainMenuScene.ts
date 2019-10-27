@@ -19,45 +19,45 @@ import {Util} from "../System/Util";
 import Top from "../System/Top";
 @ccclass
 export default class MainMenuScene extends Scene {
-
-    @property(cc.Label)
-    label: cc.Label = null;
     @property(cc.Label)
     energyLabel: cc.Label = null;
-    @property(cc.Button)
-    buttonBack: cc.Button = null;
     @property(cc.Button)
     buttonAdd: cc.Button = null;
     @property(cc.Button)
     buttonSub: cc.Button = null;
     @property(cc.Button)
-    buttonOpenPanel: cc.Button = null;
+    buttonPanel: cc.Button = null;
+    @property(cc.Button)
+    buttonToast: cc.Button = null;
 
     onLoad () {
-        this.buttonBack.node.on("click",()=>{
-            SceneManager.ins.Back();
-        })
         this.buttonAdd.node.on("click",()=>{
             DB.Set("energy", DB.Get("energy")+1)
         })
         this.buttonSub.node.on("click",()=>{
             DB.Set("energy", DB.Get("energy")-1)
         })
-        this.buttonOpenPanel.node.on("click",()=>{
+        this.buttonPanel.node.on("click",()=>{
+            this.OpenPanel("MessageBox1",(box:MessageBox)=>{
+                box.cancelButton.node.active = false;
+                box.node.name = "box1"
+                box.label.string = "第一个Panel";
+                box.okButton.node.on("click", ()=>{
+                    this.OpenPanel("MessageBox1",(box:MessageBox)=>{
+                        box.node.name = "box2"
+                        box.label.string = "第二个Panel";
+                        box.cancelButton.node.on("click", ()=>{
+                            console.log("cancel");
+                        })
+                        box.okButton.node.on("click", ()=>{
+                            console.log("ok");
+                        })
+                    });
+                })
+            });
+        })
+        this.buttonToast.node.on("click",()=>{
             Top.ins.Toast("aasfasfs");
-            // PanelManager.ins.Open("MessageBox",(box:MessageBox)=>{
-            //     box.cancelButton.node.active = false;
-            //     box.okButton.node.on("click", ()=>{
-            //         PanelManager.ins.Open("MessageBox",(box:MessageBox)=>{
-            //             box.cancelButton.node.active = false;
-            //             box.okButton.node.on("click", ()=>{
-            //                 console.log("ok");
-            //                 box.closePanel();
-            //             })
-            //         });
-            //         box.closePanel();
-            //     })
-            // });
         })
         this.Bind("energy", (energy)=>{
             this.energyLabel.string = energy;

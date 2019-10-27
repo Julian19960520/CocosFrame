@@ -10,22 +10,16 @@
 
 const {ccclass, property} = cc._decorator;
 import Panel from "../System/Panel"
+import PanelManager from "../System/PanelManager"
 @ccclass
 export default class MessageBox extends Panel {
-
+    @property(cc.Button)
+    public okButton:cc.Button = null;
+    @property(cc.Button)
+    public cancelButton:cc.Button = null;
     @property(cc.Label)
-    label: cc.Label = null;
-
-    @property
-    text: string = 'hello';
-
-    // LIFE-CYCLE CALLBACKS:
-
-    // onLoad () {}
-
-    start () {
-
+    public label:cc.Label = null;
+    onLoad(){
+        super.onLoad();
     }
-
-    // update (dt) {}
 }

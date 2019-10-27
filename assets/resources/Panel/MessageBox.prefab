@@ -1552,8 +1552,9 @@
     "cancelButton": {
       "__id__": 24
     },
-    "label": null,
-    "text": "hello",
+    "label": {
+      "__id__": 3
+    },
     "_id": ""
   },
   {

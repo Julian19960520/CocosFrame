@@ -21,11 +21,11 @@ export default class Top extends cc.Component {
         Util.instantPrefab("TopLayer/Toast", (toast:cc.Node)=>{
             toast.getComponentInChildren(cc.Label).string = text;
             this.node.addChild(toast);
-            toast.color = new cc.Color(255, 255, 255, 0);
+            toast.opacity = 0;
             cc.tween(toast)
-                .to(0.2, {color:new cc.Color(255, 255, 255, 255)} )
-                .delay(1)
-                .to(0.2, {color:new cc.Color(255, 255, 255, 0)} )
+                .to(0.1, {opacity:255} )
+                .delay(1.5)
+                .to(0.1, {opacity:0} )
                 .call(()=>{
                     this.node.removeChild(toast);
                 }

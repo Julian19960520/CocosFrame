@@ -13,7 +13,7 @@ const {ccclass, property} = cc._decorator;
 export namespace Util{
     export function instantPrefab(path:string, callback){
         cc.loader.loadRes(path, (err, prefab) => {
-            console.log("err", err);
+            console.log("err", err, prefab);
             var node:cc.Node = cc.instantiate(prefab);
             node.name = path.substr(path.lastIndexOf("/")+1);
             node.position = cc.Vec2.ZERO;

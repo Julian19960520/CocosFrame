@@ -10,58 +10,101 @@
 
 const {ccclass, property} = cc._decorator;
 import Scene from "./Scene";
+import { DB } from "./DataBind";
 @ccclass
 export default class SceneManager extends cc.Component {
     stack:string[] = [];
-    cache:Map<string, Scene> = new Map<string, Scene>();
     curScene:Scene = null;
     static ins:SceneManager = null;
     @property
     firstScene:string = "";
+    @property
+    homeScene:string = "";
+    @property(cc.Node)
+    content:cc.Node = null;
     @property(cc.BlockInputEvents)
     blockInput:cc.BlockInputEvents = null;
+
     onLoad(){
         SceneManager.ins = this;
-        this.Enter(this.firstScene, null, ShiftFunc.simpleShift);
-        this.blockInput.enabled = false;
+        this.Enter(this.firstScene, ShiftAnima.simpleShift);
+        this.blockInput.node.active = false;
     }
-    public Enter(sceneName:string, callback:(t:Scene)=>void = null, shiftFunc = ShiftFunc.moveLeftShift){
-        this.loadScene(sceneName).then((newScene:Scene)=>{
-            this.stack.push(sceneName);
-            if(callback){
-                callback(newScene);   
+    //进入新场景
+    public Enter(sceneName:string, shiftAnima = ShiftAnima.moveLeftShift){
+        this.blockInput.node.active = true;
+        this.stack.push(sceneName);
+        return this.shiftScene(sceneName, shiftAnima);
+    }
+    //回到上个场景
+    public Back(shiftAnima = ShiftAnima.moveRightShift){
+        this.blockInput.node.active = true;
+        return new Promise((resolve, reject)=>{
+            if(this.stack.length >= 2){
+                this.stack.pop();
+                this.shiftScene(this.stack[this.stack.length-1], shiftAnima).then(resolve).catch(reject);
+            }else{
+                console.log("前面没有场景了");
+                reject();
+                this.blockInput.node.active = false;
             }
-            this.blockInput.enabled = true;
-            shiftFunc(this.curScene, newScene, ()=>{
-                this.blockInput.enabled = false;
-            });
-            this.curScene = newScene;
-            this.printState();
         })
     }
-    public Back(callback:(t:Scene)=>void = null, shiftFunc = ShiftFunc.moveRightShift){
-        if(this.stack.length>=2){
+    //回到Home场景，并检查返回路径上的场景是否需要销毁
+    public goHome(shiftAnima = ShiftAnima.moveRightShift){
+        this.blockInput.node.active = true;
+        return new Promise((resolve, reject)=>{
+            if(this.homeScene == this.curScene.node.name){
+                resolve(this.curScene)
+                this.blockInput.node.active = false;
+                return;
+            }
+            //先弹出当前场景，但不销毁
             this.stack.pop();
-            let lastScene = this.stack[this.stack.length-1];
-            this.loadScene(lastScene).then((lastScene:Scene)=>{
-                if(callback){
-                    callback(lastScene);   
+            //检查并销毁路径上的场景
+            let sceneName;
+            while(this.stack.length > 0 
+                    && (sceneName = this.stack[this.stack.length-1]) != this.homeScene){
+                this.stack.pop();
+                let sceneNode = this.content.getChildByName(sceneName);
+                if(sceneNode){
+                    let scene = sceneNode.getComponent(Scene);
+                    if(scene && scene.autoDestroy){
+                        this.content.removeChild(sceneNode);
+                    }
                 }
-                this.blockInput.enabled = true;
-                shiftFunc(this.curScene, lastScene, ()=>{
-                    this.blockInput.enabled = false;
-                });
-                this.curScene = lastScene;
-                this.printState();
-            })
-        }else{
-            console.log("this.stack.length == 0");
-        }
+            }
+            //从当前场景转换到Home场景
+            this.shiftScene(this.homeScene, shiftAnima).then(resolve).catch(reject);
+        })
     }
+    //从当前场景转换到目标场景
+    private shiftScene(targetSceneName, shiftAnima){
+        return new Promise((resolve, reject)=>{
+            this.loadScene(targetSceneName).then((newScene:Scene)=>{
+                resolve(newScene);
+                let oldScene = this.curScene;
+                shiftAnima(this.curScene, newScene, ()=>{
+                    if(oldScene && oldScene.autoDestroy){
+                        this.content.removeChild(oldScene.node);
+                    }
+                    this.printState();
+                    this.blockInput.node.active = false;
+                });
+                this.curScene = newScene;
+                DB.Set("curScene", this.curScene);
+            }).catch(()=>{
+                reject();
+                this.blockInput.node.active = false;
+            });
+        });
+    }
+    //获取场景对象，如果有缓存直接使用，没有则新建对象。
     private loadScene(sceneName:string){
         return new Promise((reslove, reject)=>{
-            let scene = this.cache.get(sceneName);
-            if(scene){
+            let sceneNode = this.content.getChildByName(sceneName);
+            if(sceneNode){
+                let scene:Scene = sceneNode.getComponent(Scene);
                 reslove(scene);
             }else{
                 cc.loader.loadRes("Scene/"+sceneName+"/"+sceneName, (err, prefab) => {
@@ -69,10 +112,9 @@ export default class SceneManager extends cc.Component {
                     newNode.name = sceneName;
                     newNode.position = cc.Vec2.ZERO;
                     newNode.active = false;
-                    scene = newNode.getComponent(Scene);
+                    let scene = newNode.getComponent(Scene);
                     if(scene){
-                        this.node.addChild(scene.node, 0);
-                        this.cache.set(sceneName, scene);
+                        this.content.addChild(scene.node, 0);
                         reslove(scene);
                     }else{
                         reject();
@@ -87,10 +129,9 @@ export default class SceneManager extends cc.Component {
             str += " >> "+this.stack[i];
         }
         str+="\ncache: ";
-        this.cache.forEach((v, k)=>{
-            str+=v.name+", "
-        })
-        str+="\ncurrent: " + this.curScene?this.curScene.name:"null";
+        for(let i=0;i<this.content.childrenCount;i++){
+            str += `${i}:${this.content.children[i].name},`;
+        }
         console.log(str);
     }
 }
@@ -98,7 +139,7 @@ export default class SceneManager extends cc.Component {
 
 
 
-namespace ShiftFunc{
+namespace ShiftAnima{
     export function simpleShift(curScene:Scene, newScene:Scene, finish){
         if(curScene){
             curScene.node.active = false;

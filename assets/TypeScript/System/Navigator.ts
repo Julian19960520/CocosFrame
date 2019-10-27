@@ -1,4 +1,3 @@
-import PanelManager from "./PanelManager";
 
 // Learn TypeScript:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/typescript.html
@@ -11,22 +10,29 @@ import PanelManager from "./PanelManager";
 //  - [English] http://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 
 const {ccclass, property} = cc._decorator;
+import SceneManager from "./SceneManager";
+import Scene from "./Scene";
+import { DB } from "./DataBind";
 
 @ccclass
-export default class Panel extends cc.Component {
+export default class Navigator extends DB.DataBindComponent {
+
     @property(cc.Button)
-    public closeButton:cc.Button;
+    buttonBack: cc.Button = null;
+    @property(cc.Button)
+    buttonHome: cc.Button = null;
     onLoad(){
-        this.closeButton.node.on("click", ()=>{
-            PanelManager.ins.PopCurrent();
+        this.Bind("curScene",(scene:Scene)=>{
+            if(scene){
+                this.buttonBack.node.active = scene.showBack;
+                this.buttonHome.node.active = scene.showHome;
+            }
         })
-    }
-    public close(callback = null){
-        this.node.scale = 1;
-        cc.tween(this.node).to(0.3,{scale:0}).hide().call(callback).start();
-    }
-    public open(callback = null){
-        this.node.scale = 0;
-        cc.tween(this.node).show().to(0.3,{scale:1}).call(callback).start();
+        this.buttonBack.node.on("click",()=>{
+            SceneManager.ins.Back();
+        })
+        this.buttonHome.node.on("click",()=>{
+            SceneManager.ins.goHome();
+        })
     }
 }

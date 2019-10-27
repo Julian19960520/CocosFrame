@@ -14,68 +14,108 @@ cc._RF.push(module, 'd534dWuoKNK2blS540z8aHi', 'SceneManager');
 Object.defineProperty(exports, "__esModule", { value: true });
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var Scene_1 = require("./Scene");
+var DataBind_1 = require("./DataBind");
 var SceneManager = /** @class */ (function (_super) {
     __extends(SceneManager, _super);
     function SceneManager() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.stack = [];
-        _this.cache = new Map();
         _this.curScene = null;
         _this.firstScene = "";
+        _this.homeScene = "";
+        _this.content = null;
         _this.blockInput = null;
         return _this;
     }
     SceneManager_1 = SceneManager;
     SceneManager.prototype.onLoad = function () {
         SceneManager_1.ins = this;
-        this.Enter(this.firstScene, null, ShiftFunc.simpleShift);
-        this.blockInput.enabled = false;
+        this.Enter(this.firstScene, ShiftAnima.simpleShift);
+        this.blockInput.node.active = false;
     };
-    SceneManager.prototype.Enter = function (sceneName, callback, shiftFunc) {
+    //进入新场景
+    SceneManager.prototype.Enter = function (sceneName, shiftAnima) {
+        if (shiftAnima === void 0) { shiftAnima = ShiftAnima.moveLeftShift; }
+        this.blockInput.node.active = true;
+        this.stack.push(sceneName);
+        return this.shiftScene(sceneName, shiftAnima);
+    };
+    //回到上个场景
+    SceneManager.prototype.Back = function (shiftAnima) {
         var _this = this;
-        if (callback === void 0) { callback = null; }
-        if (shiftFunc === void 0) { shiftFunc = ShiftFunc.moveLeftShift; }
-        this.loadScene(sceneName).then(function (newScene) {
-            _this.stack.push(sceneName);
-            if (callback) {
-                callback(newScene);
+        if (shiftAnima === void 0) { shiftAnima = ShiftAnima.moveRightShift; }
+        this.blockInput.node.active = true;
+        return new Promise(function (resolve, reject) {
+            if (_this.stack.length >= 2) {
+                _this.stack.pop();
+                _this.shiftScene(_this.stack[_this.stack.length - 1], shiftAnima).then(resolve).catch(reject);
             }
-            _this.blockInput.enabled = true;
-            shiftFunc(_this.curScene, newScene, function () {
-                _this.blockInput.enabled = false;
-            });
-            _this.curScene = newScene;
-            _this.printState();
+            else {
+                console.log("前面没有场景了");
+                reject();
+                _this.blockInput.node.active = false;
+            }
         });
     };
-    SceneManager.prototype.Back = function (callback, shiftFunc) {
+    //回到Home场景，并检查返回路径上的场景是否需要销毁
+    SceneManager.prototype.goHome = function (shiftAnima) {
         var _this = this;
-        if (callback === void 0) { callback = null; }
-        if (shiftFunc === void 0) { shiftFunc = ShiftFunc.moveRightShift; }
-        if (this.stack.length >= 2) {
-            this.stack.pop();
-            var lastScene = this.stack[this.stack.length - 1];
-            this.loadScene(lastScene).then(function (lastScene) {
-                if (callback) {
-                    callback(lastScene);
+        if (shiftAnima === void 0) { shiftAnima = ShiftAnima.moveRightShift; }
+        this.blockInput.node.active = true;
+        return new Promise(function (resolve, reject) {
+            if (_this.homeScene == _this.curScene.node.name) {
+                resolve(_this.curScene);
+                _this.blockInput.node.active = false;
+                return;
+            }
+            //先弹出当前场景，但不销毁
+            _this.stack.pop();
+            //检查并销毁路径上的场景
+            var sceneName;
+            while (_this.stack.length > 0
+                && (sceneName = _this.stack[_this.stack.length - 1]) != _this.homeScene) {
+                _this.stack.pop();
+                var sceneNode = _this.content.getChildByName(sceneName);
+                if (sceneNode) {
+                    var scene = sceneNode.getComponent(Scene_1.default);
+                    if (scene && scene.autoDestroy) {
+                        _this.content.removeChild(sceneNode);
+                    }
                 }
-                _this.blockInput.enabled = true;
-                shiftFunc(_this.curScene, lastScene, function () {
-                    _this.blockInput.enabled = false;
-                });
-                _this.curScene = lastScene;
-                _this.printState();
-            });
-        }
-        else {
-            console.log("this.stack.length == 0");
-        }
+            }
+            //从当前场景转换到Home场景
+            _this.shiftScene(_this.homeScene, shiftAnima).then(resolve).catch(reject);
+        });
     };
+    //从当前场景转换到目标场景
+    SceneManager.prototype.shiftScene = function (targetSceneName, shiftAnima) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.loadScene(targetSceneName).then(function (newScene) {
+                resolve(newScene);
+                var oldScene = _this.curScene;
+                shiftAnima(_this.curScene, newScene, function () {
+                    if (oldScene && oldScene.autoDestroy) {
+                        _this.content.removeChild(oldScene.node);
+                    }
+                    _this.printState();
+                    _this.blockInput.node.active = false;
+                });
+                _this.curScene = newScene;
+                DataBind_1.DB.Set("curScene", _this.curScene);
+            }).catch(function () {
+                reject();
+                _this.blockInput.node.active = false;
+            });
+        });
+    };
+    //获取场景对象，如果有缓存直接使用，没有则新建对象。
     SceneManager.prototype.loadScene = function (sceneName) {
         var _this = this;
         return new Promise(function (reslove, reject) {
-            var scene = _this.cache.get(sceneName);
-            if (scene) {
+            var sceneNode = _this.content.getChildByName(sceneName);
+            if (sceneNode) {
+                var scene = sceneNode.getComponent(Scene_1.default);
                 reslove(scene);
             }
             else {
@@ -84,10 +124,9 @@ var SceneManager = /** @class */ (function (_super) {
                     newNode.name = sceneName;
                     newNode.position = cc.Vec2.ZERO;
                     newNode.active = false;
-                    scene = newNode.getComponent(Scene_1.default);
+                    var scene = newNode.getComponent(Scene_1.default);
                     if (scene) {
-                        _this.node.addChild(scene.node, 0);
-                        _this.cache.set(sceneName, scene);
+                        _this.content.addChild(scene.node, 0);
                         reslove(scene);
                     }
                     else {
@@ -103,10 +142,9 @@ var SceneManager = /** @class */ (function (_super) {
             str += " >> " + this.stack[i];
         }
         str += "\ncache: ";
-        this.cache.forEach(function (v, k) {
-            str += v.name + ", ";
-        });
-        str += "\ncurrent: " + this.curScene ? this.curScene.name : "null";
+        for (var i = 0; i < this.content.childrenCount; i++) {
+            str += i + ":" + this.content.children[i].name + ",";
+        }
         console.log(str);
     };
     var SceneManager_1;
@@ -114,6 +152,12 @@ var SceneManager = /** @class */ (function (_super) {
     __decorate([
         property
     ], SceneManager.prototype, "firstScene", void 0);
+    __decorate([
+        property
+    ], SceneManager.prototype, "homeScene", void 0);
+    __decorate([
+        property(cc.Node)
+    ], SceneManager.prototype, "content", void 0);
     __decorate([
         property(cc.BlockInputEvents)
     ], SceneManager.prototype, "blockInput", void 0);
@@ -123,8 +167,8 @@ var SceneManager = /** @class */ (function (_super) {
     return SceneManager;
 }(cc.Component));
 exports.default = SceneManager;
-var ShiftFunc;
-(function (ShiftFunc) {
+var ShiftAnima;
+(function (ShiftAnima) {
     function simpleShift(curScene, newScene, finish) {
         if (curScene) {
             curScene.node.active = false;
@@ -136,7 +180,7 @@ var ShiftFunc;
         }
         finish();
     }
-    ShiftFunc.simpleShift = simpleShift;
+    ShiftAnima.simpleShift = simpleShift;
     function moveLeftShift(curScene, newScene, finish) {
         if (curScene) {
             curScene.node.position = cc.v2(0, 0);
@@ -152,7 +196,7 @@ var ShiftFunc;
             }).start();
         }
     }
-    ShiftFunc.moveLeftShift = moveLeftShift;
+    ShiftAnima.moveLeftShift = moveLeftShift;
     function moveRightShift(curScene, newScene, finish) {
         if (curScene) {
             curScene.node.position = cc.v2(0, 0);
@@ -168,7 +212,7 @@ var ShiftFunc;
             }).start();
         }
     }
-    ShiftFunc.moveRightShift = moveRightShift;
+    ShiftAnima.moveRightShift = moveRightShift;
     function scaleShift(curScene, newScene, finish) {
         if (curScene) {
             curScene.node.scale = 1;
@@ -184,7 +228,7 @@ var ShiftFunc;
             });
         }
     }
-    ShiftFunc.scaleShift = scaleShift;
-})(ShiftFunc || (ShiftFunc = {}));
+    ShiftAnima.scaleShift = scaleShift;
+})(ShiftAnima || (ShiftAnima = {}));
 
 cc._RF.pop();

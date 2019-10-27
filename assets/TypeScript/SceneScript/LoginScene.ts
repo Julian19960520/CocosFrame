@@ -24,9 +24,7 @@ export default class LoginScene extends Scene {
 
     onLoad () {
         this.button.node.on("click",()=>{
-            SceneManager.ins.Enter("MainMenuScene",(scene)=>{
-                console.log("Enter", scene);
-            });
+            SceneManager.ins.Enter("MainMenuScene");
         })
     }
 

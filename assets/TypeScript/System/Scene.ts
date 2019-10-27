@@ -10,7 +10,21 @@
 
 const {ccclass, property} = cc._decorator;
 import {DB} from "./DataBind";
+import PanelManager from "./PanelManager";
 @ccclass
 export default class Scene extends DB.DataBindComponent {
+    @property
+    public autoDestroy = true;
+    @property
+    public showBack:boolean = true;
+    @property
+    public showHome:boolean = true;
+    @property
+    public showEnergyBar:boolean = true;
     
+    public navigatorItem:string[] = [];
+    //打开一个面板，从场景所在文件夹查找prefab
+    public OpenPanel(panelName:string, callback){
+        PanelManager.ins.OpenByPath(`Scene/${this.node.name}/${panelName}`, callback);
+    }
 }

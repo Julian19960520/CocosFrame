@@ -15,13 +15,13 @@ export default class PanelManager extends cc.Component {
     static ins:PanelManager = null;
     @property(cc.BlockInputEvents)
     private blockInput:cc.BlockInputEvents = null;
-    
+    private stack:Panel[] = [];
     onLoad(){
         PanelManager.ins = this;
         this.blockInput.node.active = false;
     }
     public Open(panelName:string, callback){
-        this.OpenByPath("Panel/"+panelName, callback);
+        this.OpenByPath(`Panel/${panelName}`, callback);
     }
 
     public OpenByPath(path:string, callback){
@@ -31,16 +31,46 @@ export default class PanelManager extends cc.Component {
             newNode.position = cc.Vec2.ZERO;
             let panel = newNode.getComponent(Panel);
             if(panel){
+                //隐藏上个面板
+                if(this.stack.length > 0){
+                    let lastPanel = this.stack[this.stack.length-1];
+                    lastPanel.close();
+                }
+                //打开新面板
                 this.blockInput.node.active = true;
-                callback(panel);
+                this.blockInput.node.setSiblingIndex(this.node.childrenCount-1);
                 this.node.addChild(panel.node, this.node.childrenCount-1);
+                panel.open();
+                this.stack.push(panel);
+                callback(panel);
+                this.printStack();
             }else{
                 console.log("PanelManager: cannot find panel component on node : " + path);
             }
         });
     }
-    public Close(panel:Panel){
-        this.node.removeChild(panel.node);
-        this.blockInput.node.active = false;
+    public PopCurrent(){
+        if(this.stack.length>0){
+            let panel = this.stack.pop();
+            panel.close(()=>{
+                this.node.removeChild(panel.node);
+            })
+        }
+        if(this.stack.length>0){
+            let lastPanel = this.stack[this.stack.length-1];
+            this.blockInput.node.setSiblingIndex(this.node.childrenCount-1);
+            lastPanel.node.setSiblingIndex(this.node.childrenCount-1);
+            lastPanel.open();
+        }else{
+            this.blockInput.node.active = false;
+        }
+        this.printStack();
+    }
+    public printStack(){
+        let str = "PanelStack:"
+        for(let i=0; i<this.node.childrenCount; i++){
+            str += this.node.children[i].name+" >> ";
+        }
+        console.log(str);
     }
 }

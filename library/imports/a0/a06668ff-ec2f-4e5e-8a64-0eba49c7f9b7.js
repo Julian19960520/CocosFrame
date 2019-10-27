@@ -27,9 +27,7 @@ var LoginScene = /** @class */ (function (_super) {
     // onLoad () {}
     LoginScene.prototype.onLoad = function () {
         this.button.node.on("click", function () {
-            SceneManager_1.default.ins.Enter("MainMenuScene", function (scene) {
-                console.log("Enter", scene);
-            });
+            SceneManager_1.default.ins.Enter("MainMenuScene");
         });
     };
     __decorate([
