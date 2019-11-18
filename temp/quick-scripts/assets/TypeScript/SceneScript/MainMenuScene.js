@@ -14,6 +14,7 @@ var Scene_1 = require("../System/Scene");
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
+var SceneManager_1 = require("../System/SceneManager");
 var DataBind_1 = require("../System/DataBind");
 var Top_1 = require("../System/Top");
 var MainMenuScene = /** @class */ (function (_super) {
@@ -25,6 +26,7 @@ var MainMenuScene = /** @class */ (function (_super) {
         _this.buttonSub = null;
         _this.buttonPanel = null;
         _this.buttonToast = null;
+        _this.buttonStart = null;
         return _this;
         // update (dt) {}
     }
@@ -62,6 +64,9 @@ var MainMenuScene = /** @class */ (function (_super) {
             _this.energyLabel.string = energy;
         });
         DataBind_1.DB.Set("energy", 6);
+        this.buttonStart.node.on("click", function () {
+            SceneManager_1.default.ins.Enter("GameScene");
+        });
     };
     __decorate([
         property(cc.Label)
@@ -78,6 +83,9 @@ var MainMenuScene = /** @class */ (function (_super) {
     __decorate([
         property(cc.Button)
     ], MainMenuScene.prototype, "buttonToast", void 0);
+    __decorate([
+        property(cc.Button)
+    ], MainMenuScene.prototype, "buttonStart", void 0);
     MainMenuScene = __decorate([
         ccclass
     ], MainMenuScene);

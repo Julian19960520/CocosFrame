@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var Scene_1 = require("./Scene");
 var DataBind_1 = require("./DataBind");
+var ScreenRect_1 = require("./ScreenRect");
 var SceneManager = /** @class */ (function (_super) {
     __extends(SceneManager, _super);
     function SceneManager() {
@@ -97,6 +98,7 @@ var SceneManager = /** @class */ (function (_super) {
                 shiftAnima(_this.curScene, newScene, function () {
                     if (oldScene && oldScene.autoDestroy) {
                         _this.content.removeChild(oldScene.node);
+                        oldScene.node.destroy();
                     }
                     _this.printState();
                     _this.blockInput.node.active = false;
@@ -213,6 +215,38 @@ var ShiftAnima;
         }
     }
     ShiftAnima.moveRightShift = moveRightShift;
+    function moveUpShift(curScene, newScene, finish) {
+        if (curScene) {
+            curScene.node.position = cc.v2(0, 0);
+            cc.tween(curScene.node).to(0.5, { position: cc.v2(0, -ScreenRect_1.default.height) }, { easing: 'quintOut' }).call(function () {
+                curScene.node.active = false;
+            }).start();
+        }
+        if (newScene) {
+            newScene.node.position = cc.v2(0, ScreenRect_1.default.height);
+            newScene.node.active = true;
+            cc.tween(newScene.node).to(0.5, { position: cc.v2(0, 0) }, { easing: 'quintOut' }).call(function () {
+                finish();
+            }).start();
+        }
+    }
+    ShiftAnima.moveUpShift = moveUpShift;
+    function moveDownShift(curScene, newScene, finish) {
+        if (curScene) {
+            curScene.node.position = cc.v2(0, 0);
+            cc.tween(curScene.node).to(0.5, { position: cc.v2(0, ScreenRect_1.default.height) }, { easing: 'quintOut' }).call(function () {
+                curScene.node.active = false;
+            }).start();
+        }
+        if (newScene) {
+            newScene.node.position = cc.v2(0, -ScreenRect_1.default.height);
+            newScene.node.active = true;
+            cc.tween(newScene.node).to(0.5, { position: cc.v2(0, 0) }, { easing: 'quintOut' }).call(function () {
+                finish();
+            }).start();
+        }
+    }
+    ShiftAnima.moveDownShift = moveDownShift;
     function scaleShift(curScene, newScene, finish) {
         if (curScene) {
             curScene.node.scale = 1;
@@ -229,6 +263,6 @@ var ShiftAnima;
         }
     }
     ShiftAnima.scaleShift = scaleShift;
-})(ShiftAnima || (ShiftAnima = {}));
+})(ShiftAnima = exports.ShiftAnima || (exports.ShiftAnima = {}));
 
 cc._RF.pop();

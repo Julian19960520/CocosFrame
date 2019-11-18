@@ -18,16 +18,20 @@ export default class ScreenRect extends cc.Component {
     public minHeight: number = 1000;
 
     public static Ins:ScreenRect = null;
+    public static width:number = 640;
+    public static height:number = 1136;
     onLoad() {
         ScreenRect.Ins = this;
         let widget: cc.Widget = this.node.getComponent(cc.Widget);
-        let winSizePixels = cc.director.getWinSizeInPixels();
-        if (winSizePixels.height > this.maxHeight) {
-            widget.top = widget.bottom = (winSizePixels.height - this.maxHeight) / 2;
+        let winSize = cc.winSize;
+        if (winSize.height > this.maxHeight) {
+            widget.top = widget.bottom = (winSize.height - this.maxHeight) / 2;
         }
-        if (winSizePixels.height < this.minHeight) {
-            this.node.scale = winSizePixels.height / this.minHeight;
+        if (winSize.height < this.minHeight) {
+            this.node.scale = winSize.height / this.minHeight;
             this.node.height = this.minHeight;
         }
+        ScreenRect.width = this.node.width;
+        ScreenRect.height = this.node.height;
     }
 }

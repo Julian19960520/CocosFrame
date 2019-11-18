@@ -1,13 +1,3 @@
-// Learn TypeScript:
-//  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/typescript.html
-//  - [English] http://www.cocos2d-x.org/docs/creator/manual/en/scripting/typescript.html
-// Learn Attribute:
-//  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/reference/attributes.html
-//  - [English] http://www.cocos2d-x.org/docs/creator/manual/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
-//  - [English] http://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
-
 const {ccclass, property} = cc._decorator;
 
 export namespace Util{
@@ -19,5 +9,21 @@ export namespace Util{
             node.position = cc.Vec2.ZERO;
             callback(node);
         });
+    }
+
+    export function angle(vec2:cc.Vec2){
+        let angle = vec2.angle(cc.Vec2.RIGHT);
+        if(vec2.y < 0){
+            angle = 2*Math.PI - angle;
+        }
+        return angle;
+    }
+
+    export function randomIdx(len){
+        return Math.floor(Math.random()*len);
+    }
+
+    export function random(min, max){
+        return Math.floor(Math.random()*(max-min))+min;
     }
 }

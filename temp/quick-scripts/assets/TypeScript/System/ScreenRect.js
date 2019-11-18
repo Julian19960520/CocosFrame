@@ -25,17 +25,21 @@ var ScreenRect = /** @class */ (function (_super) {
     ScreenRect.prototype.onLoad = function () {
         ScreenRect_1.Ins = this;
         var widget = this.node.getComponent(cc.Widget);
-        var winSizePixels = cc.director.getWinSizeInPixels();
-        if (winSizePixels.height > this.maxHeight) {
-            widget.top = widget.bottom = (winSizePixels.height - this.maxHeight) / 2;
+        var winSize = cc.winSize;
+        if (winSize.height > this.maxHeight) {
+            widget.top = widget.bottom = (winSize.height - this.maxHeight) / 2;
         }
-        if (winSizePixels.height < this.minHeight) {
-            this.node.scale = winSizePixels.height / this.minHeight;
+        if (winSize.height < this.minHeight) {
+            this.node.scale = winSize.height / this.minHeight;
             this.node.height = this.minHeight;
         }
+        ScreenRect_1.width = this.node.width;
+        ScreenRect_1.height = this.node.height;
     };
     var ScreenRect_1;
     ScreenRect.Ins = null;
+    ScreenRect.width = 640;
+    ScreenRect.height = 1136;
     __decorate([
         property
     ], ScreenRect.prototype, "maxHeight", void 0);

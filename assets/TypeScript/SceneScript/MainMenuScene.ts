@@ -30,6 +30,9 @@ export default class MainMenuScene extends Scene {
     @property(cc.Button)
     buttonToast: cc.Button = null;
 
+    @property(cc.Button)
+    buttonStart: cc.Button = null;
+    
     onLoad () {
         this.buttonAdd.node.on("click",()=>{
             DB.Set("energy", DB.Get("energy")+1)
@@ -63,6 +66,9 @@ export default class MainMenuScene extends Scene {
             this.energyLabel.string = energy;
         });
         DB.Set("energy", 6);
+        this.buttonStart.node.on("click",()=>{
+            SceneManager.ins.Enter("GameScene");
+        })
     }
 
     // update (dt) {}

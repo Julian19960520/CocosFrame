@@ -21,7 +21,11 @@ export default class Navigator extends DB.DataBindComponent {
     buttonBack: cc.Button = null;
     @property(cc.Button)
     buttonHome: cc.Button = null;
+    public static ins:Navigator = null;
+    public onBackClick:()=>void = null;
+    public onHomeClick:()=>void = null;
     onLoad(){
+        Navigator.ins = this;
         this.Bind("curScene",(scene:Scene)=>{
             if(scene){
                 this.buttonBack.node.active = scene.showBack;
@@ -29,10 +33,22 @@ export default class Navigator extends DB.DataBindComponent {
             }
         })
         this.buttonBack.node.on("click",()=>{
-            SceneManager.ins.Back();
+            if(this.onBackClick){
+                this.onBackClick();
+            }else{
+                SceneManager.ins.Back();
+            }
+            this.onBackClick = null;
+            this.onHomeClick = null;
         })
         this.buttonHome.node.on("click",()=>{
-            SceneManager.ins.goHome();
+            if(this.onHomeClick){
+                this.onHomeClick();
+            }else{
+                SceneManager.ins.goHome();
+            }
+            this.onBackClick = null;
+            this.onHomeClick = null;
         })
     }
 }
