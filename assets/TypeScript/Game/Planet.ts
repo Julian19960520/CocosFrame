@@ -25,7 +25,7 @@ export default class Planet extends cc.Component {
     public speed:number = 0;        //线速度
     public direction:number = 0;    //移动方向（标准极坐标系下的角度）
     public height:number = 0;       //高度（到中心行星的距离）
-    public angle:number = 0;        //角度（以中心行星为极点，本行星所在的角度）
+    public radian:number = 0;        //角度（以中心行星为极点，本行星所在的角度）
     public clockwise:boolean = true;//公转是否是顺时针
     public moveMode:MoveMode = MoveMode.Linear; //移动方式
     public onLoad(){
@@ -48,12 +48,12 @@ export default class Planet extends cc.Component {
                 if(this.speed == 0) return;
                 //this.height-=0.2;
                 let deltaAngle = (this.clockwise?1:-1) * this.speed * dt / this.height;
-                this.angle += deltaAngle;
+                this.radian += deltaAngle;
                 let oldPos = this.node.position;
-                this.node.x = this.centerNode.x + this.height * Math.cos(this.angle);
-                this.node.y = this.centerNode.y + this.height * Math.sin(this.angle);
+                this.node.x = this.centerNode.x + this.height * Math.cos(this.radian);
+                this.node.y = this.centerNode.y + this.height * Math.sin(this.radian);
                 let vec = this.node.position.sub(oldPos);
-                this.direction = Util.angle(vec);
+                this.direction = Util.radian(vec);
                 break;
             }
         }
@@ -68,7 +68,7 @@ export default class Planet extends cc.Component {
         this.clockwise = isClockwise;
         let vec = this.node.position.sub(target.position);
         this.height = vec.mag();
-        this.angle = Util.angle(vec);
+        this.radian = Util.radian(vec);
     }
 
 }

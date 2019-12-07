@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var DataBind_1 = require("./DataBind");
 var PanelManager_1 = require("./PanelManager");
+var Util_1 = require("./Util");
 var Scene = /** @class */ (function (_super) {
     __extends(Scene, _super);
     function Scene() {
@@ -29,6 +30,10 @@ var Scene = /** @class */ (function (_super) {
     //打开一个面板，从场景所在文件夹查找prefab
     Scene.prototype.OpenPanel = function (panelName, callback) {
         PanelManager_1.default.ins.OpenByPath("Scene/" + this.node.name + "/" + panelName, callback);
+    };
+    //读取一个prefab，从场景所在文件夹查找prefab
+    Scene.prototype.instantPrefab = function (name, callback) {
+        Util_1.Util.instantPrefab("Scene/" + this.node.name + "/" + name, callback);
     };
     __decorate([
         property

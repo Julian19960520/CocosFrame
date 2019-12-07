@@ -15,7 +15,7 @@ const {ccclass, property} = cc._decorator;
 @ccclass
 export default class Panel extends cc.Component {
     @property(cc.Button)
-    public closeButton:cc.Button;
+    public closeButton:cc.Button = null;
     onLoad(){
         this.closeButton.node.on("click", ()=>{
             PanelManager.ins.PopCurrent();

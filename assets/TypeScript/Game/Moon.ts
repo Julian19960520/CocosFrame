@@ -22,7 +22,7 @@ export default class Moon extends Planet {
     public update(dt){
         super.update(dt);
         if(this.arrow.active){
-            this.arrow.angle = this.direction*180/Math.PI;
+            //this.arrow.angle = this.direction*180/Math.PI;
         }
         if(this.capturer && this.moonState == MoonState.Captured){
             let vec1 = cc.v2(Math.cos(this.direction), Math.sin(this.direction));   //月球飞行向量
@@ -35,6 +35,9 @@ export default class Moon extends Planet {
             }
         }
     }
+    public setArrowDir(angle){
+        this.arrow.angle = angle;
+    }
     //瞄准
     public aim(){
         this.moonState = MoonState.Aim;
@@ -45,7 +48,7 @@ export default class Moon extends Planet {
         this.moonState = MoonState.Launched;
         this.arrow.active = false;
         this.capturer = null;
-        this.MoveTowards(this.direction);
+        this.MoveTowards(this.arrow.angle*Math.PI/180);
     }
     //被捕获
     public captured(capturer:Planet){

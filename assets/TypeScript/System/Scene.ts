@@ -11,6 +11,7 @@
 const {ccclass, property} = cc._decorator;
 import {DB} from "./DataBind";
 import PanelManager from "./PanelManager";
+import { Util } from "./Util";
 @ccclass
 export default class Scene extends DB.DataBindComponent {
     @property
@@ -26,5 +27,9 @@ export default class Scene extends DB.DataBindComponent {
     //打开一个面板，从场景所在文件夹查找prefab
     public OpenPanel(panelName:string, callback){
         PanelManager.ins.OpenByPath(`Scene/${this.node.name}/${panelName}`, callback);
+    }
+    //读取一个prefab，从场景所在文件夹查找prefab
+    public instantPrefab(name:string, callback){
+        Util.instantPrefab(`Scene/${this.node.name}/${name}`,callback);
     }
 }
