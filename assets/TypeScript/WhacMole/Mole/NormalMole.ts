@@ -1,33 +1,50 @@
 import MoleBase from "./MoleBase";
-import ParticleSystem from "../../Game/ParticleSystem";
+import ParticleSystem from "../../Frame/ParticleSystem";
+import { DB } from "../../Frame/DataBind";
+import { PoolManager } from "../../Frame/PoolManager";
 
 const {ccclass, property} = cc._decorator;
 
 @ccclass
 export default class NormalMole extends MoleBase {
-    @property(ParticleSystem)
-    knockStar:ParticleSystem = null;
-    onLoad () {
+    private knocked = false;
+    onEnable () {
         super.onLoad();
         this.view.on(cc.Node.EventType.TOUCH_START, this.onTouch, this);
     }
-    onDestroy(){
+    onDisable(){
         this.view.off(cc.Node.EventType.TOUCH_START, this.onTouch, this);
     }
-    private onTouch(){
-        this.Knock();
+    public Reset(){
+        this.view.resumeSystemEvents(true);
     }
-    public Show(time = 0){
+    public onBeatStart(){
         this.view.resumeSystemEvents(true);
         this.animation.play("Show");
-
+        this.knocked = false;
     }
-    public Hide(){
+    public onBeatEnd(callback){
         this.view.pauseSystemEvents(true);
         this.animation.play("Hide");
+        if(!this.knocked){
+            DB.Set("MissBeat",{})
+        }
+        let onStop = ()=>{
+            this.animation.off('stop', onStop);
+            callback();
+        }
+        this.animation.on('stop', onStop);
     }
-    public Knock(){
+    private onTouch(){
+        let knockStarNode = PoolManager.getInstance("Scene/WhacMoleScene/KnockStar");
+        this.node.addChild(knockStarNode);
+        knockStarNode.y = 60;
+        let particleSystem = knockStarNode.getComponent(ParticleSystem);
+        particleSystem.play();
+
         this.animation.play("Beaten");
-        this.knockStar.play();
+        DB.Set("TapBeat",{score:1})
+        this.view.pauseSystemEvents(true);
+        this.knocked = true;
     }
 }

@@ -1,3 +1,5 @@
+import PanelStack from "./PanelStack";
+
 // Learn TypeScript:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/typescript.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/manual/en/scripting/typescript.html
@@ -11,20 +13,22 @@
 const {ccclass, property} = cc._decorator;
 
 @ccclass
-export default class MoleBase extends cc.Component {
-    animation:cc.Animation = null;
-    @property(cc.Node)
-    public view: cc.Node = null;
-    onLoad () {
-        this.animation = this.node.getComponent(cc.Animation);
-    }
-    public Reset(){
+export default class Panel extends cc.Component {
+    @property(cc.Button)
+    public closeBtn:cc.Button = null;
 
+    public panelStack:PanelStack = null;
+    onLoad(){
+        this.closeBtn.node.on("click", ()=>{
+            this.panelStack.PopCurrent();
+        })
     }
-    public onBeatStart(data){
-
+    public close(callback = null){
+        this.node.scale = 1;
+        cc.tween(this.node).to(0.3,{scale:0}).hide().call(callback).start();
     }
-    public onBeatEnd(callback){
-
+    public open(callback = null){
+        this.node.scale = 0;
+        cc.tween(this.node).show().to(0.3,{scale:1}).call(callback).start();
     }
 }

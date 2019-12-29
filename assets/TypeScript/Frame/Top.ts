@@ -1,3 +1,5 @@
+import { Util } from "./Util";
+
 // Learn TypeScript:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/typescript.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/manual/en/scripting/typescript.html
@@ -9,22 +11,25 @@
 //  - [English] http://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 
 const {ccclass, property} = cc._decorator;
-
 @ccclass
-export default class MoleBase extends cc.Component {
-    animation:cc.Animation = null;
-    @property(cc.Node)
-    public view: cc.Node = null;
-    onLoad () {
-        this.animation = this.node.getComponent(cc.Animation);
+export default class Top extends cc.Component {
+    static ins:Top = null;
+    onLoad(){
+        Top.ins = this;
     }
-    public Reset(){
-
-    }
-    public onBeatStart(data){
-
-    }
-    public onBeatEnd(callback){
-
+    public Toast(text:string){
+        Util.instantPrefab("TopLayer/Toast", (toast:cc.Node)=>{
+            toast.getComponentInChildren(cc.Label).string = text;
+            this.node.addChild(toast);
+            toast.opacity = 0;
+            cc.tween(toast)
+                .to(0.1, {opacity:255} )
+                .delay(1.5)
+                .to(0.1, {opacity:0} )
+                .call(()=>{
+                    this.node.removeChild(toast);
+                }
+            ).start();
+        });
     }
 }

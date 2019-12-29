@@ -1,6 +1,6 @@
 "use strict";
 cc._RF.push(module, '78dbe+JjolJV5b/yRzLOId5', 'DataBind');
-// TypeScript/System/DataBind.ts
+// TypeScript/Frame/DataBind.ts
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var DB;
@@ -109,8 +109,9 @@ var DB;
             return _this;
         }
         DataBindComponent.prototype.Bind = function (key, listener) {
-            this.map.set(key, listener);
-            DB.Bind(key, listener);
+            var tempListener = listener.bind(this);
+            this.map.set(key, tempListener);
+            DB.Bind(key, tempListener);
         };
         DataBindComponent.prototype.onDestroy = function () {
             this.map.forEach(function (v, k) {
@@ -120,6 +121,9 @@ var DB;
         return DataBindComponent;
     }(cc.Component));
     DB.DataBindComponent = DataBindComponent;
+    var Event;
+    (function (Event) {
+    })(Event = DB.Event || (DB.Event = {}));
 })(DB = exports.DB || (exports.DB = {}));
 
 cc._RF.pop();

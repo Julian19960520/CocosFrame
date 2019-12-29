@@ -185,7 +185,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "closeButton",
+    "_name": "closeBtn",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -648,7 +648,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "cancelButton",
+    "_name": "cancelBtn",
     "_objFlags": 0,
     "_parent": {
       "__id__": 15
@@ -1041,7 +1041,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "okButton",
+    "_name": "okBtn",
     "_objFlags": 0,
     "_parent": {
       "__id__": 15
@@ -1536,24 +1536,21 @@
     "_id": ""
   },
   {
-    "__type__": "0e9e7WoEGFMNYDeoz5X+rj3",
+    "__type__": "95e37ZZwehCK5C5sdJlvNM6",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 1
     },
     "_enabled": true,
-    "closeButton": {
+    "closeBtn": {
       "__id__": 13
     },
-    "okButton": {
+    "okBtn": {
       "__id__": 34
     },
-    "cancelButton": {
+    "cancelBtn": {
       "__id__": 24
-    },
-    "label": {
-      "__id__": 3
     },
     "_id": ""
   },

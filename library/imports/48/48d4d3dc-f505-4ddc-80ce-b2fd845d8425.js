@@ -14,7 +14,7 @@ cc._RF.push(module, '48d4dPc9QVN3IDOsv2EXYQl', 'Scene');
 Object.defineProperty(exports, "__esModule", { value: true });
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var DataBind_1 = require("./DataBind");
-var PanelManager_1 = require("./PanelManager");
+var PanelStack_1 = require("./PanelStack");
 var Util_1 = require("./Util");
 var Scene = /** @class */ (function (_super) {
     __extends(Scene, _super);
@@ -25,11 +25,47 @@ var Scene = /** @class */ (function (_super) {
         _this.showHome = true;
         _this.showEnergyBar = true;
         _this.navigatorItem = [];
+        _this.panelStack = null;
         return _this;
     }
-    //打开一个面板，从场景所在文件夹查找prefab
-    Scene.prototype.OpenPanel = function (panelName, callback) {
-        PanelManager_1.default.ins.OpenByPath("Scene/" + this.node.name + "/" + panelName, callback);
+    //初始化PanelStack
+    Scene.prototype.initPanelStack = function () {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            if (_this.panelStack) {
+                resolve(_this.panelStack);
+            }
+            else {
+                Util_1.Util.instantPrefab("Prefab/PanelStack", function (node) {
+                    _this.node.addChild(node);
+                    _this.panelStack = node.getComponent(PanelStack_1.default);
+                    _this.panelStack.scene = _this;
+                    resolve(_this.panelStack);
+                });
+            }
+        });
+    };
+    //打开一个面板，以resource文件夹作为根查找prefab
+    Scene.prototype.OpenPanelByName = function (name, callback) {
+        var _this = this;
+        this.initPanelStack().then(function (panelStack) {
+            panelStack.node.setSiblingIndex(_this.node.childrenCount - 1);
+            panelStack.OpenByName(name, callback);
+        });
+    };
+    //打开一个面板，以resource文件夹作为根查找prefab
+    Scene.prototype.OpenPanelByPath = function (path, callback) {
+        var _this = this;
+        this.initPanelStack().then(function (panelStack) {
+            panelStack.node.setSiblingIndex(_this.node.childrenCount - 1);
+            panelStack.OpenByPath(path, callback);
+        });
+    };
+    //弹出栈顶面板
+    Scene.prototype.PopPanel = function () {
+        if (this.panelStack) {
+            this.panelStack.PopCurrent();
+        }
     };
     //读取一个prefab，从场景所在文件夹查找prefab
     Scene.prototype.instantPrefab = function (name, callback) {

@@ -1,3 +1,5 @@
+import Scene from "../../Frame/Scene";
+
 // Learn TypeScript:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/typescript.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/manual/en/scripting/typescript.html
@@ -11,20 +13,15 @@
 const {ccclass, property} = cc._decorator;
 
 @ccclass
-export default class MoleBase extends cc.Component {
-    animation:cc.Animation = null;
-    @property(cc.Node)
-    public view: cc.Node = null;
-    onLoad () {
-        this.animation = this.node.getComponent(cc.Animation);
-    }
-    public Reset(){
+export default class MainScene extends Scene {
+
+    // LIFE-CYCLE CALLBACKS:
+
+    // onLoad () {}
+
+    start () {
 
     }
-    public onBeatStart(data){
 
-    }
-    public onBeatEnd(callback){
-
-    }
+    // update (dt) {}
 }

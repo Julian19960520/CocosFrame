@@ -1,6 +1,6 @@
-import AudioWarp from "../../Game/Audio";
-import EditorMole from "./EditorMole";
 
+import EditorMole from "./EditorMole";
+import AudioWarp from "../../Frame/AudioWarp";
 // Learn TypeScript:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/typescript.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/manual/en/scripting/typescript.html
