@@ -186,12 +186,12 @@ var ShiftAnima;
     function moveLeftShift(curScene, newScene, finish) {
         if (curScene) {
             curScene.node.position = cc.v2(0, 0);
-            cc.tween(curScene.node).to(0.5, { position: cc.v2(-640, 0) }, { easing: 'quintOut' }).call(function () {
+            cc.tween(curScene.node).to(0.5, { position: cc.v2(-ScreenRect_1.default.width, 0) }, { easing: 'quintOut' }).call(function () {
                 curScene.node.active = false;
             }).start();
         }
         if (newScene) {
-            newScene.node.position = cc.v2(640, 0);
+            newScene.node.position = cc.v2(ScreenRect_1.default.width, 0);
             newScene.node.active = true;
             cc.tween(newScene.node).to(0.5, { position: cc.v2(0, 0) }, { easing: 'quintOut' }).call(function () {
                 finish();
@@ -202,12 +202,12 @@ var ShiftAnima;
     function moveRightShift(curScene, newScene, finish) {
         if (curScene) {
             curScene.node.position = cc.v2(0, 0);
-            cc.tween(curScene.node).to(0.5, { position: cc.v2(640, 0) }, { easing: 'quintOut' }).call(function () {
+            cc.tween(curScene.node).to(0.5, { position: cc.v2(ScreenRect_1.default.width, 0) }, { easing: 'quintOut' }).call(function () {
                 curScene.node.active = false;
             }).start();
         }
         if (newScene) {
-            newScene.node.position = cc.v2(-640, 0);
+            newScene.node.position = cc.v2(-ScreenRect_1.default.width, 0);
             newScene.node.active = true;
             cc.tween(newScene.node).to(0.5, { position: cc.v2(0, 0) }, { easing: 'quintOut' }).call(function () {
                 finish();

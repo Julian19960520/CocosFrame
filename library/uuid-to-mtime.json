@@ -449,11 +449,6 @@
     "meta": 1577262627479,
     "relativePath": "Atlas/UI"
   },
-  "212f3033-ca8d-4164-a459-6a7f80b39c85": {
-    "asset": 1577262627479,
-    "meta": 1578385786541,
-    "relativePath": "Atlas/UI/AutoAtlas.pac"
-  },
   "7efee909-d74c-415f-b4ca-3a085cb2930a": {
     "asset": 1578385755981,
     "meta": 1577262627513,
@@ -464,20 +459,10 @@
     "meta": 1577262627509,
     "relativePath": "resources/Panel"
   },
-  "6fd63780-16f4-45fc-a9a0-d1aeea1c91df": {
-    "asset": 1578385786627,
-    "meta": 1578385786628,
-    "relativePath": "resources/Panel/MessageBox.prefab"
-  },
   "91832ce6-1124-4c46-8bc3-fd23ad6317a0": {
     "asset": 1578385707588,
     "meta": 1577262627518,
     "relativePath": "resources/TopLayer"
-  },
-  "354d2d40-b088-445a-b568-208094a5f1f1": {
-    "asset": 1578385786678,
-    "meta": 1578385786681,
-    "relativePath": "resources/TopLayer/Toast.prefab"
   },
   "98de226f-89e6-4597-8cdc-c4e0ccf8d22c": {
     "asset": 1578385755980,
@@ -489,11 +474,6 @@
     "meta": 1578385786944,
     "relativePath": "TypeScript/Frame/Navigator.ts"
   },
-  "d534d5ae-a0a3-4ad9-b952-e78d33f1a1e2": {
-    "asset": 1578385755965,
-    "meta": 1578385787206,
-    "relativePath": "TypeScript/Frame/SceneManager.ts"
-  },
   "474d0d88-e2af-431f-92be-92f32f2d87ef": {
     "asset": 1578385755960,
     "meta": 1578385786912,
@@ -503,11 +483,6 @@
     "asset": 1577262627482,
     "meta": 1578385786547,
     "relativePath": "Atlas/UI/white.png"
-  },
-  "61f81f23-f331-45bd-af7d-8fca1c2c38d4": {
-    "asset": 1578385786635,
-    "meta": 1578385786636,
-    "relativePath": "resources/Scene/LoginScene/LoginScene.prefab"
   },
   "0dd461da-89f6-4b01-ac1d-16d3c7bd4277": {
     "asset": 1578385755957,
@@ -519,11 +494,6 @@
     "meta": 1577262627515,
     "relativePath": "resources/Scene/WhacMoleScene"
   },
-  "21adf80f-ce79-4345-8f58-a89938401908": {
-    "asset": 1578385786688,
-    "meta": 1578385786689,
-    "relativePath": "resources/Scene/WhacMoleScene/WhacMoleScene.prefab"
-  },
   "93f80149-5a08-4257-b92e-38b0fd99009d": {
     "asset": 1578385755978,
     "meta": 1577262627506,
@@ -533,11 +503,6 @@
     "asset": 1578385755957,
     "meta": 1577262627483,
     "relativePath": "Atlas/WhacMole"
-  },
-  "6314f866-ea92-4d65-bd4d-4341b93d923f": {
-    "asset": 1577262627483,
-    "meta": 1578385786548,
-    "relativePath": "Atlas/WhacMole/AutoAtlas.pac"
   },
   "583e42c2-13a5-4a81-8587-6514b51073b1": {
     "asset": 1577262627483,
@@ -553,11 +518,6 @@
     "asset": 1577262627484,
     "meta": 1578385786569,
     "relativePath": "Atlas/WhacMole/Mole.png"
-  },
-  "568c7cdc-71e1-4f03-bfed-3199156c0ee1": {
-    "asset": 1578385786674,
-    "meta": 1578385786675,
-    "relativePath": "resources/Scene/WhacMoleScene/TallMole.prefab"
   },
   "73d7b91f-3829-4539-b8bb-b23d15ec0e20": {
     "asset": 1577262627484,
@@ -578,16 +538,6 @@
     "asset": 1577262627507,
     "meta": 1578385787336,
     "relativePath": "TypeScript/WhacMole/Hammer.ts"
-  },
-  "12a4e70a-ee94-4dcc-b1fd-19cdb8c9901c": {
-    "asset": 1578385786658,
-    "meta": 1578385786659,
-    "relativePath": "resources/Scene/WhacMoleScene/EditorMole.prefab"
-  },
-  "f73ecb5b-28c2-44bc-bfa8-ac4ba5bcb715": {
-    "asset": 1578385787016,
-    "meta": 1578385787019,
-    "relativePath": "Studio.fire"
   },
   "2aa6a7dd-8a28-4ff1-8ab6-1e0843d64cfe": {
     "asset": 1577262627497,
@@ -613,11 +563,6 @@
     "asset": 1577262627508,
     "meta": 1578385787417,
     "relativePath": "TypeScript/WhacMole/Mole/FlyMole.ts"
-  },
-  "373bb6d7-adfc-4a87-b5df-5c68bb3e4dda": {
-    "asset": 1578385786665,
-    "meta": 1578385786666,
-    "relativePath": "resources/Scene/WhacMoleScene/NormalMole/NormalMole.prefab"
   },
   "5c074cbd-79e9-4109-9c06-41f5708f0fbc": {
     "asset": 1578385755981,
@@ -669,11 +614,6 @@
     "meta": 1578385786604,
     "relativePath": "Atlas/WhacMole/star3.png"
   },
-  "5dcade79-1320-4e06-9827-fc8fa2a2ee54": {
-    "asset": 1578385786671,
-    "meta": 1578385786673,
-    "relativePath": "resources/Scene/WhacMoleScene/RollingStar.prefab"
-  },
   "2cef11cf-43f6-4f11-8f1f-870678f28304": {
     "asset": 1577262627485,
     "meta": 1578385786591,
@@ -684,11 +624,6 @@
     "meta": 1578385787050,
     "relativePath": "TypeScript/Frame/Particle.ts"
   },
-  "de552ef7-93fb-4a15-ba8e-079e84790e9a": {
-    "asset": 1578385786661,
-    "meta": 1578385786663,
-    "relativePath": "resources/Scene/WhacMoleScene/KnockStar.prefab"
-  },
   "12cf8bb8-b502-4168-a3a6-c32af5defa75": {
     "asset": 1578385755962,
     "meta": 1578385787064,
@@ -698,11 +633,6 @@
     "asset": 1577262627485,
     "meta": 1578385786582,
     "relativePath": "Atlas/WhacMole/Mole3.png"
-  },
-  "df4a142d-9a24-4791-955c-e89f939eb287": {
-    "asset": 1578385786640,
-    "meta": 1578385786641,
-    "relativePath": "resources/Scene/WhacMoleScene/BucketMole/BucketMole.prefab"
   },
   "f5a6cfbc-9c46-49bc-968a-8fd114c08ab9": {
     "asset": 1578385755987,
@@ -729,11 +659,6 @@
     "meta": 1578385786644,
     "relativePath": "resources/Scene/WhacMoleScene/BucketMole/Show.anim"
   },
-  "14ad3596-fd34-4ed5-813c-87e6c3ff2753": {
-    "asset": 1578385786629,
-    "meta": 1578385786630,
-    "relativePath": "resources/Prefab/PanelStack.prefab"
-  },
   "0e91a2cc-a312-4e97-a0fd-4dc959959199": {
     "asset": 1578385755961,
     "meta": 1578385786960,
@@ -758,11 +683,6 @@
     "asset": 1578385755983,
     "meta": 1578385755982,
     "relativePath": "resources/Scene/MainScene"
-  },
-  "59770f7c-d7dc-4506-81ac-3e4536812b7e": {
-    "asset": 1578385786651,
-    "meta": 1578385786653,
-    "relativePath": "resources/Scene/MainScene/WhacMoleScene.prefab"
   },
   "e01b0692-1692-4555-b006-e2cc99d5de2d": {
     "asset": 1578385755972,
@@ -824,20 +744,10 @@
     "meta": 1578385787436,
     "relativePath": "TypeScript/WhacMole/Mole/MoleBase.ts"
   },
-  "371d68ba-1581-4dc5-80e2-495972c9b9e7": {
-    "asset": 1578385786656,
-    "meta": 1578385786657,
-    "relativePath": "resources/Scene/WhacMoleScene/Hole.prefab"
-  },
   "78dbef89-8e89-4957-96ff-c91ccb388779": {
     "asset": 1578385755959,
     "meta": 1578385786894,
     "relativePath": "TypeScript/Frame/DataBind.ts"
-  },
-  "5154b28b-5b70-49e1-9a2c-78d52eff6e28": {
-    "asset": 1578385786610,
-    "meta": 1578385786611,
-    "relativePath": "Game.fire"
   },
   "71de8214-afa5-4e47-b560-d74d0a4049e6": {
     "asset": 1578385755963,
@@ -848,11 +758,6 @@
     "asset": 1578385755962,
     "meta": 1578385787088,
     "relativePath": "TypeScript/Frame/Pool.ts"
-  },
-  "5a71c9d1-4458-4c94-b858-a88ad4b94b7e": {
-    "asset": 1578385786654,
-    "meta": 1578385786655,
-    "relativePath": "resources/Scene/WhacMoleScene/button.prefab"
   },
   "caef3760-8aba-4eed-b2e4-ed4ff12dbb9a": {
     "asset": 1578385755969,
@@ -903,5 +808,100 @@
     "asset": 1577263967170,
     "meta": 1578385784175,
     "relativePath": "prefab/light/spot.prefab"
+  },
+  "212f3033-ca8d-4164-a459-6a7f80b39c85": {
+    "asset": 1577262627479,
+    "meta": 1578475586425,
+    "relativePath": "Atlas/UI/AutoAtlas.pac"
+  },
+  "6314f866-ea92-4d65-bd4d-4341b93d923f": {
+    "asset": 1577262627483,
+    "meta": 1578475586428,
+    "relativePath": "Atlas/WhacMole/AutoAtlas.pac"
+  },
+  "6fd63780-16f4-45fc-a9a0-d1aeea1c91df": {
+    "asset": 1578474712871,
+    "meta": 1578475586433,
+    "relativePath": "resources/Panel/MessageBox.prefab"
+  },
+  "5154b28b-5b70-49e1-9a2c-78d52eff6e28": {
+    "asset": 1578474712868,
+    "meta": 1578475586436,
+    "relativePath": "Game.fire"
+  },
+  "14ad3596-fd34-4ed5-813c-87e6c3ff2753": {
+    "asset": 1578474712871,
+    "meta": 1578475586438,
+    "relativePath": "resources/Prefab/PanelStack.prefab"
+  },
+  "61f81f23-f331-45bd-af7d-8fca1c2c38d4": {
+    "asset": 1578474712872,
+    "meta": 1578475586440,
+    "relativePath": "resources/Scene/LoginScene/LoginScene.prefab"
+  },
+  "df4a142d-9a24-4791-955c-e89f939eb287": {
+    "asset": 1578474712874,
+    "meta": 1578475586441,
+    "relativePath": "resources/Scene/WhacMoleScene/BucketMole/BucketMole.prefab"
+  },
+  "5a71c9d1-4458-4c94-b858-a88ad4b94b7e": {
+    "asset": 1578474712881,
+    "meta": 1578475586443,
+    "relativePath": "resources/Scene/WhacMoleScene/button.prefab"
+  },
+  "12a4e70a-ee94-4dcc-b1fd-19cdb8c9901c": {
+    "asset": 1578474712875,
+    "meta": 1578475586444,
+    "relativePath": "resources/Scene/WhacMoleScene/EditorMole.prefab"
+  },
+  "371d68ba-1581-4dc5-80e2-495972c9b9e7": {
+    "asset": 1578474712876,
+    "meta": 1578475586446,
+    "relativePath": "resources/Scene/WhacMoleScene/Hole.prefab"
+  },
+  "de552ef7-93fb-4a15-ba8e-079e84790e9a": {
+    "asset": 1578474712876,
+    "meta": 1578475586447,
+    "relativePath": "resources/Scene/WhacMoleScene/KnockStar.prefab"
+  },
+  "59770f7c-d7dc-4506-81ac-3e4536812b7e": {
+    "asset": 1578474712873,
+    "meta": 1578475586455,
+    "relativePath": "resources/Scene/MainScene/WhacMoleScene.prefab"
+  },
+  "373bb6d7-adfc-4a87-b5df-5c68bb3e4dda": {
+    "asset": 1578474712877,
+    "meta": 1578475586456,
+    "relativePath": "resources/Scene/WhacMoleScene/NormalMole/NormalMole.prefab"
+  },
+  "5dcade79-1320-4e06-9827-fc8fa2a2ee54": {
+    "asset": 1578474712878,
+    "meta": 1578475586459,
+    "relativePath": "resources/Scene/WhacMoleScene/RollingStar.prefab"
+  },
+  "568c7cdc-71e1-4f03-bfed-3199156c0ee1": {
+    "asset": 1578474712879,
+    "meta": 1578475586459,
+    "relativePath": "resources/Scene/WhacMoleScene/TallMole.prefab"
+  },
+  "354d2d40-b088-445a-b568-208094a5f1f1": {
+    "asset": 1578474712881,
+    "meta": 1578475586462,
+    "relativePath": "resources/TopLayer/Toast.prefab"
+  },
+  "21adf80f-ce79-4345-8f58-a89938401908": {
+    "asset": 1578474712880,
+    "meta": 1578475586467,
+    "relativePath": "resources/Scene/WhacMoleScene/WhacMoleScene.prefab"
+  },
+  "f73ecb5b-28c2-44bc-bfa8-ac4ba5bcb715": {
+    "asset": 1578474712870,
+    "meta": 1578475586481,
+    "relativePath": "Studio.fire"
+  },
+  "d534d5ae-a0a3-4ad9-b952-e78d33f1a1e2": {
+    "asset": 1578475624901,
+    "meta": 1578475640884,
+    "relativePath": "TypeScript/Frame/SceneManager.ts"
   }
 }
