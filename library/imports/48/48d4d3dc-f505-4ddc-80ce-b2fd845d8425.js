@@ -1,6 +1,6 @@
 "use strict";
 cc._RF.push(module, '48d4dPc9QVN3IDOsv2EXYQl', 'Scene');
-// TypeScript/System/Scene.ts
+// TypeScript/Frame/Scene.ts
 
 // Learn TypeScript:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/typescript.html

@@ -3,44 +3,77 @@
   "_name": "builtin-2d-spine",
   "_objFlags": 0,
   "_native": "",
-  "properties": {
-    "texture": {
-      "type": 13,
-      "value": null
-    },
-    "alphaThreshold": {
-      "value": 0.5
-    }
-  },
+  "properties": null,
   "techniques": [
     {
       "passes": [
         {
-          "cullMode": 0,
-          "blend": true,
-          "program": "7b385aeea63c6235fbf39dd4bf009f23c884ecc0ebb6dcef392ae264"
+          "blendState": {
+            "targets": [
+              {
+                "blend": true
+              }
+            ]
+          },
+          "rasterizerState": {
+            "cullMode": 0
+          },
+          "program": "builtin-2d-spine|vs|fs",
+          "properties": {
+            "texture": {
+              "value": "white",
+              "type": 29
+            },
+            "alphaThreshold": {
+              "value": [
+                0.5
+              ],
+              "type": 13
+            }
+          }
         }
-      ],
-      "layer": 0,
-      "stages": [
-        "opaque"
-      ],
-      "queue": 0,
-      "priority": 0
+      ]
     }
   ],
   "shaders": [
     {
-      "vert": "\n#define _IS_VERT_SHADER 1\n\nprecision highp float;\n\nuniform mat4 cc_matViewProj;\n\n#if _USE_MODEL\n  uniform mat4 cc_matWorld;\n#endif\n\nattribute vec3 a_position;\nattribute lowp vec4 a_color;\n#if USE_TINT\n  attribute lowp vec4 a_color0;\n#endif\n\nattribute mediump vec2 a_uv0;\nvarying mediump vec2 v_uv0;\n\nvarying lowp vec4 v_light;\n#if USE_TINT\n  varying lowp vec4 v_dark;\n#endif\n\nvoid main () {\n  mat4 mvp;\n  \n  #if _USE_MODEL\n    mvp = cc_matViewProj * cc_matWorld;\n  #else\n    mvp = cc_matViewProj;\n  #endif\n\n  v_uv0 = a_uv0;\n\n  v_light = a_color;\n  #if USE_TINT\n    v_dark = a_color0;\n  #endif\n\n  gl_Position = mvp * vec4(a_position, 1);\n}\n\n\n",
-      "frag": "\n#define _IS_FRAG_SHADER 1\n\nprecision highp float;\n\nuniform sampler2D texture;\nvarying mediump vec2 v_uv0;\n\n#if USE_ALPHA_TEST\n  uniform float alphaThreshold;\n#endif\n\nvoid ALPHA_TEST (in vec4 color) {\n  #if USE_ALPHA_TEST\n      if (color.a < alphaThreshold) discard;\n  #endif\n}\n\nvoid ALPHA_TEST (in float alpha) {\n  #if USE_ALPHA_TEST\n      if (alpha < alphaThreshold) discard;\n  #endif\n}\n\nvarying lowp vec4 v_light;\n#if USE_TINT\n  varying lowp vec4 v_dark;\n#endif\n\nvoid main () {\n  vec4 texColor = texture2D(texture, v_uv0);\n  #if _USE_ETC1_TEXTURE\n      texColor.a *= texture2D(texture, v_uv0 + vec2(0, 0.5)).r;\n  #endif\n  vec4 finalColor;\n\n  #if USE_TINT\n    finalColor.a = v_light.a * texColor.a;\n    finalColor.rgb = ((texColor.a - 1.0) * v_dark.a + 1.0 - texColor.rgb) * v_dark.rgb + texColor.rgb * v_light.rgb;\n  #else\n    finalColor = texColor * v_light;\n  #endif\n\n  ALPHA_TEST(finalColor);\n\n  gl_FragColor = finalColor;\n}\n\n\n",
+      "hash": 2278723298,
+      "glsl3": {
+        "vert": "\nprecision highp float;\nuniform CCGlobal {\n  vec4 cc_time;\n\n  vec4 cc_screenSize;\n\n  vec4 cc_screenScale;\n\n  vec4 cc_nativeSize;\n\n  mat4 cc_matView;\n  mat4 cc_matViewInv;\n  mat4 cc_matProj;\n  mat4 cc_matProjInv;\n  mat4 cc_matViewProj;\n  mat4 cc_matViewProjInv;\n  vec4 cc_cameraPos;\n\n  vec4 cc_exposure;\n\n  vec4 cc_mainLitDir;\n\n  vec4 cc_mainLitColor;\n\n  vec4 cc_ambientSky;\n  vec4 cc_ambientGround;\n};\nuniform CCLocal {\n  mat4 cc_matWorld;\n  mat4 cc_matWorldIT;\n};\n\nin vec3 a_position;\nin vec4 a_color;\n#if USE_TINT\n  in vec4 a_color0;\n#endif\n\nin vec2 a_uv0;\nout vec2 v_uv0;\n\nout vec4 v_light;\n#if USE_TINT\n  out vec4 v_dark;\n#endif\n\nvoid main () {\n  mat4 mvp;\n  \n  #if CC_USE_MODEL\n    mvp = cc_matViewProj * cc_matWorld;\n  #else\n    mvp = cc_matViewProj;\n  #endif\n\n  v_uv0 = a_uv0;\n\n  v_light = a_color;\n  #if USE_TINT\n    v_dark = a_color0;\n  #endif\n\n  gl_Position = mvp * vec4(a_position, 1);\n}\n\n",
+        "frag": "\nprecision highp float;\n\nuniform sampler2D texture;\nin vec2 v_uv0;\n\nin vec4 v_light;\n#if USE_TINT\n  in vec4 v_dark;\n#endif\n\n#if USE_ALPHA_TEST\n  \n  uniform ALPHA_TEST {\n    float alphaThreshold;\n  }\n#endif\n\nvoid ALPHA_TEST (in vec4 color) {\n  #if USE_ALPHA_TEST\n      if (color.a < alphaThreshold) discard;\n  #endif\n}\n\nvoid ALPHA_TEST (in float alpha) {\n  #if USE_ALPHA_TEST\n      if (alpha < alphaThreshold) discard;\n  #endif\n}\n\nvoid main () {\n  vec4 texColor = texture2D(texture, v_uv0);\n  #if CC_USE_ALPHA_ATLAS_TEXTURE\n      texColor.a *= texture2D(texture, v_uv0 + vec2(0, 0.5)).r;\n  #endif\n  vec4 finalColor;\n\n  #if USE_TINT\n    finalColor.a = v_light.a * texColor.a;\n    finalColor.rgb = ((texColor.a - 1.0) * v_dark.a + 1.0 - texColor.rgb) * v_dark.rgb + texColor.rgb * v_light.rgb;\n  #else\n    finalColor = texColor * v_light;\n  #endif\n\n  ALPHA_TEST(finalColor);\n\n  gl_FragColor = finalColor;\n}\n\n"
+      },
+      "glsl1": {
+        "vert": "\nprecision highp float;\nuniform mat4 cc_matViewProj;\nuniform mat4 cc_matWorld;\n\nattribute vec3 a_position;\nattribute vec4 a_color;\n#if USE_TINT\n  attribute vec4 a_color0;\n#endif\n\nattribute vec2 a_uv0;\nvarying vec2 v_uv0;\n\nvarying vec4 v_light;\n#if USE_TINT\n  varying vec4 v_dark;\n#endif\n\nvoid main () {\n  mat4 mvp;\n  \n  #if CC_USE_MODEL\n    mvp = cc_matViewProj * cc_matWorld;\n  #else\n    mvp = cc_matViewProj;\n  #endif\n\n  v_uv0 = a_uv0;\n\n  v_light = a_color;\n  #if USE_TINT\n    v_dark = a_color0;\n  #endif\n\n  gl_Position = mvp * vec4(a_position, 1);\n}\n\n",
+        "frag": "\nprecision highp float;\n\nuniform sampler2D texture;\nvarying vec2 v_uv0;\n\nvarying vec4 v_light;\n#if USE_TINT\n  varying vec4 v_dark;\n#endif\n\n#if USE_ALPHA_TEST\n  \n  uniform float alphaThreshold;\n#endif\n\nvoid ALPHA_TEST (in vec4 color) {\n  #if USE_ALPHA_TEST\n      if (color.a < alphaThreshold) discard;\n  #endif\n}\n\nvoid ALPHA_TEST (in float alpha) {\n  #if USE_ALPHA_TEST\n      if (alpha < alphaThreshold) discard;\n  #endif\n}\n\nvoid main () {\n  vec4 texColor = texture2D(texture, v_uv0);\n  #if CC_USE_ALPHA_ATLAS_TEXTURE\n      texColor.a *= texture2D(texture, v_uv0 + vec2(0, 0.5)).r;\n  #endif\n  vec4 finalColor;\n\n  #if USE_TINT\n    finalColor.a = v_light.a * texColor.a;\n    finalColor.rgb = ((texColor.a - 1.0) * v_dark.a + 1.0 - texColor.rgb) * v_dark.rgb + texColor.rgb * v_light.rgb;\n  #else\n    finalColor = texColor * v_light;\n  #endif\n\n  ALPHA_TEST(finalColor);\n\n  gl_FragColor = finalColor;\n}\n\n"
+      },
+      "builtins": {
+        "globals": {
+          "blocks": [
+            {
+              "name": "CCGlobal",
+              "defines": []
+            }
+          ],
+          "samplers": []
+        },
+        "locals": {
+          "blocks": [
+            {
+              "name": "CCLocal",
+              "defines": []
+            }
+          ],
+          "samplers": []
+        }
+      },
       "defines": [
         {
-          "name": "_USE_MODEL",
+          "name": "USE_TINT",
           "type": "boolean",
           "defines": []
         },
         {
-          "name": "USE_TINT",
+          "name": "CC_USE_MODEL",
           "type": "boolean",
           "defines": []
         },
@@ -50,52 +83,38 @@
           "defines": []
         },
         {
-          "name": "_USE_ETC1_TEXTURE",
+          "name": "CC_USE_ALPHA_ATLAS_TEXTURE",
           "type": "boolean",
           "defines": []
         }
       ],
-      "uniforms": [
+      "blocks": [
         {
-          "name": "texture",
-          "type": 13,
-          "defines": []
-        },
-        {
-          "name": "alphaThreshold",
-          "type": 4,
-          "property": true,
+          "name": "ALPHA_TEST",
+          "members": [
+            {
+              "name": "alphaThreshold",
+              "type": 13,
+              "count": 1
+            }
+          ],
           "defines": [
             "USE_ALPHA_TEST"
-          ]
+          ],
+          "binding": 0
         }
       ],
-      "attributes": [
+      "samplers": [
         {
-          "name": "a_position",
-          "type": 6,
-          "defines": []
-        },
-        {
-          "name": "a_color",
-          "type": 7,
-          "defines": []
-        },
-        {
-          "name": "a_color0",
-          "type": 7,
-          "defines": [
-            "USE_TINT"
-          ]
-        },
-        {
-          "name": "a_uv0",
-          "type": 5,
-          "defines": []
+          "name": "texture",
+          "type": 29,
+          "count": 1,
+          "defines": [],
+          "binding": 30
         }
       ],
-      "extensions": [],
-      "name": "7b385aeea63c6235fbf39dd4bf009f23c884ecc0ebb6dcef392ae264"
+      "dependencies": {},
+      "name": "builtin-2d-spine|vs|fs"
     }
   ]
 }

@@ -1,6 +1,6 @@
 "use strict";
 cc._RF.push(module, 'd534dWuoKNK2blS540z8aHi', 'SceneManager');
-// TypeScript/System/SceneManager.ts
+// TypeScript/Frame/SceneManager.ts
 
 // Learn TypeScript:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/typescript.html

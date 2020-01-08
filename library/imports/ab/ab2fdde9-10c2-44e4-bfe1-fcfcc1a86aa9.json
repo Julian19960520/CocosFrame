@@ -43,7 +43,6 @@
       }
     ],
     "_active": true,
-    "_level": 0,
     "_components": [],
     "_prefab": {
       "__id__": 26
@@ -66,17 +65,21 @@
       "x": 0.5,
       "y": 0.5
     },
-    "_position": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_scale": {
-      "__type__": "cc.Vec3",
-      "x": 1,
-      "y": 1,
-      "z": 1
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ]
     },
     "_eulerAngles": {
       "__type__": "cc.Vec3",
@@ -87,6 +90,7 @@
     "_skewX": 0,
     "_skewY": 0,
     "_is3DNode": true,
+    "_groupIndex": 0,
     "groupIndex": 0,
     "_id": ""
   },
@@ -99,7 +103,6 @@
     },
     "_children": [],
     "_active": true,
-    "_level": 1,
     "_components": [
       {
         "__id__": 3
@@ -126,17 +129,21 @@
       "x": 0.5,
       "y": 0.5
     },
-    "_position": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_scale": {
-      "__type__": "cc.Vec3",
-      "x": 100,
-      "y": 100,
-      "z": 100
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        0,
+        0,
+        0,
+        8.146033536604618e-8,
+        0,
+        0,
+        0.9999999999999967,
+        100,
+        100,
+        100
+      ]
     },
     "_eulerAngles": {
       "__type__": "cc.Vec3",
@@ -147,6 +154,7 @@
     "_skewX": 0,
     "_skewY": 0,
     "_is3DNode": true,
+    "_groupIndex": 0,
     "groupIndex": 0,
     "_id": ""
   },
@@ -168,6 +176,7 @@
     },
     "_receiveShadows": false,
     "_shadowCastingMode": 0,
+    "_enableAutoBatch": false,
     "textures": [],
     "_id": ""
   },
@@ -191,7 +200,6 @@
     },
     "_children": [],
     "_active": true,
-    "_level": 1,
     "_components": [
       {
         "__id__": 6
@@ -218,17 +226,21 @@
       "x": 0.5,
       "y": 0.5
     },
-    "_position": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_scale": {
-      "__type__": "cc.Vec3",
-      "x": 100,
-      "y": 100,
-      "z": 100
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        0,
+        0,
+        0,
+        8.146033536604618e-8,
+        0,
+        0,
+        0.9999999999999967,
+        100,
+        100,
+        100
+      ]
     },
     "_eulerAngles": {
       "__type__": "cc.Vec3",
@@ -239,6 +251,7 @@
     "_skewX": 0,
     "_skewY": 0,
     "_is3DNode": true,
+    "_groupIndex": 0,
     "groupIndex": 0,
     "_id": ""
   },
@@ -260,6 +273,7 @@
     },
     "_receiveShadows": false,
     "_shadowCastingMode": 0,
+    "_enableAutoBatch": false,
     "textures": [],
     "_id": ""
   },
@@ -283,7 +297,6 @@
     },
     "_children": [],
     "_active": true,
-    "_level": 1,
     "_components": [
       {
         "__id__": 9
@@ -310,17 +323,21 @@
       "x": 0.5,
       "y": 0.5
     },
-    "_position": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_scale": {
-      "__type__": "cc.Vec3",
-      "x": 100,
-      "y": 100,
-      "z": 100
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        0,
+        0,
+        0,
+        -0.7071068286895765,
+        0,
+        0,
+        0.7071067336835153,
+        100,
+        100,
+        100
+      ]
     },
     "_eulerAngles": {
       "__type__": "cc.Vec3",
@@ -331,6 +348,7 @@
     "_skewX": 0,
     "_skewY": 0,
     "_is3DNode": true,
+    "_groupIndex": 0,
     "groupIndex": 0,
     "_id": ""
   },
@@ -352,6 +370,7 @@
     },
     "_receiveShadows": false,
     "_shadowCastingMode": 0,
+    "_enableAutoBatch": false,
     "textures": [],
     "_id": ""
   },
@@ -375,7 +394,6 @@
     },
     "_children": [],
     "_active": true,
-    "_level": 1,
     "_components": [
       {
         "__id__": 12
@@ -402,17 +420,21 @@
       "x": 0.5,
       "y": 0.5
     },
-    "_position": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_scale": {
-      "__type__": "cc.Vec3",
-      "x": 100,
-      "y": 100,
-      "z": 100
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        0,
+        0,
+        0,
+        8.146033536604618e-8,
+        0,
+        0,
+        0.9999999999999967,
+        100,
+        100,
+        100
+      ]
     },
     "_eulerAngles": {
       "__type__": "cc.Vec3",
@@ -423,6 +445,7 @@
     "_skewX": 0,
     "_skewY": 0,
     "_is3DNode": true,
+    "_groupIndex": 0,
     "groupIndex": 0,
     "_id": ""
   },
@@ -444,6 +467,7 @@
     },
     "_receiveShadows": false,
     "_shadowCastingMode": 0,
+    "_enableAutoBatch": false,
     "textures": [],
     "_id": ""
   },
@@ -467,7 +491,6 @@
     },
     "_children": [],
     "_active": true,
-    "_level": 1,
     "_components": [
       {
         "__id__": 15
@@ -494,17 +517,21 @@
       "x": 0.5,
       "y": 0.5
     },
-    "_position": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_scale": {
-      "__type__": "cc.Vec3",
-      "x": 100,
-      "y": 100,
-      "z": 100
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        0,
+        0,
+        0,
+        8.146033536604618e-8,
+        0,
+        0,
+        0.9999999999999967,
+        100,
+        100,
+        100
+      ]
     },
     "_eulerAngles": {
       "__type__": "cc.Vec3",
@@ -515,6 +542,7 @@
     "_skewX": 0,
     "_skewY": 0,
     "_is3DNode": true,
+    "_groupIndex": 0,
     "groupIndex": 0,
     "_id": ""
   },
@@ -536,6 +564,7 @@
     },
     "_receiveShadows": false,
     "_shadowCastingMode": 0,
+    "_enableAutoBatch": false,
     "textures": [],
     "_id": ""
   },
@@ -559,7 +588,6 @@
     },
     "_children": [],
     "_active": true,
-    "_level": 1,
     "_components": [
       {
         "__id__": 18
@@ -586,17 +614,21 @@
       "x": 0.5,
       "y": 0.5
     },
-    "_position": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_scale": {
-      "__type__": "cc.Vec3",
-      "x": 100,
-      "y": 100,
-      "z": 100
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        0,
+        0,
+        0,
+        8.146033536604618e-8,
+        0,
+        0,
+        0.9999999999999967,
+        100,
+        100,
+        100
+      ]
     },
     "_eulerAngles": {
       "__type__": "cc.Vec3",
@@ -607,6 +639,7 @@
     "_skewX": 0,
     "_skewY": 0,
     "_is3DNode": true,
+    "_groupIndex": 0,
     "groupIndex": 0,
     "_id": ""
   },
@@ -628,6 +661,7 @@
     },
     "_receiveShadows": false,
     "_shadowCastingMode": 0,
+    "_enableAutoBatch": false,
     "textures": [],
     "_id": ""
   },
@@ -651,7 +685,6 @@
     },
     "_children": [],
     "_active": true,
-    "_level": 1,
     "_components": [
       {
         "__id__": 21
@@ -678,17 +711,21 @@
       "x": 0.5,
       "y": 0.5
     },
-    "_position": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_scale": {
-      "__type__": "cc.Vec3",
-      "x": 100,
-      "y": 100,
-      "z": 100
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        0,
+        0,
+        0,
+        8.146033536604618e-8,
+        0,
+        0,
+        0.9999999999999967,
+        100,
+        100,
+        100
+      ]
     },
     "_eulerAngles": {
       "__type__": "cc.Vec3",
@@ -699,6 +736,7 @@
     "_skewX": 0,
     "_skewY": 0,
     "_is3DNode": true,
+    "_groupIndex": 0,
     "groupIndex": 0,
     "_id": ""
   },
@@ -720,6 +758,7 @@
     },
     "_receiveShadows": false,
     "_shadowCastingMode": 0,
+    "_enableAutoBatch": false,
     "textures": [],
     "_id": ""
   },
@@ -743,7 +782,6 @@
     },
     "_children": [],
     "_active": true,
-    "_level": 1,
     "_components": [
       {
         "__id__": 24
@@ -770,17 +808,21 @@
       "x": 0.5,
       "y": 0.5
     },
-    "_position": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_scale": {
-      "__type__": "cc.Vec3",
-      "x": 100,
-      "y": 100,
-      "z": 100
+    "_trs": {
+      "__type__": "TypedArray",
+      "ctor": "Float64Array",
+      "array": [
+        0,
+        0,
+        0,
+        8.146033536604618e-8,
+        0,
+        0,
+        0.9999999999999967,
+        100,
+        100,
+        100
+      ]
     },
     "_eulerAngles": {
       "__type__": "cc.Vec3",
@@ -791,6 +833,7 @@
     "_skewX": 0,
     "_skewY": 0,
     "_is3DNode": true,
+    "_groupIndex": 0,
     "groupIndex": 0,
     "_id": ""
   },
@@ -812,6 +855,7 @@
     },
     "_receiveShadows": false,
     "_shadowCastingMode": 0,
+    "_enableAutoBatch": false,
     "textures": [],
     "_id": ""
   },
