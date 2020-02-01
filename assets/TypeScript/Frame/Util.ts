@@ -1,23 +1,44 @@
 export namespace Util{
-    export function instantPrefab(path:string, callback = null){
+    let loadingCache = new Map<string, Promise<any>>();
+    export function instantPrefab(path:string){
+        return new Promise<cc.Node>((resolve, reject)=>{
+            let loadResPromise = null;
+            if(loadingCache.has(path)){
+                loadResPromise = loadingCache.get(path);
+            }else{
+                loadResPromise = loadRes(path);
+                loadingCache.set(path, loadResPromise);
+            }
+            loadResPromise.then((prefab:cc.Node) => {
+                loadingCache.delete(path);
+                let node:cc.Node = cc.instantiate(prefab);
+                node.name = path.substr(path.lastIndexOf("/")+1);
+                node.position = cc.Vec2.ZERO;
+                resolve(node);
+            }).catch(reject);
+        });
+    }
+    export function loadRes(path:string){
         return new Promise((resolve, reject)=>{
             cc.loader.loadRes(path, (err, prefab) => {
                 if (err) {
                     cc.error(err.message || err);
-                    reject();
-                    return;
+                    reject(prefab);
+                }else{
+                    resolve(prefab);
                 }
-                var node:cc.Node = cc.instantiate(prefab);
-                node.name = path.substr(path.lastIndexOf("/")+1);
-                node.position = cc.Vec2.ZERO;
-                if(callback){
-                    callback(node);
-                }
-                resolve(node);
             });
         })
     }
-
+    export function getTimeStamp(){
+        var date = new Date();
+        return date.getTime();
+    }
+    export function newCustomEvent(type, bubbles, detail){
+        let evt = new cc.Event.EventCustom(type, bubbles);
+        evt.detail = detail;
+        return evt;
+    }
     export function radian(vec2:cc.Vec2){
         let radian = vec2.angle(cc.Vec2.RIGHT);
         if(vec2.y < 0){
@@ -49,11 +70,14 @@ export namespace Util{
     }
 
     export function random(min, max){
-        return Math.floor(Math.random()*(max-min))+min;
+        return Math.round(Math.random()*(max-min))+min;
     }
 
     export function lerp(cur, tar, ratio){
         return (tar-cur)*ratio+cur;
+    }
+    export function clamp(value, min, max){
+        return Math.min(Math.max(value, min), max);
     }
     export function move(cur, tar, step){
         if(Math.abs(tar-cur) > step){
@@ -65,5 +89,9 @@ export namespace Util{
         }else{
             return tar;
         }    
+    }
+    let uuid = 0;
+    export function newUuid(){
+        return uuid++;
     }
 }

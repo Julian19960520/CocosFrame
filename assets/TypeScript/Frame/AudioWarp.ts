@@ -13,7 +13,6 @@ const {ccclass, property} = cc._decorator;
 @ccclass
 export default class AudioWarp extends cc.Component {
 
-    @property(cc.AudioClip)
     clip: cc.AudioClip = null;
     id = null;
     loop:boolean = false;

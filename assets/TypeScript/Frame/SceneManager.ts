@@ -125,6 +125,17 @@ export default class SceneManager extends cc.Component {
             }
         });
     }
+    //在content种找到场景实例，
+    public findScene<T extends Scene>(type: {prototype: T}):T{
+        return this.content.getComponentInChildren(type);
+    }
+    //打开面板
+    public OpenPanelByName(name, callback){
+        this.curScene.OpenPanelByName(name,callback);
+    }
+    public OpenPanelByPath(path, callback){
+        this.curScene.OpenPanelByPath(path, callback);
+    }
     private printState(){
         let str = "==========SceneManager=========\nstack: ";
         for(let i=0; i<this.stack.length; i++){
@@ -156,12 +167,12 @@ export namespace ShiftAnima{
     export function moveLeftShift(curScene:Scene, newScene:Scene, finish){
         if(curScene){
             curScene.node.position = cc.v2(0, 0);
-            cc.tween(curScene.node).to(0.5, {position: cc.v2(-640, 0)}, { easing: 'quintOut'}).call(()=>{
+            cc.tween(curScene.node).to(0.5, {position: cc.v2(-ScreenRect.width, 0)}, { easing: 'quintOut'}).call(()=>{
                 curScene.node.active = false;
             }).start();
         }
         if(newScene){
-            newScene.node.position = cc.v2(640, 0);
+            newScene.node.position = cc.v2(ScreenRect.width, 0);
             newScene.node.active = true;
             cc.tween(newScene.node).to(0.5, {position: cc.v2(0, 0)}, { easing: 'quintOut'}).call(()=>{
                 finish();
@@ -171,12 +182,12 @@ export namespace ShiftAnima{
     export function moveRightShift(curScene:Scene, newScene:Scene, finish){
         if(curScene){
             curScene.node.position = cc.v2(0, 0);
-            cc.tween(curScene.node).to(0.5, {position: cc.v2(640, 0)}, { easing: 'quintOut'}).call(()=>{
+            cc.tween(curScene.node).to(0.5, {position: cc.v2(ScreenRect.width, 0)}, { easing: 'quintOut'}).call(()=>{
                 curScene.node.active = false;
             }).start();
         }
         if(newScene){
-            newScene.node.position = cc.v2(-640, 0);
+            newScene.node.position = cc.v2(-ScreenRect.width, 0);
             newScene.node.active = true;
             cc.tween(newScene.node).to(0.5, {position: cc.v2(0, 0)}, { easing: 'quintOut'}).call(()=>{
                 finish();

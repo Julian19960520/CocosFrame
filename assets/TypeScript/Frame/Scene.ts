@@ -22,7 +22,8 @@ export default class Scene extends DB.DataBindComponent {
     public showHome:boolean = true;
     @property
     public showEnergyBar:boolean = true;
-    
+    @property
+    public showCoinBar:boolean = false;
     public navigatorItem:string[] = [];
     public panelStack:PanelStack = null;
 
@@ -32,7 +33,7 @@ export default class Scene extends DB.DataBindComponent {
             if(this.panelStack){
                 resolve(this.panelStack)
             }else{
-                Util.instantPrefab("Prefab/PanelStack",(node:cc.Node)=>{
+                Util.instantPrefab("Prefab/PanelStack").then((node:cc.Node)=>{
                     this.node.addChild(node);
                     this.panelStack = node.getComponent(PanelStack);
                     this.panelStack.scene = this;
@@ -62,7 +63,7 @@ export default class Scene extends DB.DataBindComponent {
         }
     }
     //读取一个prefab，从场景所在文件夹查找prefab
-    public instantPrefab(name:string, callback){
-        Util.instantPrefab(`Scene/${this.node.name}/${name}`,callback);
+    public instantPrefab(name:string){
+        return Util.instantPrefab(`Scene/${this.node.name}/${name}`);
     }
 }

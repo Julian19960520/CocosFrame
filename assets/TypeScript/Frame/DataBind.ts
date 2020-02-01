@@ -90,6 +90,13 @@ export namespace DB{
             this.map.set(key, tempListener);
             DB.Bind(key, tempListener);
         }
+        public UnBind(key){
+            let listener = this.map.get(key);
+            if(listener){
+                this.map.delete(key);
+                DB.UnBind(key, listener);
+            }
+        }
         onDestroy(){
             this.map.forEach((v, k)=>{
                 DB.UnBind(k, v);

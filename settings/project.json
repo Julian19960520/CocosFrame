@@ -2,7 +2,41 @@
   "assets-sort-type": "name",
   "collision-matrix": [
     [
+      false
+    ],
+    [
+      false,
+      false,
       true
+    ],
+    [
+      false,
+      true,
+      false,
+      true,
+      true,
+      true
+    ],
+    [
+      false,
+      false,
+      true,
+      false
+    ],
+    [
+      false,
+      false,
+      true,
+      false,
+      false
+    ],
+    [
+      false,
+      false,
+      true,
+      false,
+      false,
+      false
     ]
   ],
   "design-resolution-height": 640,
@@ -21,14 +55,20 @@
   "fit-height": false,
   "fit-width": true,
   "group-list": [
-    "default"
+    "default",
+    "Carrot",
+    "Pig",
+    "Fence",
+    "Rabbit",
+    "FarmHper"
   ],
-  "last-module-event-record-time": 1577606020435,
+  "last-module-event-record-time": 1581112820415,
   "simulator-orientation": false,
   "simulator-resolution": {
     "height": 640,
     "width": 960
   },
   "use-customize-simulator": true,
-  "use-project-simulator-setting": false
+  "use-project-simulator-setting": false,
+  "start-scene": "current"
 }

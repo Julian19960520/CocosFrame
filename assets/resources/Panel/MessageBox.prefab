@@ -110,8 +110,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 400,
-      "height": 237
+      "width": 97.87,
+      "height": 50.4
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -121,7 +121,7 @@
     "_position": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": 14,
+      "y": 0,
       "z": 0
     },
     "_scale": {
@@ -168,7 +168,7 @@
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",
-    "_N$overflow": 2,
+    "_N$overflow": 0,
     "_N$cacheMode": 0,
     "_id": ""
   },
@@ -180,7 +180,7 @@
     "asset": {
       "__uuid__": "6fd63780-16f4-45fc-a9a0-d1aeea1c91df"
     },
-    "fileId": "bbsmaGt2tO4KU7Cc9HZ/69",
+    "fileId": "2fQJigI8REcrLPNoZbYkTs",
     "sync": false
   },
   {
@@ -1545,6 +1545,10 @@
     "_enabled": true,
     "closeBtn": {
       "__id__": 13
+    },
+    "autoClosePrePanel": false,
+    "label": {
+      "__id__": 3
     },
     "okBtn": {
       "__id__": 34

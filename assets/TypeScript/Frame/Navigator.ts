@@ -21,6 +21,8 @@ export default class Navigator extends DB.DataBindComponent {
     buttonBack: cc.Button = null;
     @property(cc.Button)
     buttonHome: cc.Button = null;
+    @property(cc.Node)
+    coinBar: cc.Node = null;
     public static ins:Navigator = null;
     public onBackClick:()=>void = null;
     public onHomeClick:()=>void = null;
@@ -30,6 +32,7 @@ export default class Navigator extends DB.DataBindComponent {
             if(scene){
                 this.buttonBack.node.active = scene.showBack;
                 this.buttonHome.node.active = scene.showHome;
+                this.coinBar.active = scene.showCoinBar;
             }
         })
         this.buttonBack.node.on("click",()=>{

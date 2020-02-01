@@ -1,6 +1,6 @@
 "use strict";
 cc._RF.push(module, 'd534dWuoKNK2blS540z8aHi', 'SceneManager');
-// TypeScript/System/SceneManager.ts
+// TypeScript/Frame/SceneManager.ts
 
 // Learn TypeScript:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/typescript.html
@@ -138,6 +138,17 @@ var SceneManager = /** @class */ (function (_super) {
             }
         });
     };
+    //在content种找到场景实例，
+    SceneManager.prototype.findScene = function (type) {
+        return this.content.getComponentInChildren(type);
+    };
+    //打开面板
+    SceneManager.prototype.OpenPanelByName = function (name, callback) {
+        this.curScene.OpenPanelByName(name, callback);
+    };
+    SceneManager.prototype.OpenPanelByPath = function (path, callback) {
+        this.curScene.OpenPanelByPath(path, callback);
+    };
     SceneManager.prototype.printState = function () {
         var str = "==========SceneManager=========\nstack: ";
         for (var i = 0; i < this.stack.length; i++) {
@@ -186,12 +197,12 @@ var ShiftAnima;
     function moveLeftShift(curScene, newScene, finish) {
         if (curScene) {
             curScene.node.position = cc.v2(0, 0);
-            cc.tween(curScene.node).to(0.5, { position: cc.v2(-640, 0) }, { easing: 'quintOut' }).call(function () {
+            cc.tween(curScene.node).to(0.5, { position: cc.v2(-ScreenRect_1.default.width, 0) }, { easing: 'quintOut' }).call(function () {
                 curScene.node.active = false;
             }).start();
         }
         if (newScene) {
-            newScene.node.position = cc.v2(640, 0);
+            newScene.node.position = cc.v2(ScreenRect_1.default.width, 0);
             newScene.node.active = true;
             cc.tween(newScene.node).to(0.5, { position: cc.v2(0, 0) }, { easing: 'quintOut' }).call(function () {
                 finish();
@@ -202,12 +213,12 @@ var ShiftAnima;
     function moveRightShift(curScene, newScene, finish) {
         if (curScene) {
             curScene.node.position = cc.v2(0, 0);
-            cc.tween(curScene.node).to(0.5, { position: cc.v2(640, 0) }, { easing: 'quintOut' }).call(function () {
+            cc.tween(curScene.node).to(0.5, { position: cc.v2(ScreenRect_1.default.width, 0) }, { easing: 'quintOut' }).call(function () {
                 curScene.node.active = false;
             }).start();
         }
         if (newScene) {
-            newScene.node.position = cc.v2(-640, 0);
+            newScene.node.position = cc.v2(-ScreenRect_1.default.width, 0);
             newScene.node.active = true;
             cc.tween(newScene.node).to(0.5, { position: cc.v2(0, 0) }, { easing: 'quintOut' }).call(function () {
                 finish();

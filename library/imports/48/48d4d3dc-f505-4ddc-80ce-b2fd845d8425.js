@@ -1,6 +1,6 @@
 "use strict";
 cc._RF.push(module, '48d4dPc9QVN3IDOsv2EXYQl', 'Scene');
-// TypeScript/System/Scene.ts
+// TypeScript/Frame/Scene.ts
 
 // Learn TypeScript:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/typescript.html
@@ -24,6 +24,7 @@ var Scene = /** @class */ (function (_super) {
         _this.showBack = true;
         _this.showHome = true;
         _this.showEnergyBar = true;
+        _this.showCoinBar = false;
         _this.navigatorItem = [];
         _this.panelStack = null;
         return _this;
@@ -36,7 +37,7 @@ var Scene = /** @class */ (function (_super) {
                 resolve(_this.panelStack);
             }
             else {
-                Util_1.Util.instantPrefab("Prefab/PanelStack", function (node) {
+                Util_1.Util.instantPrefab("Prefab/PanelStack").then(function (node) {
                     _this.node.addChild(node);
                     _this.panelStack = node.getComponent(PanelStack_1.default);
                     _this.panelStack.scene = _this;
@@ -68,8 +69,8 @@ var Scene = /** @class */ (function (_super) {
         }
     };
     //读取一个prefab，从场景所在文件夹查找prefab
-    Scene.prototype.instantPrefab = function (name, callback) {
-        Util_1.Util.instantPrefab("Scene/" + this.node.name + "/" + name, callback);
+    Scene.prototype.instantPrefab = function (name) {
+        return Util_1.Util.instantPrefab("Scene/" + this.node.name + "/" + name);
     };
     __decorate([
         property
@@ -83,6 +84,9 @@ var Scene = /** @class */ (function (_super) {
     __decorate([
         property
     ], Scene.prototype, "showEnergyBar", void 0);
+    __decorate([
+        property
+    ], Scene.prototype, "showCoinBar", void 0);
     Scene = __decorate([
         ccclass
     ], Scene);

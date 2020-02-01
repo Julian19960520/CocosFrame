@@ -1,6 +1,11 @@
 {
   "user": {
     "name": "User",
-    "prefab": []
+    "prefab": [
+      {
+        "name": "ScrollList_Grid",
+        "uuid": "2b3678bb-24b4-4e63-b3e3-fe3b14379bbe"
+      }
+    ]
   }
 }

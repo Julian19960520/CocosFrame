@@ -12,10 +12,12 @@ const {ccclass, property} = cc._decorator;
 
 @ccclass
 export default class GameManager extends cc.Component {
-
+    public static Ins:GameManager;
     public onLoad(){
+        GameManager.Ins = this;
         this.setupTimeScale();
     }
+    //改变默认的Update逻辑，使得timeScale影响Update的参数dt
     setupTimeScale(){
         let scheduler: cc.Scheduler = cc.director["_scheduler"];
         let schedulerUpdateFunc = scheduler.update;
@@ -34,5 +36,12 @@ export default class GameManager extends cc.Component {
             enumerable: true,
             configurable: true
         });
+    }
+    //提供常驻的定时回调
+    public startSchedule(callback: Function, interval?: number, repeat?: number, delay?: number){
+        this.schedule(callback, interval, repeat, delay);
+    }
+    public endSchedule(callback){
+        this.unschedule(callback);
     }
 }

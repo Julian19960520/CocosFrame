@@ -33,7 +33,10 @@ export default class PanelStack extends cc.Component {
                 //隐藏上个面板
                 if(this.stack.length > 0){
                     let lastPanel = this.stack[this.stack.length-1];
-                    lastPanel.close();
+                    if(panel.autoClosePrePanel){
+                        cc.log("autoClosePrePanel2" );
+                        lastPanel.close();
+                    }
                 }
                 //打开新面板
                 panel.panelStack = this;
@@ -50,8 +53,10 @@ export default class PanelStack extends cc.Component {
         });
     }
     public PopCurrent(){
+        let autoClosePrePanel = true;
         if(this.stack.length>0){
             let panel = this.stack.pop();
+            autoClosePrePanel = panel.autoClosePrePanel;
             panel.close(()=>{
                 this.node.removeChild(panel.node);
                 panel.panelStack = null;
@@ -61,7 +66,9 @@ export default class PanelStack extends cc.Component {
             let lastPanel = this.stack[this.stack.length-1];
             this.blockInput.node.setSiblingIndex(this.node.childrenCount-1);
             lastPanel.node.setSiblingIndex(this.node.childrenCount-1);
-            lastPanel.open();
+            if(autoClosePrePanel){
+                lastPanel.open();
+            }
         }else{
             this.blockInput.node.active = false;
         }

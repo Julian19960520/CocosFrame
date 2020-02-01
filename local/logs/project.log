@@ -1,246 +1,68 @@
-2019-12-25T08:21:35.494Z - normal: Load ~/.CocosCreator/settings.json
-2019-12-25T08:21:35.563Z - normal: Initializing Asset Database
-2019-12-25T08:21:35.567Z - normal: checking language setting...
-2019-12-25T08:21:35.567Z - normal: Language: zh
-2019-12-25T08:21:36.338Z - success: preview server running at http://localhost:7456
-2019-12-25T08:21:36.388Z - success: protocol editor-framework registered
-2019-12-25T08:21:36.388Z - success: protocol app registered
-2019-12-25T08:21:36.388Z - success: protocol theme registered
-2019-12-25T08:21:36.389Z - success: protocol packages registered
-2019-12-25T08:21:36.389Z - success: protocol uuid registerred
-2019-12-25T08:21:36.389Z - success: protocol db registerred
-2019-12-25T08:21:36.389Z - success: protocol thumbnail registerred
-2019-12-25T08:21:36.389Z - success: protocol unpack registerred
-2019-12-25T08:21:36.389Z - success: protocol disable-commonjs registerred
-2019-12-25T08:21:36.582Z - normal: connected!
-2019-12-25T08:21:36.584Z - normal: Check project /Users/hortor/Documents/CocosFrame
-2019-12-25T08:21:36.586Z - normal: Initializing project /Users/hortor/Documents/CocosFrame
-2019-12-25T08:21:37.017Z - normal: Initializing Cocos2d
-2019-12-25T08:21:37.788Z - normal: Initializing engine extends
-2019-12-25T08:21:37.828Z - success: alipay-adapter loaded
-2019-12-25T08:21:37.845Z - success: asset-db-debugger loaded
-2019-12-25T08:21:37.846Z - success: baidu-adapter loaded
-2019-12-25T08:21:37.847Z - success: color-picker loaded
-2019-12-25T08:21:37.991Z - success: fb-audience-network loaded
-2019-12-25T08:21:38.053Z - success: fb-live-stream loaded
-2019-12-25T08:21:38.056Z - success: google-play-instant loaded
-2019-12-25T08:21:38.063Z - success: huawei-runtime loaded
-2019-12-25T08:21:38.312Z - success: cpk-publish loaded
-2019-12-25T08:21:38.313Z - success: jsb-adapter loaded
-2019-12-25T08:21:38.319Z - success: oppo-runtime loaded
-2019-12-25T08:21:38.334Z - success: package-manager loaded
-2019-12-25T08:21:38.472Z - success: qqplay-adapter loaded
-2019-12-25T08:21:38.475Z - success: runtime-dev-tools loaded
-2019-12-25T08:21:38.495Z - success: sdkbox loaded
-2019-12-25T08:21:38.509Z - success: tester loaded
-2019-12-25T08:21:38.521Z - success: ui-kit-preview-extra loaded
-2019-12-25T08:21:38.539Z - success: ui-kit-preview loaded
-2019-12-25T08:21:38.552Z - success: ui-kit loaded
-2019-12-25T08:21:38.558Z - success: vivo-runtime loaded
-2019-12-25T08:21:38.560Z - success: weapp-adapter loaded
-2019-12-25T08:21:38.561Z - success: xiaomi-adapter loaded
-2019-12-25T08:21:38.571Z - success: alipay-minigame loaded
-2019-12-25T08:21:38.627Z - success: assets loaded
-2019-12-25T08:21:38.641Z - success: builder loaded
-2019-12-25T08:21:38.945Z - success: cocos-services loaded
-2019-12-25T08:21:38.959Z - success: console loaded
-2019-12-25T08:21:38.990Z - success: fb-instant-games loaded
-2019-12-25T08:21:39.005Z - success: game-window loaded
-2019-12-25T08:21:39.006Z - success: google-instant-games loaded
-2019-12-25T08:21:39.022Z - success: hierarchy loaded
-2019-12-25T08:21:39.036Z - success: inspector loaded
-2019-12-25T08:21:39.037Z - success: keystore loaded
-2019-12-25T08:21:39.051Z - success: node-library loaded
-2019-12-25T08:21:39.053Z - success: package-asset loaded
-2019-12-25T08:21:39.054Z - success: preferences loaded
-2019-12-25T08:21:39.066Z - success: project-exporter loaded
-2019-12-25T08:21:39.081Z - success: project-importer loaded
-2019-12-25T08:21:39.093Z - success: project-settings loaded
-2019-12-25T08:21:39.106Z - success: scene loaded
-2019-12-25T08:21:39.131Z - success: simulator-debugger loaded
-2019-12-25T08:21:39.133Z - success: sprite-editor loaded
-2019-12-25T08:21:39.147Z - success: store loaded
-2019-12-25T08:21:39.162Z - success: timeline loaded
-2019-12-25T08:21:39.166Z - success: xiaomi-runtime loaded
-2019-12-25T08:21:40.859Z - normal: Loading packages
-2019-12-25T08:21:40.882Z - normal: Watching packages
-2019-12-25T08:21:41.158Z - normal: Run Application
-2019-12-25T08:21:41.331Z - info: Cocos Services load base data!
-2019-12-25T08:21:48.955Z - warn: Please change the definition of property 'clip' in class 'AudioWarp'. Starting from v1.10,
-properties in CCClass can not be abbreviated if they are of type RawAsset.
-Please use the complete form.
-For example, if the type is Texture2D, the previous definition is:
-    clip: cc.Texture2D,
-If you use JS, it should be changed to:
-    clip: {
-      type: cc.Texture2D // use 'type:' to define Texture2D object directly
-      default: null,     // object's default value is null
-    },
-If you use TS, it should be changed to:
-    %s: {
-      type: cc.Texture2D // use 'type:' to define Texture2D object directly
-    }
-    %s: cc.Texture2D = null;
-(This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2019-12-25T08:21:48.969Z - warn: Please specifiy a default value for "Soldier" property at its declaration:
- 
-// Before:
-@property(...)
-value; 
-// After:
-@property(...)
-value = 0 planet
-2019-12-25T08:21:48.986Z - error: A Class already exists with the same __classname__ : "Planet".
-    at /Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/js.js:257:32
-    at Object.js.setClassName (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/js.js:267:17)
-    at doDefine (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:268:16)
-    at define (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:284:23)
-    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:651:23)
-    at /Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClassDecorator.js:183:26
-    at /Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClassDecorator.js:34:28
-    at window.__decorate (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/polyfill/typescript.js:65:38)
-    at /Users/hortor/Documents/CocosFrame/temp/quick-scripts/assets/TypeScript/Game/planet.js:90:14
-2019-12-25T08:21:48.987Z - error: A Class already exists with the same __cid__ : "705a9Aqaj1KnYjV8b3MsCMO".
-    at Object._setClassId (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/js.js:257:32)
-    at define (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:289:28)
-    at Object.CCClass [as Class] (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClass.js:651:23)
-    at /Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClassDecorator.js:183:26
-    at /Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/platform/CCClassDecorator.js:34:28
-    at window.__decorate (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/polyfill/typescript.js:65:38)
-    at /Users/hortor/Documents/CocosFrame/temp/quick-scripts/assets/TypeScript/Game/planet.js:90:14
-    at __define (/Users/hortor/Documents/CocosFrame/temp/quick-scripts/assets/TypeScript/Game/planet.js:94:2)
-    at /Users/hortor/Documents/CocosFrame/temp/quick-scripts/assets/TypeScript/Game/planet.js:100:13
-2019-12-25T08:21:55.368Z - normal: Simulator: WORKAREA WIDTH 1920.00, HEIGHT 1035.00
-2019-12-25T08:21:55.368Z - normal: Simulator: FRAME SCALE = 0.75
-2019-12-25T08:21:55.509Z - normal: Simulator: GLFWError #65544 Happen, Cocoa: Failed to retrieve display name
-2019-12-25T08:21:55.509Z - normal: Simulator: GLFWError #65544 Happen, Cocoa: Failed to retrieve display name
-2019-12-25T08:21:55.509Z - normal: Simulator: 
-2019-12-25T08:21:55.510Z - normal: Simulator: {
-2019-12-25T08:21:55.510Z - normal: Simulator: 	build_type: DEBUG
-2019-12-25T08:21:55.511Z - normal: Simulator: 	gl.vendor: Intel Inc.
-2019-12-25T08:21:55.511Z - normal: Simulator: 	gl.supports_PVRTC: false
-2019-12-25T08:21:55.511Z - normal: Simulator: 	gl.renderer: Intel(R) Iris(TM) Plus Graphics 640
-2019-12-25T08:21:55.511Z - normal: Simulator: 	gl.supports_ATITC: false
-2019-12-25T08:21:55.512Z - normal: Simulator: 	gl.supports_discard_framebuffer: false
-2019-12-25T08:21:55.512Z - normal: Simulator: 	gl.supports_NPOT: true
-2019-12-25T08:21:55.512Z - normal: Simulator: 	gl.max_texture_units: 16
-2019-12-25T08:21:55.513Z - normal: Simulator: 	gl.supports_ETC1: false
-2019-12-25T08:21:55.513Z - normal: Simulator: 	gl.max_texture_size: 16384
-2019-12-25T08:21:55.514Z - normal: Simulator: 	gl.supports_BGRA8888: false
-2019-12-25T08:21:55.514Z - normal: Simulator: 	gl.supports_vertex_array_object: true
-2019-12-25T08:21:55.514Z - normal: Simulator: 	gl.supports_OES_map_buffer: false
-2019-12-25T08:21:55.515Z - normal: Simulator: 	compiled_with_gl_state_cache: true
-2019-12-25T08:21:55.515Z - normal: Simulator: 	gl.supports_OES_packed_depth_stencil: false
-2019-12-25T08:21:55.516Z - normal: Simulator: 	gl.version: 2.1 INTEL-12.8.38
-2019-12-25T08:21:55.516Z - normal: Simulator: 	gl.supports_S3TC: true
-2019-12-25T08:21:55.516Z - normal: Simulator: 	compiled_with_profiler: false
-2019-12-25T08:21:55.516Z - normal: Simulator: 	gl.supports_OES_depth24: false
-2019-12-25T08:21:55.516Z - normal: Simulator: }
-2019-12-25T08:21:55.517Z - normal: Simulator: 
-2019-12-25T08:21:55.517Z - normal: Simulator: 
-2019-12-25T08:21:55.517Z - normal: Simulator: Project Config:
-2019-12-25T08:21:55.517Z - normal: Simulator:     project dir: /Applications/CocosCreator.app/Contents/Resources/cocos2d-x/simulator/mac/Simulator.app/Contents/Resources/
-2019-12-25T08:21:55.517Z - normal: Simulator:     writable path: $(PROJDIR)/
-2019-12-25T08:21:55.518Z - normal: Simulator:     script file: $(PROJDIR)/main.js
-2019-12-25T08:21:55.518Z - normal: Simulator:     frame size: 640 x 1136
-2019-12-25T08:21:55.518Z - normal: Simulator:     frame scale: 0.75
-2019-12-25T08:21:55.518Z - normal: Simulator:     show console: NO
-2019-12-25T08:21:55.518Z - normal: Simulator:     write debug log: NO ()
-2019-12-25T08:21:55.519Z - normal: Simulator:     listen: 
-2019-12-25T08:21:55.519Z - normal: Simulator:     debugger: none
-2019-12-25T08:21:55.519Z - normal: Simulator:     add searching path:
-2019-12-25T08:21:55.519Z - normal: Simulator: 
-2019-12-25T08:21:55.520Z - normal: Simulator: 
-2019-12-25T08:21:55.520Z - normal: Simulator: 
-2019-12-25T08:21:55.520Z - normal: Simulator: resetDesignResolution request
-2019-12-25T08:21:55.520Z - normal: Simulator: ------------------------------------------------
-2019-12-25T08:21:55.521Z - normal: Simulator: LOAD Js FILE: jsb-adapter/jsb-builtin.js
-2019-12-25T08:21:55.521Z - normal: Simulator: ------------------------------------------------
-2019-12-25T08:21:55.521Z - normal: Simulator: Initializing V8, version: 7.5.288.22
-2019-12-25T08:21:55.521Z - normal: Simulator: libuv version: 1.23.1-dev
-2019-12-25T08:21:55.535Z - normal: Simulator: Debugger listening..., visit [ chrome-devtools://devtools/bundled/inspector.html?v8only=true&ws=0.0.0.0:5086/00010002-0003-4004-8005-000600070008 ] in chrome browser to debug!
-2019-12-25T08:21:55.535Z - normal: Simulator: For help see https://nodejs.org/en/docs/inspector
-2019-12-25T08:21:55.578Z - normal: Simulator: JS: Enable batch GL commands optimization!
-2019-12-25T08:21:55.585Z - normal: Simulator: resetDesignResolution request
-2019-12-25T08:21:55.587Z - normal: Simulator: ------------------------------------------------
-2019-12-25T08:21:55.592Z - normal: Simulator: LOAD Js FILE: main.js
-2019-12-25T08:21:55.592Z - normal: Simulator: ------------------------------------------------
-2019-12-25T08:21:55.897Z - normal: Simulator: iShow!
-2019-12-25T08:21:56.009Z - normal: Simulator: JS: [WARN]: Please change the definition of property 'clip' in class 'AudioWarp'. Starting from v1.10,
-2019-12-25T08:21:56.010Z - normal: Simulator: properties in CCClass can not be abbreviated if they are of type RawAsset.
-2019-12-25T08:21:56.010Z - normal: Simulator: Please use the complete form.
-2019-12-25T08:21:56.013Z - normal: Simulator: For example, if the type is Texture2D, the previous definition is:
-2019-12-25T08:21:56.016Z - normal: Simulator:     clip: cc.Texture2D,
-2019-12-25T08:21:56.017Z - normal: Simulator: If you use JS, it should be changed to:
-2019-12-25T08:21:56.017Z - normal: Simulator:     clip: {
-2019-12-25T08:21:56.018Z - normal: Simulator:       type: cc.Texture2D // use 'type:' to define Texture2D object directly
-2019-12-25T08:21:56.018Z - normal: Simulator:       default: null,     // object's default value is null
-2019-12-25T08:21:56.018Z - normal: Simulator:     },
-2019-12-25T08:21:56.018Z - normal: Simulator: If you use TS, it should be changed to:
-2019-12-25T08:21:56.018Z - normal: Simulator:     %s: {
-2019-12-25T08:21:56.018Z - normal: Simulator:       type: cc.Texture2D // use 'type:' to define Texture2D object directly
-2019-12-25T08:21:56.019Z - normal: Simulator:     }
-2019-12-25T08:21:56.019Z - normal: Simulator:     %s: cc.Texture2D = null;
-2019-12-25T08:21:56.019Z - normal: Simulator: (This helps us to successfully refactor all RawAssets at v2.0, sorry for the inconvenience. 😰 )
-2019-12-25T08:21:56.029Z - normal: Simulator: JS: [WARN]: Please specifiy a default value for "Soldier" property at its declaration:
-2019-12-25T08:21:56.030Z - normal: Simulator:  
-2019-12-25T08:21:56.030Z - normal: Simulator: // Before:
-2019-12-25T08:21:56.030Z - normal: Simulator: @property(...)
-2019-12-25T08:21:56.031Z - normal: Simulator: value; 
-2019-12-25T08:21:56.031Z - normal: Simulator: // After:
-2019-12-25T08:21:56.031Z - normal: Simulator: @property(...)
-2019-12-25T08:21:56.031Z - normal: Simulator: value = 0 planet
-2019-12-25T08:21:56.038Z - normal: Simulator: glGetIntegerv: pname: 0x8b4c
-2019-12-25T08:21:56.086Z - normal: Simulator: JS: Cocos Creator v2.1.3
-2019-12-25T08:21:56.258Z - normal: Simulator: JS: [WARN]: loadRes: should not specify the extname in Conf/Level .json
-2019-12-25T08:21:56.277Z - normal: Simulator: JS: WhacMoleScene<WhacMoleScene> true
-2019-12-25T08:21:56.277Z - normal: Simulator: JS: ==========SceneManager=========
-2019-12-25T08:21:56.277Z - normal: Simulator: stack:  >> WhacMoleScene
-2019-12-25T08:21:56.278Z - normal: Simulator: cache: 0:WhacMoleScene,
-2019-12-25T08:21:58.619Z - normal: Simulator: I/AudioEngine-inl.mm (358): OpenAL was initialized successfully!
-2019-12-25T08:21:58.620Z - normal: Simulator: JS: [WARN]: Sorry, cc.Node.convertTouchToNodeSpaceAR is deprecated. Please use convertToNodeSpaceAR instead
-2019-12-25T08:21:59.781Z - normal: Simulator: JS: [WARN]: Sorry, cc.Node.convertTouchToNodeSpaceAR is deprecated. Please use convertToNodeSpaceAR instead
-2019-12-25T08:22:00.585Z - normal: Simulator: JS: [WARN]: Sorry, cc.Node.convertTouchToNodeSpaceAR is deprecated. Please use convertToNodeSpaceAR instead
-2019-12-25T08:22:01.075Z - normal: Simulator: JS: [WARN]: Sorry, cc.Node.convertTouchToNodeSpaceAR is deprecated. Please use convertToNodeSpaceAR instead
-2019-12-25T08:22:01.531Z - normal: Simulator: JS: [WARN]: Sorry, cc.Node.convertTouchToNodeSpaceAR is deprecated. Please use convertToNodeSpaceAR instead
-2019-12-25T08:22:02.016Z - normal: Simulator: JS: [WARN]: Sorry, cc.Node.convertTouchToNodeSpaceAR is deprecated. Please use convertToNodeSpaceAR instead
-2019-12-25T08:22:02.743Z - normal: Simulator: JS: [WARN]: Sorry, cc.Node.convertTouchToNodeSpaceAR is deprecated. Please use convertToNodeSpaceAR instead
-2019-12-25T08:22:03.147Z - normal: Simulator: JS: [WARN]: Sorry, cc.Node.convertTouchToNodeSpaceAR is deprecated. Please use convertToNodeSpaceAR instead
-2019-12-25T08:22:03.582Z - normal: Simulator: JS: [WARN]: Sorry, cc.Node.convertTouchToNodeSpaceAR is deprecated. Please use convertToNodeSpaceAR instead
-2019-12-25T08:22:04.624Z - normal: Simulator: ScriptEngine::cleanup begin ...
-2019-12-25T08:22:04.624Z - normal: Simulator: GC begin ..., (js->native map) size: 80, all objects: 162
-2019-12-25T08:22:04.661Z - normal: Simulator: GC end ..., (js->native map) size: 41, all objects: 123
-2019-12-25T08:22:04.662Z - normal: Simulator: GC begin ..., (js->native map) size: 41, all objects: 123
-2019-12-25T08:22:04.687Z - normal: Simulator: GC end ..., (js->native map) size: 41, all objects: 123
-2019-12-25T08:22:04.688Z - normal: Simulator: Destroy WebGLTexture (17) by GC
-2019-12-25T08:22:04.688Z - normal: Simulator: Destroy WebGLTexture (14) by GC
-2019-12-25T08:22:04.688Z - normal: Simulator: Destroy WebGLTexture (13) by GC
-2019-12-25T08:22:04.689Z - normal: Simulator: Destroy WebGLTexture (12) by GC
-2019-12-25T08:22:04.689Z - normal: Simulator: Destroy WebGLTexture (11) by GC
-2019-12-25T08:22:04.689Z - normal: Simulator: Destroy WebGLTexture (10) by GC
-2019-12-25T08:22:04.689Z - normal: Simulator: Destroy WebGLProgram (3) by GC
-2019-12-25T08:22:04.689Z - normal: Simulator: Destroy WebGLTexture (4) by GC
-2019-12-25T08:22:04.689Z - normal: Simulator: Destroy WebGLBuffer (1) by GC
-2019-12-25T08:22:04.690Z - normal: Simulator: Destroy WebGLTexture (8) by GC
-2019-12-25T08:22:04.690Z - normal: Simulator: Destroy WebGLTexture (16) by GC
-2019-12-25T08:22:04.690Z - normal: Simulator: Destroy WebGLTexture (3) by GC
-2019-12-25T08:22:04.690Z - normal: Simulator: Destroy WebGLTexture (18) by GC
-2019-12-25T08:22:04.690Z - normal: Simulator: Destroy WebGLBuffer (2) by GC
-2019-12-25T08:22:04.691Z - normal: Simulator: Destroy WebGLTexture (1) by GC
-2019-12-25T08:22:04.691Z - normal: Simulator: Destroy WebGLBuffer (6) by GC
-2019-12-25T08:22:04.691Z - normal: Simulator: Destroy WebGLTexture (5) by GC
-2019-12-25T08:22:04.691Z - normal: Simulator: Destroy WebGLTexture (6) by GC
-2019-12-25T08:22:04.692Z - normal: Simulator: Destroy WebGLBuffer (3) by GC
-2019-12-25T08:22:04.692Z - normal: Simulator: Destroy WebGLBuffer (7) by GC
-2019-12-25T08:22:04.692Z - normal: Simulator: Destroy WebGLBuffer (8) by GC
-2019-12-25T08:22:04.693Z - normal: Simulator: Destroy WebGLTexture (9) by GC
-2019-12-25T08:22:04.693Z - normal: Simulator: Destroy WebGLBuffer (5) by GC
-2019-12-25T08:22:04.693Z - normal: Simulator: Destroy WebGLFramebuffer (1) by GC
-2019-12-25T08:22:04.693Z - normal: Simulator: Destroy WebGLTexture (2) by GC
-2019-12-25T08:22:04.693Z - normal: Simulator: Destroy WebGLTexture (7) by GC
-2019-12-25T08:22:04.693Z - normal: Simulator: Destroy WebGLTexture (15) by GC
-2019-12-25T08:22:04.694Z - normal: Simulator: Destroy WebGLBuffer (4) by GC
-2019-12-25T08:22:04.694Z - normal: Simulator: GC begin ..., (js->native map) size: 0, all objects: 0
-2019-12-25T08:22:04.720Z - normal: Simulator: GC end ..., (js->native map) size: 0, all objects: 0
-2019-12-25T08:22:04.726Z - normal: Simulator: ScriptEngine::cleanup end ...
-2019-12-25T08:22:04.785Z - normal: Simulator: V/AudioPlayer (315): Exit rotate buffer thread ...
+2020-02-11T12:19:28.376Z - normal: Load ~/.CocosCreator/settings.json
+2020-02-11T12:19:28.442Z - normal: Initializing Asset Database
+2020-02-11T12:19:28.447Z - normal: checking language setting...
+2020-02-11T12:19:28.447Z - normal: Language: zh
+2020-02-11T12:19:29.284Z - success: preview server running at http://localhost:7456
+2020-02-11T12:19:29.323Z - success: protocol editor-framework registered
+2020-02-11T12:19:29.323Z - success: protocol app registered
+2020-02-11T12:19:29.323Z - success: protocol theme registered
+2020-02-11T12:19:29.323Z - success: protocol packages registered
+2020-02-11T12:19:29.323Z - success: protocol uuid registerred
+2020-02-11T12:19:29.323Z - success: protocol db registerred
+2020-02-11T12:19:29.323Z - success: protocol thumbnail registerred
+2020-02-11T12:19:29.323Z - success: protocol unpack registerred
+2020-02-11T12:19:29.324Z - success: protocol disable-commonjs registerred
+2020-02-11T12:19:29.420Z - normal: connected!
+2020-02-11T12:19:29.421Z - normal: Check project /Users/hortor/Documents/CocosFrame
+2020-02-11T12:19:29.423Z - normal: Initializing project /Users/hortor/Documents/CocosFrame
+2020-02-11T12:19:29.812Z - normal: Initializing Cocos2d
+2020-02-11T12:19:30.530Z - normal: Initializing engine extends
+2020-02-11T12:19:30.608Z - success: alipay-adapter loaded
+2020-02-11T12:19:30.630Z - success: asset-db-debugger loaded
+2020-02-11T12:19:30.635Z - success: baidu-adapter loaded
+2020-02-11T12:19:30.637Z - success: color-picker loaded
+2020-02-11T12:19:30.784Z - success: fb-audience-network loaded
+2020-02-11T12:19:30.849Z - success: fb-live-stream loaded
+2020-02-11T12:19:30.852Z - success: google-play-instant loaded
+2020-02-11T12:19:30.858Z - success: huawei-runtime loaded
+2020-02-11T12:19:31.118Z - success: cpk-publish loaded
+2020-02-11T12:19:31.119Z - success: jsb-adapter loaded
+2020-02-11T12:19:31.126Z - success: oppo-runtime loaded
+2020-02-11T12:19:31.141Z - success: package-manager loaded
+2020-02-11T12:19:31.298Z - success: qqplay-adapter loaded
+2020-02-11T12:19:31.301Z - success: runtime-dev-tools loaded
+2020-02-11T12:19:31.318Z - success: sdkbox loaded
+2020-02-11T12:19:31.332Z - success: tester loaded
+2020-02-11T12:19:31.346Z - success: ui-kit-preview-extra loaded
+2020-02-11T12:19:31.360Z - success: ui-kit-preview loaded
+2020-02-11T12:19:31.373Z - success: ui-kit loaded
+2020-02-11T12:19:31.380Z - success: vivo-runtime loaded
+2020-02-11T12:19:31.381Z - success: weapp-adapter loaded
+2020-02-11T12:19:31.383Z - success: xiaomi-adapter loaded
+2020-02-11T12:19:31.386Z - success: alipay-minigame loaded
+2020-02-11T12:19:31.439Z - success: assets loaded
+2020-02-11T12:19:31.453Z - success: builder loaded
+2020-02-11T12:19:31.775Z - success: cocos-services loaded
+2020-02-11T12:19:31.791Z - success: console loaded
+2020-02-11T12:19:31.820Z - success: fb-instant-games loaded
+2020-02-11T12:19:31.835Z - success: game-window loaded
+2020-02-11T12:19:31.835Z - success: google-instant-games loaded
+2020-02-11T12:19:31.853Z - success: hierarchy loaded
+2020-02-11T12:19:31.867Z - success: inspector loaded
+2020-02-11T12:19:31.869Z - success: keystore loaded
+2020-02-11T12:19:31.886Z - success: node-library loaded
+2020-02-11T12:19:31.887Z - success: package-asset loaded
+2020-02-11T12:19:31.888Z - success: preferences loaded
+2020-02-11T12:19:31.902Z - success: project-exporter loaded
+2020-02-11T12:19:31.917Z - success: project-importer loaded
+2020-02-11T12:19:31.955Z - success: project-settings loaded
+2020-02-11T12:19:31.972Z - success: scene loaded
+2020-02-11T12:19:31.973Z - success: simulator-debugger loaded
+2020-02-11T12:19:31.974Z - success: sprite-editor loaded
+2020-02-11T12:19:31.989Z - success: store loaded
+2020-02-11T12:19:32.008Z - success: timeline loaded
+2020-02-11T12:19:32.011Z - success: xiaomi-runtime loaded
+2020-02-11T12:19:33.810Z - normal: Loading packages
+2020-02-11T12:19:33.827Z - normal: Watching packages
+2020-02-11T12:19:33.947Z - normal: Run Application
+2020-02-11T12:19:34.050Z - info: Cocos Services load base data!

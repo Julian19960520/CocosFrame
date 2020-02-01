@@ -113,6 +113,13 @@ var DB;
             this.map.set(key, tempListener);
             DB.Bind(key, tempListener);
         };
+        DataBindComponent.prototype.UnBind = function (key) {
+            var listener = this.map.get(key);
+            if (listener) {
+                this.map.delete(key);
+                DB.UnBind(key, listener);
+            }
+        };
         DataBindComponent.prototype.onDestroy = function () {
             this.map.forEach(function (v, k) {
                 DB.UnBind(k, v);

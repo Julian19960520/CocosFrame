@@ -1,4 +1,6 @@
 import { Util } from "./Util";
+import PlantDetailBox from "../FarmScene/PlantDetailBox";
+import { PlantItemData } from "../FarmScene/dts";
 
 // Learn TypeScript:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/typescript.html
@@ -17,8 +19,8 @@ export default class Top extends cc.Component {
     onLoad(){
         Top.ins = this;
     }
-    public Toast(text:string){
-        Util.instantPrefab("TopLayer/Toast", (toast:cc.Node)=>{
+    public showToast(text:string){
+        Util.instantPrefab("TopLayer/Toast").then((toast:cc.Node)=>{
             toast.getComponentInChildren(cc.Label).string = text;
             this.node.addChild(toast);
             toast.opacity = 0;
@@ -31,5 +33,47 @@ export default class Top extends cc.Component {
                 }
             ).start();
         });
+    }
+    private plantDetailBox:PlantDetailBox = null;
+    public showPlantDetailBox(plantItemData:PlantItemData, pos:cc.Vec2){
+        cc.log("showPlantDetailBox");
+        if(this.plantDetailBox){
+            this.plantDetailBox.node.active = true;
+            this.plantDetailBox.node.position = pos;
+            this.plantDetailBox.setData(plantItemData);
+        }else{
+            Util.instantPrefab("TopLayer/PlantDetailBox").then((boxNode:cc.Node)=>{
+                let box = boxNode.getComponent(PlantDetailBox);
+                box.setData(plantItemData);
+                this.node.addChild(boxNode);
+                boxNode.position = pos;
+                this.plantDetailBox = box;
+            });
+        }
+    }
+    public hidePlantDetailBox(){
+        if(this.plantDetailBox){
+            this.plantDetailBox.node.active = false;
+        }
+    }
+    public showFloatLabel(string , parent:cc.Node, offset){
+        let pos:any = parent.convertToWorldSpaceAR(offset);
+        pos = parent.convertToNodeSpaceAR(pos);
+        cc.log(pos);
+        let node = new cc.Node();
+        let label = node.addComponent(cc.Label);
+        parent.addChild(node);
+        node.position = pos;
+        label.string = string;
+        label.fontSize = 25;
+        cc.tween(node)
+            .to(0.1, {y:node.y+5} )
+            .delay(1.5)
+            .to(0.1, {y:node.y+20, opacity:0} )
+            .call(()=>{
+                node.removeFromParent();
+            }
+        ).start();
+        return label;
     }
 }

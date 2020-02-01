@@ -21,7 +21,12 @@ export namespace PoolManager{
             }
         }
         public returnInstance(node:cc.Node){
-            this.list.push(node);
+            if(this.list.indexOf(node) < 0){
+                if(node.parent){
+                    node.removeFromParent();
+                }
+                this.list.push(node);
+            }
         }
     }
     ///池的工厂
@@ -46,9 +51,11 @@ export namespace PoolManager{
     export function preload(paths:string[]){
         let list = [];
         for(let i=0; i<paths.length; i++){
-            let pool = new Pool();
-            poolMap.set(paths[i], pool);
-            list.push(pool.loadPrefab(paths[i]));
+            if(!poolMap.has(paths[i])){
+                let pool = new Pool();
+                poolMap.set(paths[i], pool);
+                list.push(pool.loadPrefab(paths[i]));
+            }
         }
         return Promise.all(list);
     }
