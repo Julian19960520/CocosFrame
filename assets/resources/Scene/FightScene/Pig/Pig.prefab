@@ -321,6 +321,9 @@
     "hpLabel": {
       "__id__": 6
     },
+    "sprite": {
+      "__id__": 3
+    },
     "velocity": null,
     "_id": ""
   },

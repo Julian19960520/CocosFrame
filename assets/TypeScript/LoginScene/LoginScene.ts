@@ -2,7 +2,7 @@ import Scene from "../Frame/Scene";
 import SceneManager from "../Frame/SceneManager";
 import { DB } from "../Frame/DataBind";
 import { Util } from "../Frame/Util";
-import { Type, ItemData, PlantItemData, PropItemData } from "../FarmScene/dts";
+import { Type, ItemData, PlantItemData, PropItemData, WeaponType } from "../FarmScene/dts";
 import { FarmController } from "../FarmScene/FarmController";
 import { Config } from "../FarmScene/Config";
 
@@ -88,6 +88,14 @@ export default class LoginScene extends Scene {
             {id:3, cnt:2},
             {id:4, cnt:2},
             {id:5, cnt:2},
+        ]);
+        DB.Set("user/wallLevel", 1);
+        DB.Set("user/weaponDatas",[
+            {type:WeaponType.Carrot, lvl:1},
+            {type:WeaponType.Carrot, lvl:1},
+            {type:WeaponType.Carrot, lvl:1},
+            {type:WeaponType.Carrot, lvl:1},
+            {type:WeaponType.Carrot, lvl:1},
         ]);
         //
         FarmController.runPlantGrowThread(itemDataArr);

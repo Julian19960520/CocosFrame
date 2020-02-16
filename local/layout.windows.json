@@ -5,7 +5,7 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 68,
+      "x": 65,
       "y": 23,
       "width": 1375,
       "height": 877,
@@ -14,14 +14,14 @@
           {
             "children": [
               {
-                "active": 1,
+                "active": 0,
                 "children": [
                   "builder",
                   "scene"
                 ],
-                "height": 504,
+                "height": 504.375,
                 "type": "panel",
-                "width": 654
+                "width": 657
               },
               {
                 "active": 1,
@@ -31,14 +31,14 @@
                   "game-window",
                   "timeline"
                 ],
-                "height": 289,
+                "height": 288.625,
                 "type": "panel",
-                "width": 654
+                "width": 657
               }
             ],
             "height": 795,
             "type": "dock-v",
-            "width": 654
+            "width": 657
           },
           {
             "active": 0,
@@ -88,9 +88,9 @@
   "panels": {
     "sprite-editor": {
       "x": 0,
-      "y": 0,
+      "y": 23,
       "width": 1440,
-      "height": 900
+      "height": 877
     },
     "preferences": {
       "x": 681,
@@ -105,8 +105,8 @@
       "height": 722
     },
     "project-settings": {
-      "x": 0,
-      "y": 0,
+      "x": 555,
+      "y": 23,
       "width": 1440,
       "height": 900
     },

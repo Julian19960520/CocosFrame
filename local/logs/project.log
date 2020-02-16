@@ -1,68 +1,542 @@
-2020-02-11T12:19:28.376Z - normal: Load ~/.CocosCreator/settings.json
-2020-02-11T12:19:28.442Z - normal: Initializing Asset Database
-2020-02-11T12:19:28.447Z - normal: checking language setting...
-2020-02-11T12:19:28.447Z - normal: Language: zh
-2020-02-11T12:19:29.284Z - success: preview server running at http://localhost:7456
-2020-02-11T12:19:29.323Z - success: protocol editor-framework registered
-2020-02-11T12:19:29.323Z - success: protocol app registered
-2020-02-11T12:19:29.323Z - success: protocol theme registered
-2020-02-11T12:19:29.323Z - success: protocol packages registered
-2020-02-11T12:19:29.323Z - success: protocol uuid registerred
-2020-02-11T12:19:29.323Z - success: protocol db registerred
-2020-02-11T12:19:29.323Z - success: protocol thumbnail registerred
-2020-02-11T12:19:29.323Z - success: protocol unpack registerred
-2020-02-11T12:19:29.324Z - success: protocol disable-commonjs registerred
-2020-02-11T12:19:29.420Z - normal: connected!
-2020-02-11T12:19:29.421Z - normal: Check project /Users/hortor/Documents/CocosFrame
-2020-02-11T12:19:29.423Z - normal: Initializing project /Users/hortor/Documents/CocosFrame
-2020-02-11T12:19:29.812Z - normal: Initializing Cocos2d
-2020-02-11T12:19:30.530Z - normal: Initializing engine extends
-2020-02-11T12:19:30.608Z - success: alipay-adapter loaded
-2020-02-11T12:19:30.630Z - success: asset-db-debugger loaded
-2020-02-11T12:19:30.635Z - success: baidu-adapter loaded
-2020-02-11T12:19:30.637Z - success: color-picker loaded
-2020-02-11T12:19:30.784Z - success: fb-audience-network loaded
-2020-02-11T12:19:30.849Z - success: fb-live-stream loaded
-2020-02-11T12:19:30.852Z - success: google-play-instant loaded
-2020-02-11T12:19:30.858Z - success: huawei-runtime loaded
-2020-02-11T12:19:31.118Z - success: cpk-publish loaded
-2020-02-11T12:19:31.119Z - success: jsb-adapter loaded
-2020-02-11T12:19:31.126Z - success: oppo-runtime loaded
-2020-02-11T12:19:31.141Z - success: package-manager loaded
-2020-02-11T12:19:31.298Z - success: qqplay-adapter loaded
-2020-02-11T12:19:31.301Z - success: runtime-dev-tools loaded
-2020-02-11T12:19:31.318Z - success: sdkbox loaded
-2020-02-11T12:19:31.332Z - success: tester loaded
-2020-02-11T12:19:31.346Z - success: ui-kit-preview-extra loaded
-2020-02-11T12:19:31.360Z - success: ui-kit-preview loaded
-2020-02-11T12:19:31.373Z - success: ui-kit loaded
-2020-02-11T12:19:31.380Z - success: vivo-runtime loaded
-2020-02-11T12:19:31.381Z - success: weapp-adapter loaded
-2020-02-11T12:19:31.383Z - success: xiaomi-adapter loaded
-2020-02-11T12:19:31.386Z - success: alipay-minigame loaded
-2020-02-11T12:19:31.439Z - success: assets loaded
-2020-02-11T12:19:31.453Z - success: builder loaded
-2020-02-11T12:19:31.775Z - success: cocos-services loaded
-2020-02-11T12:19:31.791Z - success: console loaded
-2020-02-11T12:19:31.820Z - success: fb-instant-games loaded
-2020-02-11T12:19:31.835Z - success: game-window loaded
-2020-02-11T12:19:31.835Z - success: google-instant-games loaded
-2020-02-11T12:19:31.853Z - success: hierarchy loaded
-2020-02-11T12:19:31.867Z - success: inspector loaded
-2020-02-11T12:19:31.869Z - success: keystore loaded
-2020-02-11T12:19:31.886Z - success: node-library loaded
-2020-02-11T12:19:31.887Z - success: package-asset loaded
-2020-02-11T12:19:31.888Z - success: preferences loaded
-2020-02-11T12:19:31.902Z - success: project-exporter loaded
-2020-02-11T12:19:31.917Z - success: project-importer loaded
-2020-02-11T12:19:31.955Z - success: project-settings loaded
-2020-02-11T12:19:31.972Z - success: scene loaded
-2020-02-11T12:19:31.973Z - success: simulator-debugger loaded
-2020-02-11T12:19:31.974Z - success: sprite-editor loaded
-2020-02-11T12:19:31.989Z - success: store loaded
-2020-02-11T12:19:32.008Z - success: timeline loaded
-2020-02-11T12:19:32.011Z - success: xiaomi-runtime loaded
-2020-02-11T12:19:33.810Z - normal: Loading packages
-2020-02-11T12:19:33.827Z - normal: Watching packages
-2020-02-11T12:19:33.947Z - normal: Run Application
-2020-02-11T12:19:34.050Z - info: Cocos Services load base data!
+2020-02-17T04:26:55.531Z - normal: Load ~/.CocosCreator/settings.json
+2020-02-17T04:26:55.606Z - normal: Initializing Asset Database
+2020-02-17T04:26:55.610Z - normal: checking language setting...
+2020-02-17T04:26:55.610Z - normal: Language: zh
+2020-02-17T04:26:56.543Z - success: preview server running at http://localhost:7456
+2020-02-17T04:26:56.606Z - success: protocol editor-framework registered
+2020-02-17T04:26:56.606Z - success: protocol app registered
+2020-02-17T04:26:56.607Z - success: protocol theme registered
+2020-02-17T04:26:56.607Z - success: protocol packages registered
+2020-02-17T04:26:56.607Z - success: protocol uuid registerred
+2020-02-17T04:26:56.608Z - success: protocol db registerred
+2020-02-17T04:26:56.608Z - success: protocol thumbnail registerred
+2020-02-17T04:26:56.608Z - success: protocol unpack registerred
+2020-02-17T04:26:56.608Z - success: protocol disable-commonjs registerred
+2020-02-17T04:26:56.693Z - normal: connected!
+2020-02-17T04:26:56.695Z - normal: Check project /Users/hortor/Documents/CocosFrame
+2020-02-17T04:26:56.704Z - normal: Initializing project /Users/hortor/Documents/CocosFrame
+2020-02-17T04:26:57.246Z - normal: Initializing Cocos2d
+2020-02-17T04:26:58.177Z - normal: Initializing engine extends
+2020-02-17T04:26:58.207Z - success: alipay-adapter loaded
+2020-02-17T04:26:58.226Z - success: asset-db-debugger loaded
+2020-02-17T04:26:58.228Z - success: baidu-adapter loaded
+2020-02-17T04:26:58.229Z - success: color-picker loaded
+2020-02-17T04:26:58.385Z - success: fb-audience-network loaded
+2020-02-17T04:26:58.460Z - success: fb-live-stream loaded
+2020-02-17T04:26:58.464Z - success: google-play-instant loaded
+2020-02-17T04:26:58.471Z - success: huawei-runtime loaded
+2020-02-17T04:26:58.743Z - success: cpk-publish loaded
+2020-02-17T04:26:58.744Z - success: jsb-adapter loaded
+2020-02-17T04:26:58.755Z - success: oppo-runtime loaded
+2020-02-17T04:26:58.776Z - success: package-manager loaded
+2020-02-17T04:26:58.943Z - success: qqplay-adapter loaded
+2020-02-17T04:26:58.946Z - success: runtime-dev-tools loaded
+2020-02-17T04:26:58.965Z - success: sdkbox loaded
+2020-02-17T04:26:58.981Z - success: tester loaded
+2020-02-17T04:26:58.997Z - success: ui-kit-preview-extra loaded
+2020-02-17T04:26:59.013Z - success: ui-kit-preview loaded
+2020-02-17T04:26:59.029Z - success: ui-kit loaded
+2020-02-17T04:26:59.038Z - success: vivo-runtime loaded
+2020-02-17T04:26:59.040Z - success: weapp-adapter loaded
+2020-02-17T04:26:59.042Z - success: xiaomi-adapter loaded
+2020-02-17T04:26:59.044Z - success: alipay-minigame loaded
+2020-02-17T04:26:59.128Z - success: assets loaded
+2020-02-17T04:26:59.154Z - success: builder loaded
+2020-02-17T04:26:59.523Z - success: cocos-services loaded
+2020-02-17T04:26:59.545Z - success: console loaded
+2020-02-17T04:26:59.585Z - success: fb-instant-games loaded
+2020-02-17T04:26:59.605Z - success: game-window loaded
+2020-02-17T04:26:59.607Z - success: google-instant-games loaded
+2020-02-17T04:26:59.624Z - success: hierarchy loaded
+2020-02-17T04:26:59.642Z - success: inspector loaded
+2020-02-17T04:26:59.644Z - success: keystore loaded
+2020-02-17T04:26:59.695Z - success: node-library loaded
+2020-02-17T04:26:59.698Z - success: package-asset loaded
+2020-02-17T04:26:59.700Z - success: preferences loaded
+2020-02-17T04:26:59.715Z - success: project-exporter loaded
+2020-02-17T04:26:59.736Z - success: project-importer loaded
+2020-02-17T04:26:59.752Z - success: project-settings loaded
+2020-02-17T04:26:59.771Z - success: scene loaded
+2020-02-17T04:26:59.773Z - success: simulator-debugger loaded
+2020-02-17T04:26:59.775Z - success: sprite-editor loaded
+2020-02-17T04:26:59.795Z - success: store loaded
+2020-02-17T04:26:59.814Z - success: timeline loaded
+2020-02-17T04:26:59.819Z - success: xiaomi-runtime loaded
+2020-02-17T04:27:02.309Z - normal: Loading packages
+2020-02-17T04:27:02.333Z - normal: Watching packages
+2020-02-17T04:27:02.429Z - info: Cocos Services load base data!
+2020-02-17T04:27:02.481Z - normal: Run Application
+2020-02-17T04:27:17.183Z - normal: Resolution not valid
+2020-02-17T04:27:18.402Z - normal: Start building with options : {
+  "actualPlatform": "wechatgame",
+  "android-instant": {
+    "REMOTE_SERVER_ROOT": "",
+    "host": "",
+    "pathPattern": "",
+    "recordPath": "",
+    "scheme": "https",
+    "skipRecord": false
+  },
+  "apiLevel": "",
+  "appABIs": [],
+  "appBundle": false,
+  "baidugame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "testappid",
+    "orientation": "portrait",
+    "subContext": ""
+  },
+  "buildPath": "/Users/hortor/Documents/CocosFrame/build",
+  "debug": false,
+  "dest": "/Users/hortor/Documents/CocosFrame/build/wechatgame",
+  "embedWebDebugger": false,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "md5Cache": true,
+  "mergeStartScene": false,
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.CocosFrame",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait",
+    "zip": false
+  },
+  "scenes": [
+    "5154b28b-5b70-49e1-9a2c-78d52eff6e28",
+    "f73ecb5b-28c2-44bc-bfa8-ac4ba5bcb715"
+  ],
+  "sourceMaps": false,
+  "startScene": "5154b28b-5b70-49e1-9a2c-78d52eff6e28",
+  "template": "link",
+  "title": "CocosFrame",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wx3f57e2acf5250d57",
+    "orientation": "portrait",
+    "separate_engine": false,
+    "subContext": ""
+  },
+  "xxteaKey": "03b47b7b-5310-41",
+  "zipCompressJs": true,
+  "project": "/Users/hortor/Documents/CocosFrame",
+  "projectName": "CocosFrame",
+  "debugBuildWorker": false
+}
+2020-02-17T04:27:18.405Z - normal: Building /Users/hortor/Documents/CocosFrame
+2020-02-17T04:27:18.406Z - normal: Destination /Users/hortor/Documents/CocosFrame/build/wechatgame
+2020-02-17T04:27:18.546Z - normal: Delete /Users/hortor/Documents/CocosFrame/build/wechatgame/subpackages/**/*,/Users/hortor/Documents/CocosFrame/build/wechatgame/**/*
+2020-02-17T04:27:23.009Z - normal: Start building assets
+2020-02-17T04:27:23.009Z - normal: Start spawn build-worker
+2020-02-17T04:27:23.829Z - normal: Finish spawn build-worker
+2020-02-17T04:27:23.829Z - normal: Start init build-worker
+2020-02-17T04:27:27.331Z - normal: Finish init build-worker
+2020-02-17T04:27:27.331Z - normal: Start build-assets in worker
+2020-02-17T04:27:27.914Z - warn: Script attached to "EditorMole" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/Moles/EditorMole"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "690271e0-a1bc-41ac-88e4-f66edc677537"
+Class ID: "69027HgobxBrIjk9m7cZ3U3"
+
+2020-02-17T04:27:27.916Z - warn: Script attached to "EditorMole" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/Moles/EditorMole"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "690271e0-a1bc-41ac-88e4-f66edc677537"
+Class ID: "69027HgobxBrIjk9m7cZ3U3"
+
+2020-02-17T04:27:27.932Z - warn: Script attached to "EditorMole" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/Moles/EditorMole"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "690271e0-a1bc-41ac-88e4-f66edc677537"
+Class ID: "69027HgobxBrIjk9m7cZ3U3"
+
+2020-02-17T04:27:27.936Z - warn: Script attached to "EditorMole" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/Moles/EditorMole"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "690271e0-a1bc-41ac-88e4-f66edc677537"
+Class ID: "69027HgobxBrIjk9m7cZ3U3"
+
+2020-02-17T04:27:27.938Z - warn: Script attached to "EditorMole" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/Moles/EditorMole"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "690271e0-a1bc-41ac-88e4-f66edc677537"
+Class ID: "69027HgobxBrIjk9m7cZ3U3"
+
+2020-02-17T04:27:27.940Z - warn: Script attached to "EditorMole" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/Moles/EditorMole"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "690271e0-a1bc-41ac-88e4-f66edc677537"
+Class ID: "69027HgobxBrIjk9m7cZ3U3"
+
+2020-02-17T04:27:27.941Z - warn: Script attached to "EditorMole" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/Moles/EditorMole"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "690271e0-a1bc-41ac-88e4-f66edc677537"
+Class ID: "69027HgobxBrIjk9m7cZ3U3"
+
+2020-02-17T04:27:27.941Z - warn: Script attached to "EditorMole" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/Moles/EditorMole"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "690271e0-a1bc-41ac-88e4-f66edc677537"
+Class ID: "69027HgobxBrIjk9m7cZ3U3"
+
+2020-02-17T04:27:27.943Z - warn: Script attached to "EditorMole" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/Moles/EditorMole"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "690271e0-a1bc-41ac-88e4-f66edc677537"
+Class ID: "69027HgobxBrIjk9m7cZ3U3"
+
+2020-02-17T04:27:27.943Z - warn: Script attached to "EditorMole" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/Moles/EditorMole"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "690271e0-a1bc-41ac-88e4-f66edc677537"
+Class ID: "69027HgobxBrIjk9m7cZ3U3"
+
+2020-02-17T04:27:27.946Z - warn: Script attached to "EditorMole" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/Moles/EditorMole"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "690271e0-a1bc-41ac-88e4-f66edc677537"
+Class ID: "69027HgobxBrIjk9m7cZ3U3"
+
+2020-02-17T04:27:27.952Z - warn: Script attached to "EditorMole" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/Moles/EditorMole"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "690271e0-a1bc-41ac-88e4-f66edc677537"
+Class ID: "69027HgobxBrIjk9m7cZ3U3"
+
+2020-02-17T04:27:27.960Z - warn: Script attached to "EditorMole" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/Moles/EditorMole"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "690271e0-a1bc-41ac-88e4-f66edc677537"
+Class ID: "69027HgobxBrIjk9m7cZ3U3"
+
+2020-02-17T04:27:27.961Z - warn: Script attached to "EditorMole" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/Moles/EditorMole"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "690271e0-a1bc-41ac-88e4-f66edc677537"
+Class ID: "69027HgobxBrIjk9m7cZ3U3"
+
+2020-02-17T04:27:27.963Z - warn: Script attached to "EditorMole" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/Moles/EditorMole"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "690271e0-a1bc-41ac-88e4-f66edc677537"
+Class ID: "69027HgobxBrIjk9m7cZ3U3"
+
+2020-02-17T04:27:27.964Z - warn: Script attached to "EditorMole" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/Moles/EditorMole"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "690271e0-a1bc-41ac-88e4-f66edc677537"
+Class ID: "69027HgobxBrIjk9m7cZ3U3"
+
+2020-02-17T04:27:27.969Z - warn: Script attached to "EditorMole" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/Moles/EditorMole"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "690271e0-a1bc-41ac-88e4-f66edc677537"
+Class ID: "69027HgobxBrIjk9m7cZ3U3"
+
+2020-02-17T04:27:27.973Z - warn: Script attached to "EditorMole" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/Moles/EditorMole"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "690271e0-a1bc-41ac-88e4-f66edc677537"
+Class ID: "69027HgobxBrIjk9m7cZ3U3"
+
+2020-02-17T04:27:27.990Z - warn: Script attached to "Canvas" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "99a48c99-d65d-4ea4-978a-db8f6151a22a"
+Class ID: "99a48yZ1l1OpJeK249hUaIq"
+
+2020-02-17T04:27:28.602Z - warn: The referenced asset used in "db://assets/Studio.fire" is not found, it may have been deleted. Detailed information:
+Node path: "Canvas/Moles/EditorMole/Back"
+Used in Component: "cc.Sprite"
+uuid: "b1476aa6-2753-4b09-96ff-1ed933fd91a1"
+2020-02-17T04:27:28.604Z - warn: The referenced asset used in "db://assets/Studio.fire" is not found, it may have been deleted. Detailed information:
+Used by "cc.PrefabInfo"
+uuid: "12a4e70a-ee94-4dcc-b1fd-19cdb8c9901c"
+2020-02-17T04:27:28.606Z - warn: The referenced asset used in "db://assets/Studio.fire" is not found, it may have been deleted. Detailed information:
+Node path: "Canvas/Moles/EditorMole/Sprite"
+Used in Component: "cc.Sprite"
+uuid: "c3b15b81-938b-4840-9900-fb6bcda6dd99"
+2020-02-17T04:27:28.607Z - warn: The referenced asset used in "db://assets/Studio.fire" is not found, it may have been deleted. Detailed information:
+Node path: "Canvas/Moles/EditorMole/Front"
+Used in Component: "cc.Sprite"
+uuid: "44800722-3608-4ea0-ae47-d99cf78fe000"
+2020-02-17T04:27:28.608Z - warn: The referenced asset used in "db://assets/Studio.fire" is not found, it may have been deleted. Detailed information:
+Node path: "Canvas/Moles/EditorMole/Flag"
+Used in Component: "cc.Sprite"
+uuid: "48d12979-4144-45de-a6e8-0d860b73e9db"
+2020-02-17T04:27:28.623Z - warn: The referenced asset used in "db://assets/resources/Scene/LoginScene/Beaten.anim" is not found, it may have been deleted. Detailed information:
+uuid: "e40a168b-27f3-41a8-89ce-3e34756b387f"
+2020-02-17T04:27:29.279Z - normal: Finish build-assets in worker
+2020-02-17T04:27:29.284Z - normal: Finish building assets
+2020-02-17T04:27:29.323Z - normal: Start building plugin scripts
+2020-02-17T04:27:29.364Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2020-02-17T04:27:31.397Z - normal: Built to "/Users/hortor/Documents/CocosFrame/build/wechatgame" successfully
+2020-02-17T04:27:32.996Z - normal: Initializing...
+
+2020-02-17T04:27:33.021Z - normal: idePortFile: /Users/hortor/Library/Application Support/微信web开发者工具/Default/.ide
+
+2020-02-17T04:27:33.059Z - normal: IDE server has started, listening on http://127.0.0.1:48325
+
+2020-02-17T04:27:33.060Z - normal: initialization finished
+
+2020-02-17T04:27:33.847Z - normal: open IDE success
+
+2020-02-17T04:29:24.373Z - error: The new z is invalid
+    at cc_Node.<anonymous> (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/3d/polyfill-3d.js:174:24)
+    at cc_Camera._layout2D (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/camera/CCCamera.js:430:29)
+    at cc_Camera.beforeDraw (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/camera/CCCamera.js:439:26)
+    at cc_Camera._init (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/camera/CCCamera.js:335:22)
+    at cc_Camera.onLoad (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/camera/CCCamera.js:338:22)
+    at eval (eval at createInvokeImpl (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/component-scheduler.js:1:1), <anonymous>:3:65)
+    at CCClass._invoke (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/component-scheduler.js:165:21)
+    at CCClass.invoke (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/component-scheduler.js:103:22)
+    at CCClass.activateNode (/Applications/CocosCreator.app/Contents/Resources/engine/bin/.cache/dev/cocos2d/core/node-activator.js:185:33)
+2020-02-17T04:29:24.888Z - normal: Start building with options : {
+  "actualPlatform": "wechatgame",
+  "android-instant": {
+    "REMOTE_SERVER_ROOT": "",
+    "host": "",
+    "pathPattern": "",
+    "recordPath": "",
+    "scheme": "https",
+    "skipRecord": false
+  },
+  "apiLevel": "",
+  "appABIs": [],
+  "appBundle": false,
+  "baidugame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "testappid",
+    "orientation": "portrait",
+    "subContext": ""
+  },
+  "buildPath": "/Users/hortor/Documents/CocosFrame/build",
+  "debug": false,
+  "dest": "/Users/hortor/Documents/CocosFrame/build/wechatgame",
+  "embedWebDebugger": false,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [],
+  "fb-instant-games": {},
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "md5Cache": true,
+  "mergeStartScene": false,
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.CocosFrame",
+  "platform": "wechatgame",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait",
+    "zip": false
+  },
+  "scenes": [
+    "5154b28b-5b70-49e1-9a2c-78d52eff6e28",
+    "f73ecb5b-28c2-44bc-bfa8-ac4ba5bcb715"
+  ],
+  "sourceMaps": false,
+  "startScene": "5154b28b-5b70-49e1-9a2c-78d52eff6e28",
+  "template": "link",
+  "title": "CocosFrame",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wx3f57e2acf5250d57",
+    "orientation": "portrait",
+    "separate_engine": false,
+    "subContext": ""
+  },
+  "xxteaKey": "03b47b7b-5310-41",
+  "zipCompressJs": true,
+  "project": "/Users/hortor/Documents/CocosFrame",
+  "projectName": "CocosFrame",
+  "debugBuildWorker": false
+}
+2020-02-17T04:29:24.891Z - normal: Building /Users/hortor/Documents/CocosFrame
+2020-02-17T04:29:24.891Z - normal: Destination /Users/hortor/Documents/CocosFrame/build/wechatgame
+2020-02-17T04:29:24.892Z - normal: Delete /Users/hortor/Documents/CocosFrame/build/wechatgame/subpackages/**/*,/Users/hortor/Documents/CocosFrame/build/wechatgame/**/*
+2020-02-17T04:29:30.449Z - normal: Start building assets
+2020-02-17T04:29:30.450Z - normal: Start spawn build-worker
+2020-02-17T04:29:31.754Z - normal: Finish spawn build-worker
+2020-02-17T04:29:31.754Z - normal: Start init build-worker
+2020-02-17T04:29:35.471Z - normal: Finish init build-worker
+2020-02-17T04:29:35.471Z - normal: Start build-assets in worker
+2020-02-17T04:29:36.042Z - warn: Script attached to "EditorMole" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/Moles/EditorMole"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "690271e0-a1bc-41ac-88e4-f66edc677537"
+Class ID: "69027HgobxBrIjk9m7cZ3U3"
+
+2020-02-17T04:29:36.043Z - warn: Script attached to "EditorMole" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/Moles/EditorMole"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "690271e0-a1bc-41ac-88e4-f66edc677537"
+Class ID: "69027HgobxBrIjk9m7cZ3U3"
+
+2020-02-17T04:29:36.043Z - warn: Script attached to "EditorMole" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/Moles/EditorMole"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "690271e0-a1bc-41ac-88e4-f66edc677537"
+Class ID: "69027HgobxBrIjk9m7cZ3U3"
+
+2020-02-17T04:29:36.045Z - warn: Script attached to "EditorMole" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/Moles/EditorMole"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "690271e0-a1bc-41ac-88e4-f66edc677537"
+Class ID: "69027HgobxBrIjk9m7cZ3U3"
+
+2020-02-17T04:29:36.049Z - warn: Script attached to "EditorMole" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/Moles/EditorMole"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "690271e0-a1bc-41ac-88e4-f66edc677537"
+Class ID: "69027HgobxBrIjk9m7cZ3U3"
+
+2020-02-17T04:29:36.050Z - warn: Script attached to "EditorMole" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/Moles/EditorMole"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "690271e0-a1bc-41ac-88e4-f66edc677537"
+Class ID: "69027HgobxBrIjk9m7cZ3U3"
+
+2020-02-17T04:29:36.051Z - warn: Script attached to "EditorMole" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/Moles/EditorMole"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "690271e0-a1bc-41ac-88e4-f66edc677537"
+Class ID: "69027HgobxBrIjk9m7cZ3U3"
+
+2020-02-17T04:29:36.052Z - warn: Script attached to "EditorMole" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/Moles/EditorMole"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "690271e0-a1bc-41ac-88e4-f66edc677537"
+Class ID: "69027HgobxBrIjk9m7cZ3U3"
+
+2020-02-17T04:29:36.055Z - warn: Script attached to "EditorMole" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/Moles/EditorMole"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "690271e0-a1bc-41ac-88e4-f66edc677537"
+Class ID: "69027HgobxBrIjk9m7cZ3U3"
+
+2020-02-17T04:29:36.056Z - warn: Script attached to "EditorMole" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/Moles/EditorMole"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "690271e0-a1bc-41ac-88e4-f66edc677537"
+Class ID: "69027HgobxBrIjk9m7cZ3U3"
+
+2020-02-17T04:29:36.057Z - warn: Script attached to "EditorMole" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/Moles/EditorMole"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "690271e0-a1bc-41ac-88e4-f66edc677537"
+Class ID: "69027HgobxBrIjk9m7cZ3U3"
+
+2020-02-17T04:29:36.057Z - warn: Script attached to "EditorMole" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/Moles/EditorMole"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "690271e0-a1bc-41ac-88e4-f66edc677537"
+Class ID: "69027HgobxBrIjk9m7cZ3U3"
+
+2020-02-17T04:29:36.059Z - warn: Script attached to "EditorMole" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/Moles/EditorMole"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "690271e0-a1bc-41ac-88e4-f66edc677537"
+Class ID: "69027HgobxBrIjk9m7cZ3U3"
+
+2020-02-17T04:29:36.062Z - warn: Script attached to "EditorMole" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/Moles/EditorMole"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "690271e0-a1bc-41ac-88e4-f66edc677537"
+Class ID: "69027HgobxBrIjk9m7cZ3U3"
+
+2020-02-17T04:29:36.068Z - warn: Script attached to "EditorMole" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/Moles/EditorMole"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "690271e0-a1bc-41ac-88e4-f66edc677537"
+Class ID: "69027HgobxBrIjk9m7cZ3U3"
+
+2020-02-17T04:29:36.072Z - warn: Script attached to "EditorMole" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/Moles/EditorMole"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "690271e0-a1bc-41ac-88e4-f66edc677537"
+Class ID: "69027HgobxBrIjk9m7cZ3U3"
+
+2020-02-17T04:29:36.074Z - warn: Script attached to "EditorMole" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/Moles/EditorMole"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "690271e0-a1bc-41ac-88e4-f66edc677537"
+Class ID: "69027HgobxBrIjk9m7cZ3U3"
+
+2020-02-17T04:29:36.074Z - warn: Script attached to "EditorMole" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas/Moles/EditorMole"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "690271e0-a1bc-41ac-88e4-f66edc677537"
+Class ID: "69027HgobxBrIjk9m7cZ3U3"
+
+2020-02-17T04:29:36.092Z - warn: Script attached to "Canvas" in scene "Studio.fire" is missing or invalid. Detailed information:
+Node path: "Canvas"
+Asset url: "db://assets/Studio.fire"
+Script UUID: "99a48c99-d65d-4ea4-978a-db8f6151a22a"
+Class ID: "99a48yZ1l1OpJeK249hUaIq"
+
+2020-02-17T04:29:37.132Z - warn: The referenced asset used in "db://assets/Studio.fire" is not found, it may have been deleted. Detailed information:
+Node path: "Canvas/Moles/EditorMole/Back"
+Used in Component: "cc.Sprite"
+uuid: "b1476aa6-2753-4b09-96ff-1ed933fd91a1"
+2020-02-17T04:29:37.134Z - warn: The referenced asset used in "db://assets/Studio.fire" is not found, it may have been deleted. Detailed information:
+Used by "cc.PrefabInfo"
+uuid: "12a4e70a-ee94-4dcc-b1fd-19cdb8c9901c"
+2020-02-17T04:29:37.136Z - warn: The referenced asset used in "db://assets/Studio.fire" is not found, it may have been deleted. Detailed information:
+Node path: "Canvas/Moles/EditorMole/Sprite"
+Used in Component: "cc.Sprite"
+uuid: "c3b15b81-938b-4840-9900-fb6bcda6dd99"
+2020-02-17T04:29:37.137Z - warn: The referenced asset used in "db://assets/Studio.fire" is not found, it may have been deleted. Detailed information:
+Node path: "Canvas/Moles/EditorMole/Front"
+Used in Component: "cc.Sprite"
+uuid: "44800722-3608-4ea0-ae47-d99cf78fe000"
+2020-02-17T04:29:37.140Z - warn: The referenced asset used in "db://assets/Studio.fire" is not found, it may have been deleted. Detailed information:
+Node path: "Canvas/Moles/EditorMole/Flag"
+Used in Component: "cc.Sprite"
+uuid: "48d12979-4144-45de-a6e8-0d860b73e9db"
+2020-02-17T04:29:37.185Z - warn: The referenced asset used in "db://assets/resources/Scene/LoginScene/Beaten.anim" is not found, it may have been deleted. Detailed information:
+uuid: "e40a168b-27f3-41a8-89ce-3e34756b387f"
+2020-02-17T04:29:37.824Z - normal: Finish build-assets in worker
+2020-02-17T04:29:37.837Z - normal: Finish building assets
+2020-02-17T04:29:37.876Z - normal: Start building plugin scripts
+2020-02-17T04:29:37.912Z - normal: Generating main.js from /Applications/CocosCreator.app/Contents/Resources/static/build-templates/shares/main.js
+2020-02-17T04:29:39.771Z - normal: Built to "/Users/hortor/Documents/CocosFrame/build/wechatgame" successfully
+2020-02-17T04:30:04.488Z - normal: Resolution not valid
+2020-02-17T04:30:06.194Z - normal: Initializing...
+
+2020-02-17T04:30:06.206Z - normal: idePortFile: /Users/hortor/Library/Application Support/微信web开发者工具/Default/.ide
+
+2020-02-17T04:30:06.242Z - normal: IDE server has started, listening on http://127.0.0.1:48325
+initialization finished
+
+2020-02-17T04:30:07.262Z - normal: open IDE success
+
+2020-02-17T04:48:18.723Z - info: shutdown preview server

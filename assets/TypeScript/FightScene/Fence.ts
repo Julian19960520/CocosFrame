@@ -1,5 +1,6 @@
-import Hper from "./Hper";
-import Pig from "./Pig";
+
+import { FightSystem } from "../Frame/FightSystem";
+import Hper from "../Frame/Hper";
 
 // Learn TypeScript:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/typescript.html
@@ -17,10 +18,10 @@ const {ccclass, property} = cc._decorator;
 export default class Fence extends Hper {
     @property(cc.Label)
     hpLabel:cc.Label = null;
-    onEnable(){
-        this.node.on("onHpMaxChange", this.updateHpLabel, this);
-        this.node.on("onHpChange", this.updateHpLabel, this);
-        this.node.on("onKilled", this.onKilled, this);
+    onLoad(){
+        this.node.on(FightSystem.Event.HpChange, this.updateHpLabel, this);
+        this.node.on(FightSystem.Event.HpMaxChange, this.updateHpLabel, this);
+        this.node.on(FightSystem.Event.Killed, this.onKilled, this);
     }
     private onKilled(){
         this.node.active = false;

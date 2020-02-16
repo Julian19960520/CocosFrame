@@ -27,7 +27,10 @@ export default class GameOverPanel extends Panel {
     onRetryBtnClick(){
         this.panelStack.PopCurrent();
         let fightScene = SceneManager.ins.findScene(FightScene);
-        fightScene.restartGame();
+        fightScene.initGame();
+        fightScene.playReadyGoAnim(()=>{
+            fightScene.restartGame();
+        });
     }
     onBackFarmBtnClick(){
         this.panelStack.PopCurrent();

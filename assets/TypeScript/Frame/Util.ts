@@ -20,7 +20,7 @@ export namespace Util{
     }
     export function loadRes(path:string){
         return new Promise((resolve, reject)=>{
-            cc.loader.loadRes(path, (err, prefab) => {
+            cc.loader.loadRes(path, cc.Prefab, (err, prefab) => {
                 if (err) {
                     cc.error(err.message || err);
                     reject(prefab);
@@ -29,6 +29,18 @@ export namespace Util{
                 }
             });
         })
+    }
+    export function enableAllCollider(node:cc.Node){
+        let cols = node.getComponents(cc.Collider);
+        for(let i=0;i<cols.length;i++){
+            cols[i].enabled = true;
+        }
+    }
+    export function disableAllCollider(node:cc.Node){
+        let cols = node.getComponents(cc.Collider);
+        for(let i=0;i<cols.length;i++){
+            cols[i].enabled = false;
+        }
     }
     export function getTimeStamp(){
         var date = new Date();

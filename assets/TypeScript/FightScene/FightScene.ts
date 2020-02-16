@@ -1,8 +1,12 @@
 import Scene from "../Frame/Scene";
-import Rabbit from "../FarmScene/Rabbit";
 import PigFactory from "../FarmScene/PigFactory";
 import { Util } from "../Frame/Util";
 import GameOverPanel from "./GameOverPanel";
+import Rabbit from "./Rabbit";
+import { DB } from "../Frame/DataBind";
+import { Config } from "../FarmScene/Config";
+import Fence from "./Fence";
+import FarmHper from "./FarmHper";
 
 // Learn TypeScript:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/typescript.html
@@ -29,11 +33,29 @@ export default class FightScene extends Scene {
     @property(cc.Label)
     readyLabel:cc.Label = null;
 
-    private targetX:number = 0;
+    @property(cc.Button)
+    fightBtn: cc.Button = null;
+
+    @property(FarmHper)
+    farmHper: FarmHper = null;
+    
+    private targetX:number = 320;
 
     onLoad () {
+        let manager = cc.director.getCollisionManager();
+        // manager.enabledDebugDraw = true;
+        manager.enabled = true;
         this.node.on("GameOver", this.onGameOver, this);
         this.node.on(cc.Node.EventType.TOUCH_MOVE, this.onTouchMove, this);
+        this.fightBtn.node.on("click", this.onFightBtnClick, this);
+        this.rabbit.node.x = this.targetX;
+    }
+    onEnable(){
+        this.initGame();
+    }
+    private onFightBtnClick(){
+        this.fightBtn.node.active = false;
+        this.initGame();
         this.playReadyGoAnim(()=>{
             this.restartGame();
         });
@@ -41,12 +63,13 @@ export default class FightScene extends Scene {
     private onTouchMove(evt :cc.Event.EventTouch){
         let delta = evt.getDelta();
         this.targetX += delta.x;
+        this.targetX = Util.clamp(this.targetX, -320, 320);
     }
 
     public update (dt) {
         this.rabbit.node.x = Util.lerp(this.rabbit.node.x, this.targetX, 0.1*dt*this.lerpSpeed);
     }
-    private playReadyGoAnim(callback){
+    public playReadyGoAnim(callback){
         cc.tween(this.readyLabel.node)
             .call(()=>{
                 this.readyLabel.node.active = true;
@@ -64,6 +87,18 @@ export default class FightScene extends Scene {
                 callback();
             })
             .start();
+    }
+    initGame(){
+        let wallLevel:number = DB.Get("user/wallLevel");
+        let wallHp = Config.configWall[wallLevel].hpMax;
+        let fences = this.getComponentsInChildren(Fence);
+        for(let i=0;i<fences.length;i++){
+            let fence = fences[i];
+            fence.HpMax = fence.Hp = wallHp;
+            fence.node.active = true;
+        } 
+        this.farmHper.HpMax = this.farmHper.Hp = 3;
+        this.pigFactory.clear();
     }
     restartGame(){
         this.rabbit.play();

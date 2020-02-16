@@ -1,3 +1,5 @@
+import { FightSystem } from "./FightSystem";
+
 // Learn TypeScript:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/typescript.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/manual/en/scripting/typescript.html
@@ -16,6 +18,7 @@ export default class GameManager extends cc.Component {
     public onLoad(){
         GameManager.Ins = this;
         this.setupTimeScale();
+        FightSystem.init();
     }
     //改变默认的Update逻辑，使得timeScale影响Update的参数dt
     setupTimeScale(){

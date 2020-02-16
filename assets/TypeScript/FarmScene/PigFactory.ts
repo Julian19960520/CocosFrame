@@ -1,7 +1,6 @@
 import { PoolManager } from "../Frame/PoolManager";
 import { Util } from "../Frame/Util";
-import ScreenRect from "../Frame/ScreenRect";
-import Pig from "./Pig";
+import Pig from "../FightScene/Pig";
 
 // Learn TypeScript:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/typescript.html
@@ -30,7 +29,7 @@ export default class PigFactory extends cc.Component {
     private playing = false;
     onLoad(){
         PoolManager.preload([
-            "Scene/FarmScene/Pig/Pig"
+            "Scene/FightScene/Pig/Pig"
         ]);
     }
     update(dt){
@@ -40,21 +39,19 @@ export default class PigFactory extends cc.Component {
         this.timer += dt;
         if(this.timer > 1/this.ROF){
             this.timer = 0;
-            let pigNode = PoolManager.getInstance("Scene/FarmScene/Pig/Pig");
-            if(pigNode.parent){
-                cc.log("那你");
-            }
+            let pigNode = PoolManager.getInstance("Scene/FightScene/Pig/Pig");
             this.node.addChild(pigNode);
+
             let idx = Util.random(-2, 2);
             pigNode.position = cc.v2(idx*128, 0);
             let pig = pigNode.getComponent(Pig);
             pig.velocity = cc.v2(0, -100);
-            pig.hper.HpMax = pig.hper.Hp = 3;
+            pig.hper.HpMax = pig.hper.Hp = 12;
             pig.play();
+            pig.init();
         }
     }
     public play(){
-        this.clear();
         this.playing = true;
     }
     public stop(){

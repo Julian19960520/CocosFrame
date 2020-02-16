@@ -11,10 +11,14 @@ export enum Type {
     Shit,
     Phonograph,
 }
+export enum WeaponType {
+    Default = 0,
+    Carrot = 1,
+}
 
 export declare namespace wx{
 	function onShow(callback);
-	function shareAppMessage(obj:{title?: string, imageUrl?:string, query?:string, imageUrlId?:string});
+    function shareAppMessage(obj:{title?: string, imageUrl?:string, query?:string, imageUrlId?:string});
 };
 //配置
 export class TownShopData{

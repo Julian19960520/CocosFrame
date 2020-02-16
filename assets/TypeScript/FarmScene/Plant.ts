@@ -96,7 +96,7 @@ export default class Plant extends cc.Component {
             if(callback) callback();
         }
         if(playAnim){
-            TweenUtil.applyBounce(this.sprite.node, 1, 0.6,  func);
+            TweenUtil.applyScaleBounce(this.sprite.node, 1, 0.6,  func);
         }else{
             func();
         }
