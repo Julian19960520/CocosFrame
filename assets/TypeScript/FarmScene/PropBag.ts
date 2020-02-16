@@ -49,7 +49,7 @@ export default class PropBag extends DB.DataBindComponent {
     }
     //当切换道具时
     private propData:PropData = null;
-    public onSelectItem(item, data:PropData){
+    public onSelectItem(node, data:PropData){
         this.propData = data;
         let conf = Config.PropConfById(data.id);
         let selectFunc = null;

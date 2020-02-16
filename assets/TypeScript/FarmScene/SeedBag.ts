@@ -61,7 +61,7 @@ export default class SeedBag extends DB.DataBindComponent {
     }
     //当切换种子时
     private seedData = null;
-    public onSelectItem(item, data:SeedData){
+    public onSelectItem(node, data:SeedData){
         this.seedData = data;
         let farmScene = SceneManager.ins.findScene(FarmScene);
         farmScene.beginSelectField(

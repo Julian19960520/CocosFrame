@@ -1,3 +1,12 @@
+import Weapon from "../FightScene/Weapon";
+
+export enum Ease{
+    quintOut = 'quintOut',
+    quintIn = 'quintIn',
+    cubicOut = 'cubicOut',
+    cubicIn = 'cubicIn',
+
+}
 export enum Type {
     Default = 0,
     Seed,
@@ -11,10 +20,22 @@ export enum Type {
     Shit,
     Phonograph,
 }
+export enum WeaponType {
+    Default,
+    Banana,
+    Carrot,
+    Egg,
+    Grape,
+    HamiMelon,
+    Lemon,
+    Pineapple,
+    Strawberry,
+    Tomato,
+}
 
 export declare namespace wx{
 	function onShow(callback);
-	function shareAppMessage(obj:{title?: string, imageUrl?:string, query?:string, imageUrlId?:string});
+    function shareAppMessage(obj:{title?: string, imageUrl?:string, query?:string, imageUrlId?:string});
 };
 //配置
 export class TownShopData{
@@ -100,4 +121,27 @@ export class ProductData{
 export class PropData{
     id:number;
     cnt:number;
+}
+
+
+export class WeaponConfig{
+    type:WeaponType;
+    iconUrl:string;
+    lvlConfs:WeaponLvlConfig[];
+}
+export class WeaponLvlConfig{
+    lvl:number;
+    ROF:number;
+    speed:number;
+    prefabPath:string;
+}
+export class WeaponSlotData{
+    idx:number;
+    lock:boolean;
+    type:WeaponType;
+    weaponData?:WeaponData;
+}
+export class WeaponData{
+    type:WeaponType;
+    lvl:number;
 }

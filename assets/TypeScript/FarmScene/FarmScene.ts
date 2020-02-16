@@ -1,5 +1,4 @@
 import Scene from "../Frame/Scene";
-import Rabbit from "./Rabbit";
 import { Util } from "../Frame/Util";
 import { DB } from "../Frame/DataBind";
 import Field from "./Field";
@@ -9,6 +8,7 @@ import { PlantItemData, FieldData, ItemData, PropItemData } from "./dts";
 import SceneManager, { ShiftAnima } from "../Frame/SceneManager";
 import PlaceTipBox from "./PlaceTipBox";
 import PigFactory from "./PigFactory";
+import { PoolManager } from "../Frame/PoolManager";
 const {ccclass, property} = cc._decorator;
 
 @ccclass
@@ -42,10 +42,6 @@ export default class FarmScene extends Scene {
     private fieldDataGrid:FieldData[][] = [];
     public onLoad () {
         this.initField();
-        let manager = cc.director.getCollisionManager();
-        manager.enabledDebugDraw = true;
-        manager.enabled = true;
-
         this.node.on("SelectBoxClick", this.onSelectBoxClick, this);
         this.node.on("GameOver", this.onGameOver, this);
         this.guidepostBtn.node.on("click", this.onGuidepostBtnClick, this);
@@ -182,7 +178,7 @@ export default class FarmScene extends Scene {
             .to(0.5, {position: cc.v2(node.position.x, node.position.y+20)})
             .to(0.5, {position: temp}, { easing: 'cubicIn'}).call(()=>{
             node.removeFromParent();
-            TweenUtil.applyBounce(target,1, 1.2);
+            TweenUtil.applyScaleBounce(target,1, 1.2);
             callback();
         }).start();
     }

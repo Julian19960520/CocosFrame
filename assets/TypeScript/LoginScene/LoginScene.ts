@@ -2,7 +2,7 @@ import Scene from "../Frame/Scene";
 import SceneManager from "../Frame/SceneManager";
 import { DB } from "../Frame/DataBind";
 import { Util } from "../Frame/Util";
-import { Type, ItemData, PlantItemData, PropItemData } from "../FarmScene/dts";
+import { Type, ItemData, PlantItemData, PropItemData, WeaponType } from "../FarmScene/dts";
 import { FarmController } from "../FarmScene/FarmController";
 import { Config } from "../FarmScene/Config";
 
@@ -88,6 +88,25 @@ export default class LoginScene extends Scene {
             {id:3, cnt:2},
             {id:4, cnt:2},
             {id:5, cnt:2},
+        ]);
+        DB.Set("user/wallLevel", 1);
+        DB.Set("user/allWeapons", [
+            {idx:0, type:WeaponType.Banana},
+            {idx:1, type:WeaponType.Carrot},
+            {idx:2, type:WeaponType.Egg},
+            {idx:3, type:WeaponType.Grape},
+            {idx:4, type:WeaponType.HamiMelon},
+            {idx:5, type:WeaponType.Lemon},
+            {idx:6, type:WeaponType.Pineapple},
+            {idx:7, type:WeaponType.Strawberry},
+            {idx:8, type:WeaponType.Tomato},
+        ]);
+        DB.Set("user/weaponSlots", [
+            {idx:0, lock:false, type:WeaponType.Carrot},
+            {idx:1, lock:false, type:WeaponType.Default},
+            {idx:2, lock:true, type:WeaponType.Default},
+            {idx:3, lock:true, type:WeaponType.Default},
+            {idx:4, lock:true, type:WeaponType.Default},
         ]);
         //
         FarmController.runPlantGrowThread(itemDataArr);

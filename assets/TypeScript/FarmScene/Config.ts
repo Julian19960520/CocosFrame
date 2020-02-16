@@ -1,4 +1,4 @@
-import {GoodsConfig, SeedConfig, PlantConfig, ProductConfig, Type, PropConfig, TownShopData } from "../FarmScene/dts";
+import {GoodsConfig, SeedConfig, PlantConfig, ProductConfig, Type, PropConfig, TownShopData, WeaponType, WeaponData, WeaponConfig } from "../FarmScene/dts";
 import { DB } from "../Frame/DataBind";
 
 export namespace Config{
@@ -96,6 +96,79 @@ export namespace Config{
         {id:4, name:"稻草人", type:Type.Scarecrow},
         {id:5, name:"留声机", type:Type.Phonograph},
     ];
+    export let configWeapons:WeaponConfig[] = [
+        {
+            type:WeaponType.Carrot,
+            iconUrl:`Atlas/Icon/Weapon/Carrot`,
+            lvlConfs:[
+                {lvl:1, ROF:4, speed:600, prefabPath:"Scene/FightScene/Bullet/Carrot/Carrot"},
+                {lvl:2, ROF:6, speed:600, prefabPath:"Scene/FightScene/Bullet/Carrot/Carrot"},
+                {lvl:3, ROF:8, speed:600, prefabPath:"Scene/FightScene/Bullet/Carrot/Carrot"},
+            ]
+        },
+        {
+            type:WeaponType.Banana,
+            iconUrl:`Atlas/Icon/Weapon/Banana`,
+            lvlConfs:[
+                {lvl:1, ROF:4, speed:600, prefabPath:"Scene/FightScene/Bullet/Carrot/Carrot"},
+                {lvl:2, ROF:6, speed:600, prefabPath:"Scene/FightScene/Bullet/Carrot/Carrot"},
+                {lvl:3, ROF:8, speed:600, prefabPath:"Scene/FightScene/Bullet/Carrot/Carrot"},
+            ]
+        },
+        {
+            type:WeaponType.Egg,
+            iconUrl:`Atlas/Icon/Weapon/Egg`,
+            lvlConfs:[]
+        },
+        {
+            type:WeaponType.Grape,
+            iconUrl:`Atlas/Icon/Weapon/Grape`,
+            lvlConfs:[]
+        },
+        {
+            type:WeaponType.HamiMelon,
+            iconUrl:`Atlas/Icon/Weapon/HamiMelon`,
+            lvlConfs:[]
+        },
+        {
+            type:WeaponType.Lemon,
+            iconUrl:`Atlas/Icon/Weapon/Lemon`,
+            lvlConfs:[]
+        },
+        {
+            type:WeaponType.Pineapple,
+            iconUrl:`Atlas/Icon/Weapon/Pineapple`,
+            lvlConfs:[]
+        },
+        {
+            type:WeaponType.Strawberry,
+            iconUrl:`Atlas/Icon/Weapon/Strawberry`,
+            lvlConfs:[]
+        },
+        {
+            type:WeaponType.Tomato,
+            iconUrl:`Atlas/Icon/Weapon/Tomato`,
+            lvlConfs:[]
+        },
+    ]
+    export let configWall = [
+        { hpMax:0 },
+        { hpMax:1 },
+        { hpMax:2 },
+        { hpMax:3 },
+        { hpMax:4 },
+        { hpMax:5 },
+        { hpMax:6 },
+        { hpMax:7 },
+        { hpMax:8 },
+        { hpMax:9 },
+        { hpMax:10 },
+        { hpMax:11 },
+        { hpMax:12 },
+        { hpMax:13 },
+        { hpMax:14 },
+        { hpMax:15 },
+    ]
     export function load(){
         /**读取配置 */
         DB.Set("config/townShops", townShops);
@@ -103,7 +176,7 @@ export namespace Config{
         DB.Set("config/seed", configSeed);
         DB.Set("config/plant", configPlant);
         DB.Set("config/product", configProduct);
-    }
+    } 
     export function GoodsConfById(id){
         return configGoods.find((conf)=>{
             return conf.id == id;
@@ -128,5 +201,27 @@ export namespace Config{
         return configProp.find((conf)=>{
             return conf.id == id;
         }); 
+    }
+    export function WeaponLvlConfByTypeLvl(type, lvl){
+        let weaponConf = WeaponConfByType(type);
+        if(weaponConf){
+            let lvlConfs = weaponConf.lvlConfs;
+            for(let j=0; j<lvlConfs.length; j++){
+                let lvlConf = lvlConfs[j];
+                if(lvlConf.lvl == lvl){
+                    return lvlConf;
+                }
+            } 
+        }
+        return null;
+    }
+    export function WeaponConfByType(type){
+        for(let i=0; i<configWeapons.length; i++){
+            let weaponConf = configWeapons[i];
+            if(weaponConf.type == type){
+                return weaponConf;
+            }
+        }
+        return null;
     }
 }

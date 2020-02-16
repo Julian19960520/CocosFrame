@@ -1,20 +1,22 @@
-import Hper from "../FarmScene/Hper";
+
 import { Util } from "../Frame/Util";
+import Hper from "../Frame/Hper";
+import { FightSystem } from "../Frame/FightSystem";
 
 
 const {ccclass, property} = cc._decorator;
 
 @ccclass
-export default class NewClass extends Hper {
+export default class FarmHper extends Hper {
 
     @property(cc.ProgressBar)
     hpBar: cc.ProgressBar = null;
     @property(cc.Label)
     label: cc.Label = null;
     onLoad () {
-        this.node.on("onHpChange",this.onHpChange, this);
-        this.node.on("onHpMaxChange",this.onHpChange, this);
-        this.node.on("onKilled", this.onKilled, this);
+        this.node.on(FightSystem.Event.HpChange,this.onHpChange, this);
+        this.node.on(FightSystem.Event.HpMaxChange,this.onHpChange, this);
+        this.node.on(FightSystem.Event.Killed, this.onKilled, this);
         this.onHpChange();
     }
     onHpChange(){

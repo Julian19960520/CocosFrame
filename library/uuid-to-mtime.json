@@ -420,7 +420,7 @@
     "relativePath": "model/primitives.fbx"
   },
   "8006a762-b775-46fe-972b-df69c8ef3c96": {
-    "asset": 1581423608167,
+    "asset": 1581791507263,
     "meta": 1571929642600,
     "relativePath": "resources"
   },
@@ -430,7 +430,7 @@
     "relativePath": "TypeScript"
   },
   "7f757043-7f12-498a-b365-ae60d8dbb1ad": {
-    "asset": 1581429453874,
+    "asset": 1581790857157,
     "meta": 1571929669050,
     "relativePath": "TypeScript/Frame"
   },
@@ -460,9 +460,9 @@
     "relativePath": "resources/Prefab"
   },
   "075642a0-5da2-4f13-97d9-e1a3af650787": {
-    "asset": 1581429453833,
+    "asset": 1581791626051,
     "meta": 1577262175439,
-    "relativePath": "Music"
+    "relativePath": "resources/Sound"
   },
   "2ff7af3c-8d49-47d0-9d1f-61e170b4e255": {
     "asset": 1577262309886,
@@ -540,12 +540,12 @@
     "relativePath": "Studio.fire"
   },
   "c3e6a599-3a27-42aa-828d-20f746e76fd9": {
-    "asset": 1581429453922,
+    "asset": 1581849650061,
     "meta": 1581423608167,
     "relativePath": "resources/Atlas"
   },
   "1e3a7188-9d0b-4b9d-a7a1-73d5b27b0039": {
-    "asset": 1581429453895,
+    "asset": 1581776512640,
     "meta": 1581429453882,
     "relativePath": "resources/Atlas/Farm"
   },
@@ -555,12 +555,12 @@
     "relativePath": "Game.fire"
   },
   "6cc16c15-aa9a-4f80-8eb4-f0f9e96e826c": {
-    "asset": 1581429453906,
+    "asset": 1581847847061,
     "meta": 1581429453899,
     "relativePath": "resources/Atlas/Icon"
   },
   "7e5cd71a-c04c-4b59-8ecf-18ae493fd97e": {
-    "asset": 1581429453923,
+    "asset": 1581429610827,
     "meta": 1581429453922,
     "relativePath": "resources/Atlas/UI"
   },
@@ -578,11 +578,6 @@
     "asset": 1581429453864,
     "meta": 1581429459944,
     "relativePath": "TypeScript/Frame/DataBind.ts"
-  },
-  "474d0d88-e2af-431f-92be-92f32f2d87ef": {
-    "asset": 1581429453865,
-    "meta": 1581429459984,
-    "relativePath": "TypeScript/Frame/GameManager.ts"
   },
   "b4961073-be4f-44c1-b07d-2e27f969fa2e": {
     "asset": 1581429453866,
@@ -619,20 +614,10 @@
     "meta": 1581429460427,
     "relativePath": "TypeScript/Frame/Top.ts"
   },
-  "c5334b45-2203-42f5-80c7-e23c96957e28": {
-    "asset": 1581429453874,
-    "meta": 1581429460478,
-    "relativePath": "TypeScript/Frame/TweenUtil.ts"
-  },
   "4ad6726a-5169-4c8d-b44c-a817749848b2": {
-    "asset": 1581429453882,
+    "asset": 1581849650061,
     "meta": 1581429453878,
     "relativePath": "resources/Atlas/Btn"
-  },
-  "85f3094b-8eaf-4ec8-958a-16657cfc3f43": {
-    "asset": 1581429453874,
-    "meta": 1581429460484,
-    "relativePath": "TypeScript/Frame/Util.ts"
   },
   "12ef38bc-3ccc-4811-88be-cf1f7b979f70": {
     "asset": 1581429453878,
@@ -830,19 +815,19 @@
     "relativePath": "resources/Panel/WareHousePanel.prefab"
   },
   "29affbc0-fa99-45b9-ae2c-05e2d8143c49": {
-    "asset": 1581429453937,
+    "asset": 1581773225583,
     "meta": 1581429453928,
     "relativePath": "resources/Scene/FarmScene"
   },
   "f967efc3-6f13-4dbd-bfb6-062aaf3d0ddc": {
-    "asset": 1581429453929,
+    "asset": 1581858438532,
     "meta": 1581429453929,
-    "relativePath": "resources/Scene/FarmScene/Carrot"
+    "relativePath": "resources/Scene/FightScene/Bullet"
   },
   "1c235e85-359a-4b79-9de0-fd1a3ab60f3d": {
-    "asset": 1581429453929,
-    "meta": 1581429460806,
-    "relativePath": "resources/Scene/FarmScene/Carrot/Carrot.prefab"
+    "asset": 1581858617149,
+    "meta": 1581858617164,
+    "relativePath": "resources/Scene/FightScene/Bullet/Carrot/Carrot.prefab"
   },
   "90e8e8d0-57d4-4857-8fa3-164e4bd8cf6c": {
     "asset": 1581429453936,
@@ -850,8 +835,8 @@
     "relativePath": "resources/Scene/FarmScene/Item"
   },
   "ae6ee141-4038-4e6f-8884-56f231fe645b": {
-    "asset": 1581429453930,
-    "meta": 1581429460817,
+    "asset": 1582994099506,
+    "meta": 1582994099525,
     "relativePath": "resources/Scene/FarmScene/FarmScene.prefab"
   },
   "5416845f-1a44-46d8-93f6-a632eff4fa80": {
@@ -897,17 +882,17 @@
   "5c739347-3ce1-49ec-8f2d-ebd24b3b4976": {
     "asset": 1581429453937,
     "meta": 1581429453937,
-    "relativePath": "resources/Scene/FarmScene/Pig"
+    "relativePath": "resources/Scene/FightScene/Pig"
   },
   "99b9387d-2d29-467b-a124-9eb01e7cebfd": {
-    "asset": 1581429453938,
+    "asset": 1581858421771,
     "meta": 1581429453937,
     "relativePath": "resources/Scene/FightScene"
   },
   "fb1329f6-1172-4487-8132-8f81f09e8e01": {
-    "asset": 1581429453937,
-    "meta": 1581429460832,
-    "relativePath": "resources/Scene/FarmScene/Pig/Pig.prefab"
+    "asset": 1581784965355,
+    "meta": 1581784965362,
+    "relativePath": "resources/Scene/FightScene/Pig/Pig.prefab"
   },
   "4d41c5f6-8cb9-4cbd-9cb5-d69d1791ebb4": {
     "asset": 1581429453939,
@@ -915,8 +900,8 @@
     "relativePath": "resources/Scene/TownScene"
   },
   "666b5f0f-4be0-44e3-b87d-ead6b64f13dd": {
-    "asset": 1581429453938,
-    "meta": 1581429460835,
+    "asset": 1583004300036,
+    "meta": 1583004300048,
     "relativePath": "resources/Scene/FightScene/FightScene.prefab"
   },
   "3f97d114-cd5e-4526-acd7-dade772204db": {
@@ -940,7 +925,7 @@
     "relativePath": "resources/Scene/TownScene/TownShop/TownShop1.prefab"
   },
   "4b15f82e-ecdb-48b3-8fec-3a41274f31e3": {
-    "asset": 1581429453861,
+    "asset": 1581771799583,
     "meta": 1581429453841,
     "relativePath": "TypeScript/FarmScene"
   },
@@ -949,35 +934,15 @@
     "meta": 1581429460859,
     "relativePath": "resources/TopLayer/PlantDetailBox.prefab"
   },
-  "cd9c400f-dbab-49bc-97bf-be21fdd388d8": {
-    "asset": 1581429453841,
-    "meta": 1581429460873,
-    "relativePath": "TypeScript/FarmScene/Carrot.ts"
-  },
   "9a9662bd-bfa0-4e4c-a085-d338703a9517": {
     "asset": 1581429453842,
     "meta": 1581429460965,
     "relativePath": "TypeScript/FarmScene/CoinBar.ts"
   },
-  "833c9e79-0b1a-4403-8cbf-1e51a95b0db0": {
-    "asset": 1581429453843,
-    "meta": 1581429460974,
-    "relativePath": "TypeScript/FarmScene/Config.ts"
-  },
   "653729af-c23c-4005-8c5b-1d6304d43db7": {
     "asset": 1581429453844,
     "meta": 1581429460987,
     "relativePath": "TypeScript/FarmScene/CookingBenchPanel.ts"
-  },
-  "d8df1274-19d1-4d73-a7fe-3a6dc656b2ff": {
-    "asset": 1581429453845,
-    "meta": 1581429461020,
-    "relativePath": "TypeScript/FarmScene/Damager.ts"
-  },
-  "eafc74b0-0c28-418c-a3fe-03eb52142e44": {
-    "asset": 1581429453861,
-    "meta": 1581429461143,
-    "relativePath": "TypeScript/FarmScene/dts.ts"
   },
   "93872b1b-c6a7-4b2c-813a-d887202a83ae": {
     "asset": 1581429453845,
@@ -988,16 +953,6 @@
     "asset": 1581429453846,
     "meta": 1581429461275,
     "relativePath": "TypeScript/FarmScene/FarmItem.ts"
-  },
-  "4ae34c46-4ab3-4bbb-b0ee-cf6d12f09bba": {
-    "asset": 1581429453846,
-    "meta": 1581429461292,
-    "relativePath": "TypeScript/FarmScene/FarmScene.ts"
-  },
-  "042aae5f-bc15-4259-ad9b-bfb248d48ade": {
-    "asset": 1581429453846,
-    "meta": 1581429461353,
-    "relativePath": "TypeScript/FarmScene/Fence.ts"
   },
   "7479fd58-b5f6-44bf-90bd-0cc80dc70cce": {
     "asset": 1581429453847,
@@ -1014,35 +969,15 @@
     "meta": 1581429461408,
     "relativePath": "TypeScript/FarmScene/GoodsItem.ts"
   },
-  "307cace0-9758-46fe-9b64-c99c769027b6": {
-    "asset": 1581429453849,
-    "meta": 1581429461438,
-    "relativePath": "TypeScript/FarmScene/Hper.ts"
-  },
   "6abeb1c4-d510-4109-8402-63a10a883491": {
     "asset": 1581429453849,
     "meta": 1581429461464,
     "relativePath": "TypeScript/FarmScene/Menu.ts"
   },
-  "e206ecd5-af0e-49bb-b1a9-5fba4844f625": {
-    "asset": 1581429453850,
-    "meta": 1581429461490,
-    "relativePath": "TypeScript/FarmScene/Pig.ts"
-  },
-  "2d3eff0d-3011-4de8-abe8-bff31e326a4b": {
-    "asset": 1581429453850,
-    "meta": 1581429461502,
-    "relativePath": "TypeScript/FarmScene/PigFactory.ts"
-  },
   "2751e3fa-863a-41aa-b01b-257df6fe54c9": {
     "asset": 1581429453851,
     "meta": 1581429461538,
     "relativePath": "TypeScript/FarmScene/PlaceTipBox.ts"
-  },
-  "28916525-79df-429f-8738-8b7f145aa547": {
-    "asset": 1581429453852,
-    "meta": 1581429461547,
-    "relativePath": "TypeScript/FarmScene/Plant.ts"
   },
   "abd622c4-7c07-4457-b7ee-0c007c646e76": {
     "asset": 1581429453852,
@@ -1054,30 +989,15 @@
     "meta": 1581429461597,
     "relativePath": "TypeScript/FarmScene/ProductItem.ts"
   },
-  "c4a76f53-2baf-4920-bcbd-fc2a9d8f1279": {
-    "asset": 1581429453853,
-    "meta": 1581429461620,
-    "relativePath": "TypeScript/FarmScene/PropBag.ts"
-  },
   "a3a4cdd6-d6ed-4479-b490-f3f12b8bb100": {
     "asset": 1581429453854,
     "meta": 1581429461646,
     "relativePath": "TypeScript/FarmScene/PropItem.ts"
   },
-  "1b87d220-8e6c-4ca0-8863-e66758e4683d": {
-    "asset": 1581429453855,
-    "meta": 1581429461654,
-    "relativePath": "TypeScript/FarmScene/Rabbit.ts"
-  },
   "7968d98e-ec4c-4f42-8684-5ed6d160fc63": {
     "asset": 1581429453856,
     "meta": 1581429461675,
     "relativePath": "TypeScript/FarmScene/Radish.ts"
-  },
-  "3019d23d-d239-44de-afa3-8980ab57dbac": {
-    "asset": 1581429453857,
-    "meta": 1581429461689,
-    "relativePath": "TypeScript/FarmScene/SeedBag.ts"
   },
   "1070dabf-53da-4261-a30f-1b5e135d80e1": {
     "asset": 1581429453859,
@@ -1095,34 +1015,14 @@
     "relativePath": "TypeScript/FarmScene/WareHousePanel.ts"
   },
   "92e88f90-e955-4a4a-b049-fcf3d48ecf77": {
-    "asset": 1581429453863,
+    "asset": 1581851063246,
     "meta": 1581429453861,
     "relativePath": "TypeScript/FightScene"
-  },
-  "f19fe9ba-17e9-4bb1-aa8b-15f9b6ffaffe": {
-    "asset": 1581429453862,
-    "meta": 1581429461760,
-    "relativePath": "TypeScript/FightScene/FarmHper.ts"
-  },
-  "579cf0a6-0d28-4c54-81d7-b83f964d3c78": {
-    "asset": 1581429453862,
-    "meta": 1581429461767,
-    "relativePath": "TypeScript/FightScene/FightScene.ts"
-  },
-  "aa8fc834-8d1c-46e5-834e-60b1cea93563": {
-    "asset": 1581429453862,
-    "meta": 1581429461785,
-    "relativePath": "TypeScript/FightScene/GameOverPanel.ts"
   },
   "95e37659-c1e8-422b-90b9-b1d265bcd33a": {
     "asset": 1581429453865,
     "meta": 1581429461850,
     "relativePath": "TypeScript/Frame/MessageBox.ts"
-  },
-  "8a9bff61-c734-4d14-89ae-ac7daca802fb": {
-    "asset": 1581429453872,
-    "meta": 1581429461870,
-    "relativePath": "TypeScript/Frame/ScrollList.ts"
   },
   "66c2d280-b91b-407d-a7f8-72d199bc2c70": {
     "asset": 1581429453872,
@@ -1138,11 +1038,6 @@
     "asset": 1581429453878,
     "meta": 1581429453876,
     "relativePath": "TypeScript/TownScene"
-  },
-  "3817f867-16f8-4b98-800c-b24432226db7": {
-    "asset": 1581429453875,
-    "meta": 1581429461924,
-    "relativePath": "TypeScript/LoginScene/LoginScene.ts"
   },
   "c61aa983-38fb-4bed-8053-be32127a0ad8": {
     "asset": 1581429453877,
@@ -1251,8 +1146,8 @@
   },
   "ab550a50-24b6-4f34-a862-3270ed1ea5e3": {
     "asset": 1581429453892,
-    "meta": 1581429615032,
-    "relativePath": "resources/Atlas/Farm/Radish.png"
+    "meta": 1581775951716,
+    "relativePath": "resources/Atlas/Farm/Carrot.png"
   },
   "60163223-29c2-472d-8ccd-e0ea082ef6c5": {
     "asset": 1581429453892,
@@ -1280,22 +1175,22 @@
     "relativePath": "resources/Atlas/Farm/Warehouse.png"
   },
   "22eabd7c-7eae-4b4f-b6a8-8b31e66e6ac6": {
-    "asset": 1581429610818,
+    "asset": 1581429740064,
     "meta": 1581429610818,
     "relativePath": "resources/Atlas/Icon/FlyPlant"
   },
   "5031905d-e5cd-4d40-987b-cad15b46b9c8": {
-    "asset": 1581429610820,
+    "asset": 1581429740065,
     "meta": 1581429610819,
     "relativePath": "resources/Atlas/Icon/Product"
   },
   "10aabfa2-f934-4517-91fe-14c2cfbbf7b6": {
-    "asset": 1581429610823,
+    "asset": 1581429740066,
     "meta": 1581429610820,
     "relativePath": "resources/Atlas/Icon/Prop"
   },
   "8762269d-b484-48dc-a817-6e7c519bd855": {
-    "asset": 1581429610826,
+    "asset": 1581429740068,
     "meta": 1581429610824,
     "relativePath": "resources/Atlas/Icon/Seed"
   },
@@ -1383,5 +1278,300 @@
     "asset": 1581429453909,
     "meta": 1581429743244,
     "relativePath": "resources/Atlas/Icon/Seed/5.png"
+  },
+  "474d0d88-e2af-431f-92be-92f32f2d87ef": {
+    "asset": 1581769029338,
+    "meta": 1581769036187,
+    "relativePath": "TypeScript/Frame/GameManager.ts"
+  },
+  "f19fe9ba-17e9-4bb1-aa8b-15f9b6ffaffe": {
+    "asset": 1581775406224,
+    "meta": 1581775448490,
+    "relativePath": "TypeScript/FightScene/FarmHper.ts"
+  },
+  "8e068cf1-c580-4ada-b9c8-939b549d715e": {
+    "asset": 1581775834616,
+    "meta": 1581775834618,
+    "relativePath": "resources/Scene/FightScene/Spark"
+  },
+  "cb6ef61b-4d21-48e2-9c6f-8c0886e40dd0": {
+    "asset": 1581793436208,
+    "meta": 1581793436216,
+    "relativePath": "resources/Scene/FightScene/Bullet/Carrot/Spark.anim"
+  },
+  "72330c51-d509-47f4-9d14-1194fbd818e7": {
+    "asset": 1581781297285,
+    "meta": 1581781347389,
+    "relativePath": "TypeScript/Frame/Spark.ts"
+  },
+  "acd03ba9-3ed4-4b12-8847-f2abce1019dd": {
+    "asset": 1581782919745,
+    "meta": 1581782919749,
+    "relativePath": "resources/Scene/FightScene/Bullet/Carrot/Normal.anim"
+  },
+  "0b080a76-5bca-4c11-ae18-1764b7387189": {
+    "asset": 1581782632125,
+    "meta": 1581782806264,
+    "relativePath": "resources/Scene/FightScene/Bullet/Carrot/Carrot.plist"
+  },
+  "4558f6ba-709c-4e35-8717-38c53bd541a5": {
+    "asset": 1581782563392,
+    "meta": 1581782806250,
+    "relativePath": "resources/Scene/FightScene/Bullet/Carrot/Carrot.png"
+  },
+  "307cace0-9758-46fe-9b64-c99c769027b6": {
+    "asset": 1581783768898,
+    "meta": 1581783905273,
+    "relativePath": "TypeScript/Frame/Hper.ts"
+  },
+  "4ae34c46-4ab3-4bbb-b0ee-cf6d12f09bba": {
+    "asset": 1581784778054,
+    "meta": 1581784872310,
+    "relativePath": "TypeScript/FarmScene/FarmScene.ts"
+  },
+  "28916525-79df-429f-8738-8b7f145aa547": {
+    "asset": 1581784778054,
+    "meta": 1581784872340,
+    "relativePath": "TypeScript/FarmScene/Plant.ts"
+  },
+  "c5334b45-2203-42f5-80c7-e23c96957e28": {
+    "asset": 1581789299614,
+    "meta": 1581789302135,
+    "relativePath": "TypeScript/Frame/TweenUtil.ts"
+  },
+  "5e13667b-8a32-49fe-961a-29dfb221132c": {
+    "asset": 1581790537296,
+    "meta": 1581790720406,
+    "relativePath": "resources/Sound/hit1.mp3"
+  },
+  "fc62ce55-553f-4acd-b15b-30a055b982ff": {
+    "asset": 1581790584858,
+    "meta": 1581790720407,
+    "relativePath": "resources/Sound/hit2.mp3"
+  },
+  "aa2a7b8b-2bc2-4f45-a80c-87e4bb7d31e2": {
+    "asset": 1581791551748,
+    "meta": 1581791553527,
+    "relativePath": "TypeScript/Frame/AudioManager.ts"
+  },
+  "122ed74c-eea5-4ac7-9a7b-fbeb9a8c7b48": {
+    "asset": 1581789843986,
+    "meta": 1581791626230,
+    "relativePath": "resources/Sound/hit0.mp3"
+  },
+  "5e1a649c-4cd9-402d-83b0-4542ab75cc39": {
+    "asset": 1581841375347,
+    "meta": 1581841570130,
+    "relativePath": "TypeScript/FightScene/Bullet.ts"
+  },
+  "d8df1274-19d1-4d73-a7fe-3a6dc656b2ff": {
+    "asset": 1581841240921,
+    "meta": 1581841570166,
+    "relativePath": "TypeScript/Frame/Damager.ts"
+  },
+  "b56e1e70-cf39-4258-9a8a-a499c43c6894": {
+    "asset": 1581841567396,
+    "meta": 1581841570172,
+    "relativePath": "TypeScript/Frame/FightSystem.ts"
+  },
+  "cd9c400f-dbab-49bc-97bf-be21fdd388d8": {
+    "asset": 1581841616576,
+    "meta": 1581841618808,
+    "relativePath": "TypeScript/FightScene/Carrot.ts"
+  },
+  "da710218-2cb6-4630-85de-44312b36fa63": {
+    "asset": 1581850104920,
+    "meta": 1581847844111,
+    "relativePath": "resources/Atlas/Icon/Weapon"
+  },
+  "1915cb88-55c7-4abe-9687-b0923a5113f5": {
+    "asset": 1581848046719,
+    "meta": 1581848555568,
+    "relativePath": "resources/Atlas/Icon/Weapon/Grape.png"
+  },
+  "dac602f2-9bfb-4812-b881-043b2d6d24a1": {
+    "asset": 1581847968040,
+    "meta": 1581848494924,
+    "relativePath": "resources/Atlas/Icon/Weapon/Strawberry.png"
+  },
+  "f42c4ec8-109c-4125-9dc1-c6ddd7bae705": {
+    "asset": 1581848075384,
+    "meta": 1581848618627,
+    "relativePath": "resources/Atlas/Icon/Weapon/Lemon.png"
+  },
+  "bb63f27f-e93f-4170-9851-2c367463dc30": {
+    "asset": 1581848096808,
+    "meta": 1581848518638,
+    "relativePath": "resources/Atlas/Icon/Weapon/Pineapple.png"
+  },
+  "e48a071a-4fbe-43e8-93e3-eb690592b865": {
+    "asset": 1581848282637,
+    "meta": 1581848524654,
+    "relativePath": "resources/Atlas/Icon/Weapon/Egg.png"
+  },
+  "49b3bb9e-d756-4593-b595-398e2906beba": {
+    "asset": 1581848141447,
+    "meta": 1581848598565,
+    "relativePath": "resources/Atlas/Icon/Weapon/HamiMelon.png"
+  },
+  "5c76e652-89b3-4bd7-a353-2509a39f9a00": {
+    "asset": 1581848403373,
+    "meta": 1581848538868,
+    "relativePath": "resources/Atlas/Icon/Weapon/Banana.png"
+  },
+  "cf88d886-5690-4394-8b24-6d433bb84b1a": {
+    "asset": 1581848320980,
+    "meta": 1581848624858,
+    "relativePath": "resources/Atlas/Icon/Weapon/Tomato.png"
+  },
+  "623af46b-e3bd-4748-b389-3e0b3275159e": {
+    "asset": 1581850051289,
+    "meta": 1581849644296,
+    "relativePath": "resources/Atlas/Fight"
+  },
+  "9728735f-313f-4624-a4b1-5b5e80cf4be1": {
+    "asset": 1581849563532,
+    "meta": 1581849660709,
+    "relativePath": "resources/Atlas/Fight/switchBtn.png"
+  },
+  "0baa1398-7ff8-41e1-9338-6ba19b6601ae": {
+    "asset": 1581849819064,
+    "meta": 1582984484942,
+    "relativePath": "resources/Atlas/Fight/plus.png"
+  },
+  "4ab798ba-82bb-49cb-bfbb-26c396df2155": {
+    "asset": 1581849985117,
+    "meta": 1581850046424,
+    "relativePath": "resources/Atlas/Fight/lock.png"
+  },
+  "d79a1696-8e21-41dc-8191-871efa13a107": {
+    "asset": 1581850100209,
+    "meta": 1581850104935,
+    "relativePath": "resources/Atlas/Icon/Weapon/Lock.png"
+  },
+  "042aae5f-bc15-4259-ad9b-bfb248d48ade": {
+    "asset": 1581852277847,
+    "meta": 1581852280123,
+    "relativePath": "TypeScript/FightScene/Fence.ts"
+  },
+  "d594144b-d6d7-4ce3-9011-8096c7ac61cf": {
+    "asset": 1581857323302,
+    "meta": 1581855927175,
+    "relativePath": "resources/Scene/FightScene/Weapon"
+  },
+  "ec540851-6f2f-4601-b6ed-729491167b4a": {
+    "asset": 1581857543386,
+    "meta": 1581857543392,
+    "relativePath": "resources/Scene/FightScene/Weapon/WeaponCarrot.prefab"
+  },
+  "67a8764c-a390-45e8-8c96-3ca2812ceeef": {
+    "asset": 1581858438532,
+    "meta": 1581858427747,
+    "relativePath": "resources/Scene/FightScene/Bullet/Carrot"
+  },
+  "2d3eff0d-3011-4de8-abe8-bff31e326a4b": {
+    "asset": 1581913752526,
+    "meta": 1581913762335,
+    "relativePath": "TypeScript/FightScene/PigFactory.ts"
+  },
+  "e7158017-087c-444f-bc89-0da9dc5d9973": {
+    "asset": 1582983656006,
+    "meta": 1582983851144,
+    "relativePath": "TypeScript/FightScene/Weapon.ts"
+  },
+  "37acccbc-ab06-429e-8fa1-123c54bbedaa": {
+    "asset": 1582984076064,
+    "meta": 1582984087419,
+    "relativePath": "resources/Atlas/Icon/Weapon/Carrot.png"
+  },
+  "aa8fc834-8d1c-46e5-834e-60b1cea93563": {
+    "asset": 1582987033696,
+    "meta": 1582987034875,
+    "relativePath": "TypeScript/FightScene/GameOverPanel.ts"
+  },
+  "1b87d220-8e6c-4ca0-8863-e66758e4683d": {
+    "asset": 1582987428446,
+    "meta": 1582987494600,
+    "relativePath": "TypeScript/FightScene/Rabbit.ts"
+  },
+  "4f30459e-704e-48da-8caf-a17b63906062": {
+    "asset": 1582988772975,
+    "meta": 1582988776117,
+    "relativePath": "resources/Atlas/Fight/expBall.png"
+  },
+  "276e279c-c323-490c-bee0-366e2a4a043e": {
+    "asset": 1582993226647,
+    "meta": 1582993226648,
+    "relativePath": "resources/Scene/FightScene/ExpBall"
+  },
+  "7fb2c7e6-989d-4266-a6e0-fa41677123f8": {
+    "asset": 1582994448839,
+    "meta": 1582994448847,
+    "relativePath": "resources/Scene/FightScene/ExpBall/ExpBall.prefab"
+  },
+  "e206ecd5-af0e-49bb-b1a9-5fba4844f625": {
+    "asset": 1582994614598,
+    "meta": 1582994926767,
+    "relativePath": "TypeScript/FightScene/Pig.ts"
+  },
+  "85f3094b-8eaf-4ec8-958a-16657cfc3f43": {
+    "asset": 1582994908196,
+    "meta": 1582994926780,
+    "relativePath": "TypeScript/Frame/Util.ts"
+  },
+  "677446e6-a7af-4132-b6b0-ce5dbd68cf89": {
+    "asset": 1582998165432,
+    "meta": 1582998170458,
+    "relativePath": "resources/Atlas/Fight/upgrade.png"
+  },
+  "8a9bff61-c734-4d14-89ae-ac7daca802fb": {
+    "asset": 1582998817528,
+    "meta": 1582998819332,
+    "relativePath": "TypeScript/Frame/ScrollList.ts"
+  },
+  "579cf0a6-0d28-4c54-81d7-b83f964d3c78": {
+    "asset": 1582999393206,
+    "meta": 1582999406795,
+    "relativePath": "TypeScript/FightScene/FightScene.ts"
+  },
+  "833c9e79-0b1a-4403-8cbf-1e51a95b0db0": {
+    "asset": 1583000029068,
+    "meta": 1583000039457,
+    "relativePath": "TypeScript/FarmScene/Config.ts"
+  },
+  "3817f867-16f8-4b98-800c-b24432226db7": {
+    "asset": 1583000185680,
+    "meta": 1583000187252,
+    "relativePath": "TypeScript/LoginScene/LoginScene.ts"
+  },
+  "68f5387f-1ac9-4edf-8dd5-995302d1c586": {
+    "asset": 1583002290402,
+    "meta": 1583002291465,
+    "relativePath": "TypeScript/FightScene/WeaponBtn.ts"
+  },
+  "c4a76f53-2baf-4920-bcbd-fc2a9d8f1279": {
+    "asset": 1583002436741,
+    "meta": 1583002497895,
+    "relativePath": "TypeScript/FarmScene/PropBag.ts"
+  },
+  "3019d23d-d239-44de-afa3-8980ab57dbac": {
+    "asset": 1583002437578,
+    "meta": 1583002497906,
+    "relativePath": "TypeScript/FarmScene/SeedBag.ts"
+  },
+  "eafc74b0-0c28-418c-a3fe-03eb52142e44": {
+    "asset": 1583003252732,
+    "meta": 1583003254192,
+    "relativePath": "TypeScript/FarmScene/dts.ts"
+  },
+  "85a3d6b1-3843-49bb-89ca-8818cb478348": {
+    "asset": 1583003827066,
+    "meta": 1583003966631,
+    "relativePath": "TypeScript/FightScene/WeaponSlot.ts"
+  },
+  "27cefc9f-a832-45d1-804b-35d397e7a93b": {
+    "asset": 1583004133064,
+    "meta": 1583004153682,
+    "relativePath": "TypeScript/FightScene/WeaponBag.ts"
   }
 }
