@@ -5,9 +5,9 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 65,
+      "x": 64,
       "y": 23,
-      "width": 1375,
+      "width": 1376,
       "height": 877,
       "layout": {
         "children": [
@@ -24,7 +24,7 @@
                 "width": 654
               },
               {
-                "active": 0,
+                "active": 1,
                 "children": [
                   "node-library",
                   "console",
@@ -47,7 +47,7 @@
             ],
             "height": 795,
             "type": "panel",
-            "width": 207
+            "width": 208
           },
           {
             "active": 0,

@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "ExpBall",
+    "_name": "Carrot",
     "_objFlags": 0,
     "_parent": null,
     "_children": [
@@ -26,10 +26,16 @@
     "_components": [
       {
         "__id__": 5
+      },
+      {
+        "__id__": 6
+      },
+      {
+        "__id__": 7
       }
     ],
     "_prefab": {
-      "__id__": 6
+      "__id__": 8
     },
     "_opacity": 255,
     "_color": {
@@ -41,8 +47,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 32,
-      "height": 32
+      "width": 28,
+      "height": 91
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -70,19 +76,19 @@
     "_skewX": 0,
     "_skewY": 0,
     "_is3DNode": false,
-    "groupIndex": 0,
+    "groupIndex": 1,
     "_id": ""
   },
   {
     "__type__": "cc.Node",
-    "_name": "New Node",
+    "_name": "Sprite",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
     },
     "_children": [],
     "_active": true,
-    "_level": 2,
+    "_level": 3,
     "_components": [
       {
         "__id__": 3
@@ -101,8 +107,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 0,
-      "height": 0
+      "width": 28,
+      "height": 91
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -134,7 +140,7 @@
     "_id": ""
   },
   {
-    "__type__": "cc.MotionStreak",
+    "__type__": "cc.Sprite",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -148,51 +154,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_fadeTime": 0.1,
-    "_minSeg": 5,
-    "_stroke": 30,
-    "_texture": {
-      "__uuid__": "4f30459e-704e-48da-8caf-a17b63906062"
-    },
-    "_color": {
-      "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
-    },
-    "_fastMode": false,
-    "_N$preview": true,
-    "_id": ""
-  },
-  {
-    "__type__": "cc.PrefabInfo",
-    "root": {
-      "__id__": 1
-    },
-    "asset": {
-      "__uuid__": "7fb2c7e6-989d-4266-a6e0-fa41677123f8"
-    },
-    "fileId": "c8i0YdPitAN5mnTJAGvw4d",
-    "sync": false
-  },
-  {
-    "__type__": "cc.Sprite",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 1
-    },
-    "_enabled": true,
-    "_materials": [
-      {
-        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
-      }
-    ],
-    "_srcBlendFactor": 770,
-    "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "e3bea714-e13f-4f02-9415-9f2d06b0bb3f"
+      "__uuid__": "452a4022-c288-4d9e-b4d4-f046b670afd4"
     },
     "_type": 0,
     "_sizeMode": 1,
@@ -214,9 +177,80 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "7fb2c7e6-989d-4266-a6e0-fa41677123f8"
+      "__uuid__": "1c235e85-359a-4b79-9de0-fd1a3ab60f3d"
     },
-    "fileId": "81lh9mTdZGq6UlcGgT8cIA",
+    "fileId": "8eMj8wM69EGpAdqY75gEqg",
+    "sync": false
+  },
+  {
+    "__type__": "cc.BoxCollider",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "tag": 0,
+    "_offset": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_size": {
+      "__type__": "cc.Size",
+      "width": 28,
+      "height": 91
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Animation",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "_defaultClip": {
+      "__uuid__": "602d0e15-fe9d-4763-86ad-0a33b4ffca51"
+    },
+    "_clips": [
+      {
+        "__uuid__": "602d0e15-fe9d-4763-86ad-0a33b4ffca51"
+      },
+      {
+        "__uuid__": "bebd9ca3-8e0c-4c03-aca3-18339b626fc8"
+      }
+    ],
+    "playOnLoad": false,
+    "_id": ""
+  },
+  {
+    "__type__": "5e1a6ScTNlALYOwRUKrdcw5",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "dmg": 1,
+    "remainTimes": 1,
+    "velocity": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__uuid__": "1c235e85-359a-4b79-9de0-fd1a3ab60f3d"
+    },
+    "fileId": "b9A8NnmM5FxYJ8Jh1OSZBH",
     "sync": false
   }
 ]

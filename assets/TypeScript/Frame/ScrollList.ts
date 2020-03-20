@@ -80,7 +80,7 @@ export default class ScrollList extends cc.ScrollView {
         let selectLost = true;
         for(let i=0; i<this.dataArr.length; i++){
             let data = this.dataArr[i];
-            let item = this.map.get(data);
+            let item = this.findItemByData(data);
             if(i>=startIdx && i<=endIdx){   //应该显示
                 if(!item){                      //如果这个数据还没有对应的显示item
                     let item = this.newItem();      //获取一个item显示之
@@ -167,7 +167,9 @@ export default class ScrollList extends cc.ScrollView {
         item.active = true;
         return item;
     }
-
+    public findItemByData(targetData){
+        return this.map.get(targetData);
+    }
     private curSelectIdx:number = 0;
     private curSelectData:cc.Node = null;
     public selectItemByIdx(idx){
@@ -201,6 +203,16 @@ export default class ScrollList extends cc.ScrollView {
         });  
     }
     private onClickItem(evt:cc.Event){
+        let target = evt.target as cc.Node;
+        let comps = target.getComponents(cc.Component);
+        for(let i=0;i<comps.length;i++){
+            let comp = comps[i];
+            if(typeof(comp["canSelect"]) == "function"){
+                if(!comp["canSelect"]()){
+                    return;
+                }
+            }
+        }
         this.selectItemByItem(evt.target);       
     }
 }

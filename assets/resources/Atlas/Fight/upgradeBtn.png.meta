@@ -1,6 +1,6 @@
 {
   "ver": "2.3.3",
-  "uuid": "0baa1398-7ff8-41e1-9338-6ba19b6601ae",
+  "uuid": "1155e71c-0cbb-429d-a073-beeb6c1630e3",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -11,8 +11,8 @@
   "subMetas": {
     "upgradeBtn": {
       "ver": "1.0.4",
-      "uuid": "e0972864-797d-4c0b-8633-075cefc4ef37",
-      "rawTextureUuid": "0baa1398-7ff8-41e1-9338-6ba19b6601ae",
+      "uuid": "561faaa3-8a47-4005-b6cd-16afe9648369",
+      "rawTextureUuid": "1155e71c-0cbb-429d-a073-beeb6c1630e3",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

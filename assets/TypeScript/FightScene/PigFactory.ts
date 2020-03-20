@@ -46,7 +46,7 @@ export default class PigFactory extends cc.Component {
             pigNode.position = cc.v2(idx*128, 0);
             let pig = pigNode.getComponent(Pig);
             pig.velocity = cc.v2(0, -100);
-            pig.hper.HpMax = pig.hper.Hp = 12;
+            pig.hper.HpMax = pig.hper.Hp = 3;
             pig.play();
             pig.init();
         }

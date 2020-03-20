@@ -31,7 +31,9 @@ export default class WeaponBtn extends cc.Component {
     setData(data){
         this.data = data;
         let weaponConf = Config.WeaponConfByType(data.type);
+        this.icon.node.active = false;
         cc.loader.loadRes(weaponConf.iconUrl, cc.SpriteFrame, (err, spriteFrame)=>{
+            this.icon.node.active = true;
             this.icon.spriteFrame = spriteFrame;
         });
         this.inUseNode.active = this.isInUse(data.type);

@@ -1,9 +1,8 @@
 import { PoolManager } from "../Frame/PoolManager";
 import Carrot from "./Carrot";
 import { Util } from "../Frame/Util";
-import { DB } from "../Frame/DataBind";
-import Weapon from "./Weapon";
 import { WeaponType, WeaponData } from "../FarmScene/dts";
+import Weapon from "./Weapon/Weapon";
 // Learn TypeScript:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/typescript.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/manual/en/scripting/typescript.html
@@ -44,22 +43,31 @@ export default class Rabbit extends cc.Component {
     public clearWeapon(){
         this.weaponGroup.removeAllChildren();
     }
-    public createWeapon(weaponData:WeaponData){
-        this.newWeaponNode(weaponData).then((weapon:Weapon)=>{
-            weapon.bulletGroup = this.bulletGroup;
+    public createWeapon(type:WeaponType){
+        let promise = this.newWeaponNode(type);
+        promise.then((weapon:Weapon)=>{
+            weapon.bulletParent = this.bulletGroup;
+            weapon.play();
+            weapon.setLvl(0);
             this.weapons.push(weapon);
             this.weaponGroup.addChild(weapon.node);
         });
+        return promise;
     }
     //创造不同物品的工厂
-    public newWeaponNode(weaponData){
+    public newWeaponNode(type){
         return new Promise((resolve, reject)=>{
-            switch(weaponData.type){
+            switch(type){
                 case WeaponType.Carrot:{
-                    Util.instantPrefab("Scene/FightScene/Weapon/WeaponCarrot").then((node:cc.Node)=>{
+                    Util.instantPrefab("Scene/FightScene/Weapon/WeaponCarrot/WeaponCarrot").then((node:cc.Node)=>{
                         let weapon = node.getComponent(Weapon);
-                        weapon.play();
-                        weapon.setData(weaponData);
+                        resolve(weapon);
+                    });
+                    break;
+                }
+                case WeaponType.Banana:{
+                    Util.instantPrefab("Scene/FightScene/Weapon/WeaponBanana/WeaponBanana").then((node:cc.Node)=>{
+                        let weapon = node.getComponent(Weapon);
                         resolve(weapon);
                     });
                     break;

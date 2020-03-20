@@ -1,7 +1,7 @@
 import ScrollList from "../Frame/ScrollList";
 import { DB } from "../Frame/DataBind";
 import { WeaponSlotData, WeaponType } from "../FarmScene/dts";
-import WeaponSlot from "./WeaponSlot";
+import WeaponSlot, { SlotState } from "./WeaponSlot";
 import WeaponBtn from "./WeaponBtn";
 
 // Learn TypeScript:
@@ -55,6 +55,12 @@ export default class WeaponBag extends DB.DataBindComponent {
             data.type = WeaponType.Default;
             slot.setData(data);
             this.allWeaponList.setDataArr(DB.Get("user/allWeapons"));
+        }
+    }
+    public setSlotState(state:SlotState){
+        let slots = this.slotList.content.getComponentsInChildren(WeaponSlot);
+        for(let i=0;i<slots.length; i++){
+            slots[i].setState(state);
         }
     }
 }

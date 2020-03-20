@@ -24,7 +24,6 @@ export default class Pool extends cc.Component {
             if(parentNode){
                 parentNode.addChild(node);
             }
-            
             return node;
         }
         var node:cc.Node = cc.instantiate(this.prefab);

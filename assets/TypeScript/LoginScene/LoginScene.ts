@@ -14,6 +14,7 @@ export default class LoginScene extends Scene {
     @property(cc.Label)
     label: cc.Label = null;
     onLoad () {
+        Util.moveVec2(cc.v2(100,100), cc.v2(200,200),10);
         //倒计时
         let count = 0;
         this.schedule(()=>{
@@ -102,11 +103,11 @@ export default class LoginScene extends Scene {
             {idx:8, type:WeaponType.Tomato},
         ]);
         DB.Set("user/weaponSlots", [
-            {idx:0, lock:false, type:WeaponType.Carrot},
-            {idx:1, lock:false, type:WeaponType.Default},
-            {idx:2, lock:true, type:WeaponType.Default},
-            {idx:3, lock:true, type:WeaponType.Default},
-            {idx:4, lock:true, type:WeaponType.Default},
+            {idx:0, type:WeaponType.Carrot, lock:false, cost:0},
+            {idx:1, type:WeaponType.Default, lock:true, cost:100},
+            {idx:2, type:WeaponType.Default, lock:true, cost:200},
+            {idx:3, type:WeaponType.Default, lock:true, cost:300},
+            {idx:4, type:WeaponType.Default, lock:true, cost:400},
         ]);
         //
         FarmController.runPlantGrowThread(itemDataArr);

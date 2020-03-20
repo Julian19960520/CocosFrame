@@ -102,14 +102,36 @@ export namespace Util{
             return tar;
         }    
     }
+    export function moveVec2(cur:cc.Vec2, tar:cc.Vec2, step:number){
+        let dir = tar.sub(cur);
+        if(dir.magSqr() > step*step){
+            dir.normalize(dir);
+            dir.mulSelf(step);
+            return dir.addSelf(cur);
+        }else{
+            return tar;
+        }
+    }
     let uuid = 0;
     export function newUuid(){
         return uuid++;
     }
-    //计算nodeA相对nodeB的相对坐标，
+    //计算nodeA相对nodeB的相对坐标。即如果把NodeA放到NodeB下，返回NodeA的坐标
     export function convertPosition(nodeA:cc.Node, nodeB:cc.Node){
-        let pnt = nodeA.convertToWorldSpaceAR(cc.Vec2.ZERO);
-        pnt = nodeB.convertToNodeSpaceAR(pnt);
-        return cc.v2(pnt.x, pnt.y);
+        let res = cc.v2();
+        nodeA.convertToWorldSpaceAR(cc.Vec2.ZERO, res);
+        nodeB.convertToNodeSpaceAR(res, res);
+        return res;
+    }
+    //移动node到一个新的节点下，并保持位置不变
+    export function moveNode(node:cc.Node, parent:cc.Node){
+        let res = cc.v2();
+        node.convertToWorldSpaceAR(cc.Vec2.ZERO, res);
+        parent.convertToNodeSpaceAR(res, res);
+        if(node.parent){
+            node.removeFromParent();
+        }
+        parent.addChild(node);
+        node.position = res;
     }
 }

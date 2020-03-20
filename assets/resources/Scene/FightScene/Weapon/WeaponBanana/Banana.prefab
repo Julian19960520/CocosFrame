@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Carrot",
+    "_name": "Banana",
     "_objFlags": 0,
     "_parent": null,
     "_children": [
@@ -107,8 +107,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 28,
-      "height": 91
+      "width": 100,
+      "height": 100
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -155,7 +155,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "452a4022-c288-4d9e-b4d4-f046b670afd4"
+      "__uuid__": "813032b6-0172-4c1e-bc80-5912e2a46518"
     },
     "_type": 0,
     "_sizeMode": 1,
@@ -168,7 +168,9 @@
     "_fillStart": 0,
     "_fillRange": 0,
     "_isTrimmedMode": true,
-    "_atlas": null,
+    "_atlas": {
+      "__uuid__": "3d832b77-e70a-48fd-abb2-c53d27353613"
+    },
     "_id": ""
   },
   {
@@ -177,7 +179,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "1c235e85-359a-4b79-9de0-fd1a3ab60f3d"
+      "__uuid__": "dc44e6f0-bdd4-4786-9783-ae6ac2b2b496"
     },
     "fileId": "8eMj8wM69EGpAdqY75gEqg",
     "sync": false
@@ -212,14 +214,14 @@
     },
     "_enabled": true,
     "_defaultClip": {
-      "__uuid__": "acd03ba9-3ed4-4b12-8847-f2abce1019dd"
+      "__uuid__": "80af41f1-c465-46af-afbc-7b91f377ec1f"
     },
     "_clips": [
       {
-        "__uuid__": "acd03ba9-3ed4-4b12-8847-f2abce1019dd"
+        "__uuid__": "80af41f1-c465-46af-afbc-7b91f377ec1f"
       },
       {
-        "__uuid__": "cb6ef61b-4d21-48e2-9c6f-8c0886e40dd0"
+        "__uuid__": "6616eb88-1d94-4b52-8326-8af5683afd0b"
       }
     ],
     "playOnLoad": false,
@@ -248,7 +250,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "1c235e85-359a-4b79-9de0-fd1a3ab60f3d"
+      "__uuid__": "dc44e6f0-bdd4-4786-9783-ae6ac2b2b496"
     },
     "fileId": "b9A8NnmM5FxYJ8Jh1OSZBH",
     "sync": false

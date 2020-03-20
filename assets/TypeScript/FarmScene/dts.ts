@@ -127,7 +127,7 @@ export class PropData{
 export class WeaponConfig{
     type:WeaponType;
     iconUrl:string;
-    lvlConfs:WeaponLvlConfig[];
+    lvlConfs:any[];
 }
 export class WeaponLvlConfig{
     lvl:number;
@@ -137,11 +137,13 @@ export class WeaponLvlConfig{
 }
 export class WeaponSlotData{
     idx:number;
-    lock:boolean;
     type:WeaponType;
+    lock:boolean;
+    cost:number;
     weaponData?:WeaponData;
 }
 export class WeaponData{
     type:WeaponType;
     lvl:number;
+    lvlListeners:any[];
 }

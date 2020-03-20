@@ -101,18 +101,18 @@ export namespace Config{
             type:WeaponType.Carrot,
             iconUrl:`Atlas/Icon/Weapon/Carrot`,
             lvlConfs:[
-                {lvl:1, ROF:4, speed:600, prefabPath:"Scene/FightScene/Bullet/Carrot/Carrot"},
-                {lvl:2, ROF:6, speed:600, prefabPath:"Scene/FightScene/Bullet/Carrot/Carrot"},
-                {lvl:3, ROF:8, speed:600, prefabPath:"Scene/FightScene/Bullet/Carrot/Carrot"},
+                {lvl:0, ROF:3, speed:1000, muzzleEnableIdxs:[1]},
+                {lvl:1, ROF:4, speed:1200, muzzleEnableIdxs:[0,2]},
+                {lvl:2, ROF:5, speed:1500, muzzleEnableIdxs:[0,1,2]},
             ]
         },
         {
             type:WeaponType.Banana,
             iconUrl:`Atlas/Icon/Weapon/Banana`,
             lvlConfs:[
-                {lvl:1, ROF:4, speed:600, prefabPath:"Scene/FightScene/Bullet/Carrot/Carrot"},
-                {lvl:2, ROF:6, speed:600, prefabPath:"Scene/FightScene/Bullet/Carrot/Carrot"},
-                {lvl:3, ROF:8, speed:600, prefabPath:"Scene/FightScene/Bullet/Carrot/Carrot"},
+                {lvl:0, ROF:4, speed:1000, backSpeed:1200, maxCnt:1},
+                {lvl:1, ROF:6, speed:1200, backSpeed:1500, maxCnt:2},
+                {lvl:2, ROF:8, speed:1500, backSpeed:1800, maxCnt:3},
             ]
         },
         {
@@ -204,16 +204,7 @@ export namespace Config{
     }
     export function WeaponLvlConfByTypeLvl(type, lvl){
         let weaponConf = WeaponConfByType(type);
-        if(weaponConf){
-            let lvlConfs = weaponConf.lvlConfs;
-            for(let j=0; j<lvlConfs.length; j++){
-                let lvlConf = lvlConfs[j];
-                if(lvlConf.lvl == lvl){
-                    return lvlConf;
-                }
-            } 
-        }
-        return null;
+        return weaponConf.lvlConfs[lvl];
     }
     export function WeaponConfByType(type){
         for(let i=0; i<configWeapons.length; i++){
