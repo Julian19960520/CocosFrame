@@ -1,6 +1,6 @@
 "use strict";
 cc._RF.push(module, 'd534dWuoKNK2blS540z8aHi', 'SceneManager');
-// TypeScript/Frame/SceneManager.ts
+// TypeScript/CocosFrame/SceneManager.ts
 
 // Learn TypeScript:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/typescript.html
@@ -36,15 +36,17 @@ var SceneManager = /** @class */ (function (_super) {
     };
     //进入新场景
     SceneManager.prototype.Enter = function (sceneName, shiftAnima) {
-        if (shiftAnima === void 0) { shiftAnima = ShiftAnima.moveLeftShift; }
+        if (shiftAnima === void 0) { shiftAnima = ShiftAnima.simpleShift; }
         this.blockInput.node.active = true;
-        this.stack.push(sceneName);
+        if (sceneName != "LoadingScene") {
+            this.stack.push(sceneName);
+        }
         return this.shiftScene(sceneName, shiftAnima);
     };
     //回到上个场景
     SceneManager.prototype.Back = function (shiftAnima) {
         var _this = this;
-        if (shiftAnima === void 0) { shiftAnima = ShiftAnima.moveRightShift; }
+        if (shiftAnima === void 0) { shiftAnima = ShiftAnima.simpleShift; }
         this.blockInput.node.active = true;
         return new Promise(function (resolve, reject) {
             if (_this.stack.length >= 2) {
@@ -61,7 +63,7 @@ var SceneManager = /** @class */ (function (_super) {
     //回到Home场景，并检查返回路径上的场景是否需要销毁
     SceneManager.prototype.goHome = function (shiftAnima) {
         var _this = this;
-        if (shiftAnima === void 0) { shiftAnima = ShiftAnima.moveRightShift; }
+        if (shiftAnima === void 0) { shiftAnima = ShiftAnima.simpleShift; }
         this.blockInput.node.active = true;
         return new Promise(function (resolve, reject) {
             if (_this.homeScene == _this.curScene.node.name) {
@@ -95,17 +97,17 @@ var SceneManager = /** @class */ (function (_super) {
             _this.loadScene(targetSceneName).then(function (newScene) {
                 resolve(newScene);
                 var oldScene = _this.curScene;
-                shiftAnima(_this.curScene, newScene, function () {
+                _this.curScene = newScene;
+                DataBind_1.DB.Set("curScene", _this.curScene);
+                shiftAnima(oldScene, newScene, function () {
                     if (oldScene && oldScene.autoDestroy) {
                         _this.content.removeChild(oldScene.node);
-                        oldScene.node.destroy();
                     }
                     _this.printState();
                     _this.blockInput.node.active = false;
                 });
-                _this.curScene = newScene;
-                DataBind_1.DB.Set("curScene", _this.curScene);
-            }).catch(function () {
+            }).catch(function (e) {
+                cc.error(e);
                 reject();
                 _this.blockInput.node.active = false;
             });
@@ -122,6 +124,10 @@ var SceneManager = /** @class */ (function (_super) {
             }
             else {
                 cc.loader.loadRes("Scene/" + sceneName + "/" + sceneName, function (err, prefab) {
+                    if (err) {
+                        cc.error(err);
+                        return;
+                    }
                     var newNode = cc.instantiate(prefab);
                     newNode.name = sceneName;
                     newNode.position = cc.Vec2.ZERO;
@@ -150,14 +156,15 @@ var SceneManager = /** @class */ (function (_super) {
         this.curScene.OpenPanelByPath(path, callback);
     };
     SceneManager.prototype.printState = function () {
-        var str = "==========SceneManager=========\nstack: ";
+        var str = "\n++++++++++++SceneManager++++++++++++\n+ stack: ";
         for (var i = 0; i < this.stack.length; i++) {
             str += " >> " + this.stack[i];
         }
-        str += "\ncache: ";
+        str += "\n+ cache: ";
         for (var i = 0; i < this.content.childrenCount; i++) {
             str += i + ":" + this.content.children[i].name + ",";
         }
+        str += "\n++++++++++++++++++++++++++++++++++++\n";
         console.log(str);
     };
     var SceneManager_1;
@@ -185,11 +192,9 @@ var ShiftAnima;
     function simpleShift(curScene, newScene, finish) {
         if (curScene) {
             curScene.node.active = false;
-            console.log(curScene.name + " false");
         }
         if (newScene) {
             newScene.node.active = true;
-            console.log(newScene.name + " true");
         }
         finish();
     }

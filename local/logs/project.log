@@ -1,68 +1,149 @@
-2020-03-20T09:14:43.404Z - normal: Load ~/.CocosCreator/settings.json
-2020-03-20T09:14:43.469Z - normal: Initializing Asset Database
-2020-03-20T09:14:43.473Z - normal: checking language setting...
-2020-03-20T09:14:43.473Z - normal: Language: zh
-2020-03-20T09:14:44.317Z - success: preview server running at http://localhost:7456
-2020-03-20T09:14:44.357Z - success: protocol editor-framework registered
-2020-03-20T09:14:44.357Z - success: protocol app registered
-2020-03-20T09:14:44.358Z - success: protocol theme registered
-2020-03-20T09:14:44.358Z - success: protocol packages registered
-2020-03-20T09:14:44.358Z - success: protocol uuid registerred
-2020-03-20T09:14:44.358Z - success: protocol db registerred
-2020-03-20T09:14:44.358Z - success: protocol thumbnail registerred
-2020-03-20T09:14:44.358Z - success: protocol unpack registerred
-2020-03-20T09:14:44.358Z - success: protocol disable-commonjs registerred
-2020-03-20T09:14:44.464Z - normal: connected!
-2020-03-20T09:14:44.466Z - normal: Check project /Users/hortor/Documents/CocosFrame
-2020-03-20T09:14:44.468Z - normal: Initializing project /Users/hortor/Documents/CocosFrame
-2020-03-20T09:14:44.877Z - normal: Initializing Cocos2d
-2020-03-20T09:14:45.635Z - normal: Initializing engine extends
-2020-03-20T09:14:45.722Z - success: alipay-adapter loaded
-2020-03-20T09:14:45.747Z - success: asset-db-debugger loaded
-2020-03-20T09:14:45.749Z - success: baidu-adapter loaded
-2020-03-20T09:14:45.750Z - success: color-picker loaded
-2020-03-20T09:14:45.905Z - success: fb-audience-network loaded
-2020-03-20T09:14:45.968Z - success: fb-live-stream loaded
-2020-03-20T09:14:45.971Z - success: google-play-instant loaded
-2020-03-20T09:14:45.978Z - success: huawei-runtime loaded
-2020-03-20T09:14:46.231Z - success: cpk-publish loaded
-2020-03-20T09:14:46.233Z - success: jsb-adapter loaded
-2020-03-20T09:14:46.239Z - success: oppo-runtime loaded
-2020-03-20T09:14:46.255Z - success: package-manager loaded
-2020-03-20T09:14:46.404Z - success: qqplay-adapter loaded
-2020-03-20T09:14:46.407Z - success: runtime-dev-tools loaded
-2020-03-20T09:14:46.422Z - success: sdkbox loaded
-2020-03-20T09:14:46.435Z - success: tester loaded
-2020-03-20T09:14:46.448Z - success: ui-kit-preview-extra loaded
-2020-03-20T09:14:46.461Z - success: ui-kit-preview loaded
-2020-03-20T09:14:46.474Z - success: ui-kit loaded
-2020-03-20T09:14:46.480Z - success: vivo-runtime loaded
-2020-03-20T09:14:46.481Z - success: weapp-adapter loaded
-2020-03-20T09:14:46.483Z - success: xiaomi-adapter loaded
-2020-03-20T09:14:46.486Z - success: alipay-minigame loaded
-2020-03-20T09:14:46.567Z - success: assets loaded
-2020-03-20T09:14:46.581Z - success: builder loaded
-2020-03-20T09:14:46.906Z - success: cocos-services loaded
-2020-03-20T09:14:46.921Z - success: console loaded
-2020-03-20T09:14:46.950Z - success: fb-instant-games loaded
-2020-03-20T09:14:46.965Z - success: game-window loaded
-2020-03-20T09:14:46.966Z - success: google-instant-games loaded
-2020-03-20T09:14:46.981Z - success: hierarchy loaded
-2020-03-20T09:14:46.993Z - success: inspector loaded
-2020-03-20T09:14:46.994Z - success: keystore loaded
-2020-03-20T09:14:47.008Z - success: node-library loaded
-2020-03-20T09:14:47.009Z - success: package-asset loaded
-2020-03-20T09:14:47.010Z - success: preferences loaded
-2020-03-20T09:14:47.022Z - success: project-exporter loaded
-2020-03-20T09:14:47.035Z - success: project-importer loaded
-2020-03-20T09:14:47.047Z - success: project-settings loaded
-2020-03-20T09:14:47.059Z - success: scene loaded
-2020-03-20T09:14:47.060Z - success: simulator-debugger loaded
-2020-03-20T09:14:47.062Z - success: sprite-editor loaded
-2020-03-20T09:14:47.097Z - success: store loaded
-2020-03-20T09:14:47.114Z - success: timeline loaded
-2020-03-20T09:14:47.118Z - success: xiaomi-runtime loaded
-2020-03-20T09:14:49.239Z - normal: Loading packages
-2020-03-20T09:14:49.283Z - normal: Watching packages
-2020-03-20T09:14:49.408Z - normal: Run Application
-2020-03-20T09:14:49.575Z - info: Cocos Services load base data!
+2020-03-22T10:07:11.551Z - normal: Load ~/.CocosCreator/settings.json
+2020-03-22T10:07:11.614Z - normal: Initializing Asset Database
+2020-03-22T10:07:11.617Z - normal: checking language setting...
+2020-03-22T10:07:11.617Z - normal: Language: zh
+2020-03-22T10:07:12.441Z - success: preview server running at http://localhost:7456
+2020-03-22T10:07:12.481Z - success: protocol editor-framework registered
+2020-03-22T10:07:12.482Z - success: protocol app registered
+2020-03-22T10:07:12.482Z - success: protocol theme registered
+2020-03-22T10:07:12.482Z - success: protocol packages registered
+2020-03-22T10:07:12.482Z - success: protocol uuid registerred
+2020-03-22T10:07:12.482Z - success: protocol db registerred
+2020-03-22T10:07:12.482Z - success: protocol thumbnail registerred
+2020-03-22T10:07:12.482Z - success: protocol unpack registerred
+2020-03-22T10:07:12.482Z - success: protocol disable-commonjs registerred
+2020-03-22T10:07:12.567Z - normal: connected!
+2020-03-22T10:07:12.569Z - normal: Check project /Users/hortor/Documents/CocosFrame
+2020-03-22T10:07:12.571Z - normal: Initializing project /Users/hortor/Documents/CocosFrame
+2020-03-22T10:07:12.981Z - normal: Initializing Cocos2d
+2020-03-22T10:07:13.752Z - normal: Initializing engine extends
+2020-03-22T10:07:13.795Z - success: alipay-adapter loaded
+2020-03-22T10:07:13.804Z - success: asset-db-debugger loaded
+2020-03-22T10:07:13.805Z - success: baidu-adapter loaded
+2020-03-22T10:07:13.806Z - success: color-picker loaded
+2020-03-22T10:07:13.929Z - success: fb-audience-network loaded
+2020-03-22T10:07:13.985Z - success: fb-live-stream loaded
+2020-03-22T10:07:13.988Z - success: google-play-instant loaded
+2020-03-22T10:07:13.992Z - success: huawei-runtime loaded
+2020-03-22T10:07:14.230Z - success: cpk-publish loaded
+2020-03-22T10:07:14.231Z - success: jsb-adapter loaded
+2020-03-22T10:07:14.237Z - success: oppo-runtime loaded
+2020-03-22T10:07:14.248Z - success: package-manager loaded
+2020-03-22T10:07:14.406Z - success: qqplay-adapter loaded
+2020-03-22T10:07:14.409Z - success: runtime-dev-tools loaded
+2020-03-22T10:07:14.419Z - success: sdkbox loaded
+2020-03-22T10:07:14.430Z - success: tester loaded
+2020-03-22T10:07:14.440Z - success: ui-kit-preview-extra loaded
+2020-03-22T10:07:14.451Z - success: ui-kit-preview loaded
+2020-03-22T10:07:14.465Z - success: ui-kit loaded
+2020-03-22T10:07:14.472Z - success: vivo-runtime loaded
+2020-03-22T10:07:14.473Z - success: weapp-adapter loaded
+2020-03-22T10:07:14.475Z - success: xiaomi-adapter loaded
+2020-03-22T10:07:14.478Z - success: alipay-minigame loaded
+2020-03-22T10:07:14.529Z - success: assets loaded
+2020-03-22T10:07:14.539Z - success: builder loaded
+2020-03-22T10:07:14.878Z - success: cocos-services loaded
+2020-03-22T10:07:14.891Z - success: console loaded
+2020-03-22T10:07:14.927Z - success: fb-instant-games loaded
+2020-03-22T10:07:14.939Z - success: game-window loaded
+2020-03-22T10:07:14.941Z - success: google-instant-games loaded
+2020-03-22T10:07:14.954Z - success: hierarchy loaded
+2020-03-22T10:07:14.968Z - success: inspector loaded
+2020-03-22T10:07:14.970Z - success: keystore loaded
+2020-03-22T10:07:14.984Z - success: node-library loaded
+2020-03-22T10:07:14.986Z - success: package-asset loaded
+2020-03-22T10:07:14.991Z - success: preferences loaded
+2020-03-22T10:07:15.002Z - success: project-exporter loaded
+2020-03-22T10:07:15.015Z - success: project-importer loaded
+2020-03-22T10:07:15.024Z - success: project-settings loaded
+2020-03-22T10:07:15.034Z - success: scene loaded
+2020-03-22T10:07:15.036Z - success: simulator-debugger loaded
+2020-03-22T10:07:15.037Z - success: sprite-editor loaded
+2020-03-22T10:07:15.050Z - success: store loaded
+2020-03-22T10:07:15.066Z - success: timeline loaded
+2020-03-22T10:07:15.095Z - success: xiaomi-runtime loaded
+2020-03-22T10:07:16.573Z - normal: Loading packages
+2020-03-22T10:07:16.582Z - normal: Watching packages
+2020-03-22T10:07:16.721Z - normal: Run Application
+2020-03-22T10:07:16.912Z - info: Cocos Services load base data!
+2020-03-22T10:09:03.001Z - info: 只有预制节点 "virus1" 及其子节点会被保存。
+2020-03-22T10:09:59.532Z - info: 只有预制节点 "PlayScene" 及其子节点会被保存。
+2020-03-22T10:10:27.582Z - failed: load script [./Guy] failed : Error: Cannot find module './Guy'
+    at Module._resolveFilename (module.js:470:15)
+    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:35:12)
+    at Function.s._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:941)
+    at Function.Module._load (module.js:418:25)
+    at Module.require (module.js:498:17)
+    at require (internal/module.js:20:19)
+    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:589)
+    at /Users/hortor/Documents/CocosFrame/temp/quick-scripts/assets/TypeScript/PlayScene/PlayScene.js:1:365
+    at __define (/Users/hortor/Documents/CocosFrame/temp/quick-scripts/assets/TypeScript/PlayScene/PlayScene.js:7:13)
+    at /Users/hortor/Documents/CocosFrame/temp/quick-scripts/assets/TypeScript/PlayScene/PlayScene.js:57:13
+2020-03-22T10:10:27.582Z - failed: load script [/Users/hortor/Documents/CocosFrame/temp/quick-scripts/assets/TypeScript/PlayScene/PlayScene.js] failed : TypeError: Cannot read property 'default' of undefined
+    at /Users/hortor/Documents/CocosFrame/temp/quick-scripts/assets/TypeScript/PlayScene/PlayScene.js:42:23
+    at __define (/Users/hortor/Documents/CocosFrame/temp/quick-scripts/assets/TypeScript/PlayScene/PlayScene.js:51:2)
+    at /Users/hortor/Documents/CocosFrame/temp/quick-scripts/assets/TypeScript/PlayScene/PlayScene.js:57:13
+    at Object.<anonymous> (/Users/hortor/Documents/CocosFrame/temp/quick-scripts/assets/TypeScript/PlayScene/PlayScene.js:64:11)
+    at Object.<anonymous> (/Users/hortor/Documents/CocosFrame/temp/quick-scripts/assets/TypeScript/PlayScene/PlayScene.js:67:3)
+    at Module._compile (module.js:571:32)
+    at Object.Module._extensions..js (module.js:580:10)
+    at Module.load (module.js:488:32)
+    at tryModuleLoad (module.js:447:12)
+    at Function.Module._load (module.js:439:3)
+2020-03-22T10:10:27.663Z - warn: Script attached to "PlayScene" in prefab "PlayScene.prefab" is missing or invalid. Detailed information:
+Node path: "PlayScene"
+Asset url: "db://assets/resources/Scene/PlayScene/PlayScene.prefab"
+Script UUID: "d2eade82-e8c3-4bf7-b134-e212c3734bfe"
+Class ID: "d2ead6C6MNL97E04hLDc0v+"
+
+2020-03-22T10:11:32.379Z - info: 只有预制节点 "PlayScene" 及其子节点会被保存。
+2020-03-22T10:12:09.207Z - info: 只有预制节点 "PlayScene" 及其子节点会被保存。
+2020-03-22T10:14:09.888Z - info: 只有预制节点 "PlayScene" 及其子节点会被保存。
+2020-03-22T10:16:22.066Z - info: 只有预制节点 "virus1" 及其子节点会被保存。
+2020-03-22T10:22:16.774Z - info: 只有预制节点 "PlayScene" 及其子节点会被保存。
+2020-03-22T10:57:31.846Z - info: 只有预制节点 "PlayScene" 及其子节点会被保存。
+2020-03-22T10:59:14.807Z - info: 只有预制节点 "MessageBox" 及其子节点会被保存。
+2020-03-22T11:02:22.920Z - info: 只有预制节点 "PlayScene" 及其子节点会被保存。
+2020-03-22T11:02:51.188Z - info: 只有预制节点 "virus1" 及其子节点会被保存。
+2020-03-22T11:02:55.124Z - info: 只有预制节点 "virus1" 及其子节点会被保存。
+2020-03-22T14:48:31.508Z - info: 只有预制节点 "PlayScene" 及其子节点会被保存。
+2020-03-22T14:56:02.584Z - info: 只有预制节点 "PlayScene" 及其子节点会被保存。
+2020-03-22T15:17:25.463Z - failed: load script [./Pool] failed : Error: Cannot find module './Pool'
+    at Module._resolveFilename (module.js:470:15)
+    at Function.Module._resolveFilename [as _resolveFilenameVendor] (/Applications/CocosCreator.app/Contents/Resources/electron.asar/common/reset-search-paths.js:35:12)
+    at Function.s._resolveFilename (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:941)
+    at Function.Module._load (module.js:418:25)
+    at Module.require (module.js:498:17)
+    at require (internal/module.js:20:19)
+    at Object.cc.require (/Applications/CocosCreator.app/Contents/Resources/app.asar/editor/page/project-scripts.js:1:589)
+    at /Users/hortor/Documents/CocosFrame/temp/quick-scripts/assets/TypeScript/CocosFrame/ParticleSystem.js:1:371
+    at __define (/Users/hortor/Documents/CocosFrame/temp/quick-scripts/assets/TypeScript/CocosFrame/ParticleSystem.js:7:14)
+    at /Users/hortor/Documents/CocosFrame/temp/quick-scripts/assets/TypeScript/CocosFrame/ParticleSystem.js:133:13
+2020-03-22T15:17:25.465Z - failed: load script [/Users/hortor/Documents/CocosFrame/temp/quick-scripts/assets/TypeScript/CocosFrame/ParticleSystem.js] failed : TypeError: Cannot read property 'default' of undefined
+    at /Users/hortor/Documents/CocosFrame/temp/quick-scripts/assets/TypeScript/CocosFrame/ParticleSystem.js:121:24
+    at __define (/Users/hortor/Documents/CocosFrame/temp/quick-scripts/assets/TypeScript/CocosFrame/ParticleSystem.js:127:2)
+    at /Users/hortor/Documents/CocosFrame/temp/quick-scripts/assets/TypeScript/CocosFrame/ParticleSystem.js:133:13
+    at Object.<anonymous> (/Users/hortor/Documents/CocosFrame/temp/quick-scripts/assets/TypeScript/CocosFrame/ParticleSystem.js:140:11)
+    at Object.<anonymous> (/Users/hortor/Documents/CocosFrame/temp/quick-scripts/assets/TypeScript/CocosFrame/ParticleSystem.js:143:3)
+    at Module._compile (module.js:571:32)
+    at Object.Module._extensions..js (module.js:580:10)
+    at Module.load (module.js:488:32)
+    at tryModuleLoad (module.js:447:12)
+    at Function.Module._load (module.js:439:3)
+2020-03-22T15:17:59.796Z - info: 只有预制节点 "PlayScene" 及其子节点会被保存。
+2020-03-22T15:41:03.532Z - info: 只有预制节点 "PlayScene" 及其子节点会被保存。
+2020-03-22T16:01:37.571Z - info: 只有预制节点 "PlayScene" 及其子节点会被保存。
+2020-03-22T16:02:20.843Z - warn: Cannot place directory into itself - 4b447ece-1437-4cd4-840f-1beef2146d97
+2020-03-22T16:02:23.350Z - warn: Cannot place directory into itself - 4b447ece-1437-4cd4-840f-1beef2146d97
+2020-03-22T16:02:24.592Z - warn: [db-task][refresh] uuid collision, the uuid(6971c448-7e66-4be6-8806-1e88371217d3) for /Users/hortor/Documents/CocosFrame/assets/resources/Prefab/Virus - 001/virus1.prefab is already used. A new uuid(3a82f49e-3866-4a8e-b0a7-a584b8337dae) will be assigned.
+2020-03-22T16:02:49.827Z - info: 只有预制节点 "PlayScene" 及其子节点会被保存。
+2020-03-22T16:03:22.336Z - info: 只有预制节点 "virus1" 及其子节点会被保存。
+2020-03-22T16:03:38.604Z - info: 只有预制节点 "mask" 及其子节点会被保存。
+2020-03-22T16:04:06.289Z - info: 只有预制节点 "glasses" 及其子节点会被保存。
+2020-03-22T16:04:20.318Z - info: 只有预制节点 "mask" 及其子节点会被保存。
+2020-03-22T16:09:35.463Z - info: 只有预制节点 "virus1" 及其子节点会被保存。
+2020-03-22T16:45:13.755Z - info: 只有预制节点 "virus1" 及其子节点会被保存。
+2020-03-22T16:45:22.958Z - info: 只有预制节点 "virus1" 及其子节点会被保存。
+2020-03-22T16:45:31.236Z - info: 只有预制节点 "virus1" 及其子节点会被保存。
+2020-03-22T16:45:43.924Z - info: 只有预制节点 "virus1" 及其子节点会被保存。
+2020-03-22T16:46:12.102Z - info: 只有预制节点 "virus1" 及其子节点会被保存。

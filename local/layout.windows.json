@@ -5,10 +5,10 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 64,
-      "y": 23,
-      "width": 1376,
-      "height": 877,
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 900,
       "layout": {
         "children": [
           {
@@ -21,10 +21,10 @@
                 ],
                 "height": 507,
                 "type": "panel",
-                "width": 654
+                "width": 654.3125
               },
               {
-                "active": 1,
+                "active": 0,
                 "children": [
                   "node-library",
                   "console",
@@ -33,12 +33,12 @@
                 ],
                 "height": 286,
                 "type": "panel",
-                "width": 654
+                "width": 654.3125
               }
             ],
             "height": 795,
             "type": "dock-v",
-            "width": 654
+            "width": 654.3125
           },
           {
             "active": 0,
@@ -47,7 +47,7 @@
             ],
             "height": 795,
             "type": "panel",
-            "width": 208
+            "width": 207.28125
           },
           {
             "active": 0,
@@ -56,7 +56,7 @@
             ],
             "height": 795,
             "type": "panel",
-            "width": 204
+            "width": 204.40625
           },
           {
             "active": 0,
@@ -83,6 +83,32 @@
         "cocos-services",
         "scene"
       ]
+    },
+    "window-1584892599239": {
+      "main": false,
+      "url": "unpack://static/window.html",
+      "windowType": "dockable",
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 900,
+      "layout": {
+        "children": [
+          {
+            "active": 0,
+            "children": [
+              "project-settings"
+            ],
+            "height": 900,
+            "type": "panel",
+            "width": 1440
+          }
+        ],
+        "type": "dock-v"
+      },
+      "panels": [
+        "project-settings"
+      ]
     }
   },
   "panels": {
@@ -105,8 +131,8 @@
       "height": 722
     },
     "project-settings": {
-      "x": 555,
-      "y": 23,
+      "x": 0,
+      "y": 0,
       "width": 1440,
       "height": 900
     },

@@ -47,8 +47,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1136,
-      "height": 640
+      "width": 640,
+      "height": 1136
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -57,8 +57,8 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": 568,
-      "y": 320,
+      "x": 320,
+      "y": 568,
       "z": 0
     },
     "_scale": {
@@ -251,6 +251,7 @@
     "showBack": true,
     "showHome": true,
     "showEnergyBar": true,
+    "showCoinBar": false,
     "label": {
       "__id__": 3
     },

@@ -1,6 +1,6 @@
 "use strict";
 cc._RF.push(module, 'ebae1CVLSJEvJy2dYGyFI4x', 'ScreenRect');
-// TypeScript/System/ScreenRect.ts
+// TypeScript/CocosFrame/ScreenRect.ts
 
 // Learn TypeScript:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/typescript.html
@@ -35,6 +35,7 @@ var ScreenRect = /** @class */ (function (_super) {
         }
         ScreenRect_1.width = this.node.width;
         ScreenRect_1.height = this.node.height;
+        ScreenRect_1.box = this.node.getBoundingBoxToWorld();
     };
     var ScreenRect_1;
     ScreenRect.Ins = null;
