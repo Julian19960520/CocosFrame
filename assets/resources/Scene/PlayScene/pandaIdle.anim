@@ -1,0 +1,47 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "pandaIdle",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.8666666666666667,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 2,
+  "curveData": {
+    "paths": {
+      "flipGroup/head": {
+        "props": {
+          "scaleX": [
+            {
+              "frame": 0,
+              "value": 0.5
+            },
+            {
+              "frame": 0.4166666666666667,
+              "value": 0.52
+            },
+            {
+              "frame": 0.8666666666666667,
+              "value": 0.5
+            }
+          ],
+          "scaleY": [
+            {
+              "frame": 0,
+              "value": 0.5
+            },
+            {
+              "frame": 0.4166666666666667,
+              "value": 0.48
+            },
+            {
+              "frame": 0.8666666666666667,
+              "value": 0.5
+            }
+          ]
+        }
+      }
+    }
+  },
+  "events": []
+}

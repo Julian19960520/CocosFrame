@@ -3,6 +3,34 @@
     "name": "User",
     "prefab": [
       {
+        "name": "CircleBtn",
+        "uuid": "15cb111f-2a2e-4ae7-92c4-62686238ee6e"
+      },
+      {
+        "name": "RectBtn",
+        "uuid": "02ac459d-e6d7-4938-a0f7-a8bcfd9e551c"
+      },
+      {
+        "name": "ProgressBar",
+        "uuid": "1b058041-5c6a-4e7d-90eb-6831d01d3947"
+      },
+      {
+        "name": "Slider",
+        "uuid": "c030afdc-160a-4243-bc6c-e030ebd3c99d"
+      },
+      {
+        "name": "closeBtn",
+        "uuid": "65c57a21-d2b0-4806-9495-bf5e71f27703"
+      },
+      {
+        "name": "ScrollList_Ver",
+        "uuid": "b323d240-1988-4959-9778-a6853e721981"
+      },
+      {
+        "name": "ScrollList_Hor",
+        "uuid": "186e0ab7-844b-4317-abe6-8b99ca053bc7"
+      },
+      {
         "name": "ScrollList_Grid",
         "uuid": "2b3678bb-24b4-4e63-b3e3-fe3b14379bbe"
       }

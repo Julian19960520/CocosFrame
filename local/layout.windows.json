@@ -1,12 +1,13 @@
 {
   "version": "1.1.1",
   "windows": {
+    "worker": {},
     "main": {
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 64,
-      "y": 23,
+      "x": 1521,
+      "y": -436,
       "width": 1376,
       "height": 877,
       "layout": {
@@ -47,7 +48,7 @@
             ],
             "height": 795,
             "type": "panel",
-            "width": 208
+            "width": 204
           },
           {
             "active": 0,
@@ -66,7 +67,7 @@
             ],
             "height": 795,
             "type": "panel",
-            "width": 304
+            "width": 308
           }
         ],
         "type": "dock-h"
@@ -87,10 +88,10 @@
   },
   "panels": {
     "sprite-editor": {
-      "x": 65,
+      "x": 129,
       "y": 23,
-      "width": 1440,
-      "height": 877
+      "width": 789,
+      "height": 705
     },
     "preferences": {
       "x": 681,
@@ -105,10 +106,10 @@
       "height": 722
     },
     "project-settings": {
-      "x": 555,
+      "x": 0,
       "y": 23,
       "width": 1440,
-      "height": 900
+      "height": 877
     },
     "timeline": {
       "x": 2199,

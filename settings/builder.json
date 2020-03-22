@@ -43,7 +43,7 @@
     "appid": "wx3f57e2acf5250d57",
     "orientation": "portrait",
     "separate_engine": false,
-    "subContext": ""
+    "subContext": "openDataContextProject"
   },
   "xxteaKey": "03b47b7b-5310-41",
   "zipCompressJs": true

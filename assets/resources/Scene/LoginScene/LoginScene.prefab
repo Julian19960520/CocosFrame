@@ -40,15 +40,15 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 0,
-      "g": 0,
-      "b": 0,
+      "r": 83,
+      "g": 83,
+      "b": 83,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1136,
-      "height": 640
+      "width": 640,
+      "height": 1136
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -57,8 +57,8 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": 568,
-      "y": 320,
+      "x": 320,
+      "y": 568,
       "z": 0
     },
     "_scale": {
@@ -196,7 +196,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "607afc93-cdce-470d-bc71-2d3c1335390e"
+      "__uuid__": "3454a292-02a3-4901-8ebf-3c9a031eb9c2"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -251,6 +251,7 @@
     "showBack": true,
     "showHome": true,
     "showEnergyBar": true,
+    "showCoinBar": false,
     "label": {
       "__id__": 3
     },
